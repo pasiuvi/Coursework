@@ -1,127 +1,280 @@
-# question2_social_media_analysis/data_collection/scraper.py
+"""
+Book scraper module for extracting book data from books.toscrape.com.
+
+This module implements a web scraper that collects book information including
+title, price, rating, category, and availability from books.toscrape.com
+and saves the data to a CSV file.
+"""
+
+import csv
+import os
+import re
+import time
+from typing import Dict, List, Optional
+from urllib.parse import urljoin
 
 import requests
 from bs4 import BeautifulSoup
-import csv
-import time
-import re
 
-def scrape_books():
+
+class BookScraper:
     """
-    Scrapes book data from http://books.toscrape.com/, including title, price,
-    category, rating, and availability, and saves it to a CSV file.
-    """
-    base_url = "http://books.toscrape.com/catalogue/page-{}.html"
-    all_books = []
-    page_num = 1
+    A web scraper for extracting book data from books.toscrape.com.
     
-    # Mapping for converting star rating text to a number
-    rating_map = {'One': 1, 'Two': 2, 'Three': 3, 'Four': 4, 'Five': 5}
-
-    while True:
-        url = base_url.format(page_num)
-        print(f"Scraping page {page_num}...")
+    This class provides functionality to scrape book information including
+    title, price, rating, category, and availability from the website.
+    """
+    
+    # Class constants
+    BASE_URL = "http://books.toscrape.com/catalogue/page-{}.html"
+    DETAIL_BASE_URL = "http://books.toscrape.com/catalogue/"
+    DEFAULT_DELAY = 1  # seconds between requests
+    
+    def __init__(self, output_file: str = 'question2_social_media_analysis/data/scraped_books.csv'):
+        """
+        Initialize the BookScraper.
         
+        Args:
+            output_file: Path to the output CSV file
+        """
+        self.output_file = output_file
+        self.session = requests.Session()
+        self._setup_session()
+    
+    def _setup_session(self) -> None:
+        """Set up the requests session with headers and configuration."""
+        self.session.headers.update({
+            'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36'
+        })
+    
+    def _fetch_page(self, url: str) -> Optional[BeautifulSoup]:
+        """
+        Fetch and parse a web page.
+        
+        Args:
+            url: The URL to fetch
+            
+        Returns:
+            BeautifulSoup object if successful, None otherwise
+        """
         try:
-            response = requests.get(url)
-            response.raise_for_status()  # Raise an exception for bad status codes
+            response = self.session.get(url)
+            response.raise_for_status()
+            return BeautifulSoup(response.content, 'html.parser')
         except requests.exceptions.HTTPError as e:
             if response.status_code == 404:
                 print("End of pages reached.")
-                break
-            else:
-                print(f"HTTP error occurred: {e}")
-                break
+                return None
+            print(f"HTTP error occurred: {e}")
+            return None
         except requests.exceptions.RequestException as e:
             print(f"Request error occurred: {e}")
-            break
-
-        soup = BeautifulSoup(response.content, 'html.parser')
-        books = soup.find_all('article', class_='product_pod')
-
-        if not books:
-            print("No more books found. Stopping.")
-            break
-
-        for book in books:
-            title = book.h3.a['title']
-            
-            # --- Extract Price ---
-            price_str = book.find('p', class_='price_color').text
-            try:
-                # Remove all non-numeric characters except decimal point
-                price_numeric = re.sub(r'[^\d.]', '', price_str)
-                price_cleaned = float(price_numeric)
-            except (ValueError, AttributeError) as e:
-                print(f"Error processing price '{price_str}': {e}")
-                price_cleaned = 0.0  # Default value if conversion fails
-
-            # --- Extract Rating ---
-            try:
-                rating_tag = book.find('p', class_=re.compile(r'star-rating'))
-                rating_class = rating_tag['class'][1] # e.g., 'Three'
-                rating = rating_map.get(rating_class, 0) # Default to 0 if not found
-            except (AttributeError, IndexError, TypeError) as e:
-                print(f"Error getting rating for book '{title}': {e}")
-                rating = 0
-
-            # --- Navigate to the book's detail page for category and availability ---
-            category = "Unknown"
-            availability = 0
-            try:
-                book_relative_url = book.h3.a['href']
-                book_url = 'http://books.toscrape.com/catalogue/' + book_relative_url.replace('../', '')
-                book_response = requests.get(book_url)
-                book_soup = BeautifulSoup(book_response.content, 'html.parser')
-                
-                # Get category
-                breadcrumb = book_soup.find('ul', class_='breadcrumb')
-                if breadcrumb and len(breadcrumb.find_all('li')) > 2:
-                    category = breadcrumb.find_all('li')[2].a.text.strip()
-                
-                # Get availability
-                availability_tag = book_soup.find('p', class_='instock availability')
-                if availability_tag:
-                    # Use regex to find all digits in the string
-                    availability_match = re.search(r'(\d+)', availability_tag.text)
-                    if availability_match:
-                        availability = int(availability_match.group(1))
-
-            except (AttributeError, IndexError, requests.exceptions.RequestException) as e:
-                print(f"Error getting details for book '{title}': {e}")
-                # Defaults are already set, so we can just continue
-
-            all_books.append({
-                'title': title,
-                'price': price_cleaned,
-                'rating': rating,
-                'availability': availability,
-                'category': category
-            })
+            return None
+    
+    def _extract_title(self, book_element) -> str:
+        """
+        Extract book title from book element.
         
-        # Be a good web citizen by adding a delay between requests
-        time.sleep(1)
-        page_num += 1
-
-    # Save the data to a CSV file
-    csv_file = 'scraped_books.csv'
-    with open(csv_file, 'w', newline='', encoding='utf-8') as f:
+        Args:
+            book_element: BeautifulSoup element containing book data
+            
+        Returns:
+            Book title as string
+        """
+        try:
+            return book_element.h3.a['title']
+        except (AttributeError, KeyError):
+            return "Unknown Title"
+    
+    def _extract_price(self, book_element) -> float:
+        """
+        Extract and clean book price from book element.
+        
+        Args:
+            book_element: BeautifulSoup element containing book data
+            
+        Returns:
+            Price as float, 0.0 if extraction fails
+        """
+        try:
+            price_str = book_element.find('p', class_='price_color').text
+            # Remove all non-numeric characters except decimal point
+            price_numeric = re.sub(r'[^\d.]', '', price_str)
+            return float(price_numeric)
+        except (ValueError, AttributeError) as e:
+            print(f"Error processing price: {e}")
+            return 0.0
+    
+    def _extract_rating(self, book_element) -> int:
+        """
+        Extract book rating from book element.
+        
+        Args:
+            book_element: BeautifulSoup element containing book data
+            
+        Returns:
+            Rating as integer (1-5), 0 if extraction fails
+        """
+        try:
+            rating_map = {'One': 1, 'Two': 2, 'Three': 3, 'Four': 4, 'Five': 5}
+            rating_tag = book_element.find('p', class_=re.compile(r'star-rating'))
+            rating_class = rating_tag['class'][1]  # e.g., 'Three'
+            return rating_map.get(rating_class, 0)
+        except (AttributeError, IndexError, TypeError):
+            return 0
+    
+    def _extract_book_details(self, book_element) -> Dict[str, str]:
+        """
+        Extract detailed information from book's detail page
+        
+        Args:
+            book_element: BeautifulSoup element containing book data
+            
+        Returns:
+            Dictionary containing category and availability
+        """
+        details = {"category": "Unknown", "availability": 0}
+        
+        try:
+            book_relative_url = book_element.h3.a['href']
+            book_url = urljoin(self.DETAIL_BASE_URL, book_relative_url.replace('../', ''))
+            book_soup = self._fetch_page(book_url)
+            
+            if book_soup is None:
+                return details
+            
+            # Extract category
+            category = self._extract_category(book_soup)
+            if category:
+                details["category"] = category
+            
+            # Extract availability
+            availability = self._extract_availability(book_soup)
+            details["availability"] = availability
+            
+        except (AttributeError, KeyError) as e:
+            print(f"Error getting book details: {e}")
+        
+        return details
+    
+    def _extract_category(self, book_soup: BeautifulSoup) -> Optional[str]:
+        """
+        Extract category from book detail page.
+        
+        Args:
+            book_soup: BeautifulSoup object of book detail page
+            
+        Returns:
+            Category name or None if not found
+        """
+        try:
+            breadcrumb = book_soup.find('ul', class_='breadcrumb')
+            if breadcrumb and len(breadcrumb.find_all('li')) > 2:
+                return breadcrumb.find_all('li')[2].a.text.strip()
+        except (AttributeError, IndexError):
+            pass
+        return None
+    
+    def _extract_availability(self, book_soup: BeautifulSoup) -> int:
+        """
+        Extract availability status from book detail page.
+        
+        Args:
+            book_soup: BeautifulSoup object of book detail page
+            
+        Returns:
+            1 if in stock, 0 if out of stock
+        """
+        try:
+            availability_tag = book_soup.find('p', class_='instock availability')
+            if availability_tag and 'In stock' in availability_tag.text:
+                return 1
+        except AttributeError:
+            pass
+        return 0
+    
+    def _extract_book_data(self, book_element) -> Dict[str, any]:
+        """
+        Extract all data for a single book.
+        
+        Args:
+            book_element: BeautifulSoup element containing book data
+            
+        Returns:
+            Dictionary containing all book information
+        """
+        title = self._extract_title(book_element)
+        price = self._extract_price(book_element)
+        rating = self._extract_rating(book_element)
+        details = self._extract_book_details(book_element)
+        
+        return {
+            'title': title,
+            'price': price,
+            'rating': rating,
+            'availability': details['availability'],
+            'category': details['category']
+        }
+    
+    def _save_to_csv(self, books_data: List[Dict[str, any]]) -> None:
+        """
+        Save book data to CSV file.
+        
+        Args:
+            books_data: List of dictionaries containing book information
+        """
+        # Create directory if it doesn't exist
+        os.makedirs(os.path.dirname(self.output_file), exist_ok=True)
+        
         fieldnames = ['title', 'price', 'rating', 'availability', 'category']
-        writer = csv.DictWriter(f, fieldnames=fieldnames)
-        writer.writeheader()
-        writer.writerows(all_books)
+        
+        with open(self.output_file, 'w', newline='', encoding='utf-8') as f:
+            writer = csv.DictWriter(f, fieldnames=fieldnames)
+            writer.writeheader()
+            writer.writerows(books_data)
+    
+    def scrape_books(self) -> None:
+        """
+        Main method to scrape all books from the website.
+        
+        This method iterates through all pages, extracts book data,
+        and saves it to a CSV file.
+        """
+        all_books = []
+        page_num = 1
+        limited_pages = 2  # Limit to first 50 pages for demonstration
 
-    print(f"Scraping complete! {len(all_books)} books saved to {csv_file}")
+        while page_num <= limited_pages:
+            url = self.BASE_URL.format(page_num)
+            print(f"Scraping page {page_num}...")
+            
+            soup = self._fetch_page(url)
+            if soup is None:
+                break
+            
+            books = soup.find_all('article', class_='product_pod')
+            if not books:
+                print("No more books found. Stopping.")
+                break
+            
+            for book in books:
+                book_data = self._extract_book_data(book)
+                all_books.append(book_data)
+            
+            # Be a good web citizen by adding a delay between requests
+            time.sleep(self.DEFAULT_DELAY)
+            page_num += 1
+        
+        # Save the data to CSV file
+        self._save_to_csv(all_books)
+        print(f"Scraping complete! {len(all_books)} books saved to {self.output_file}")
+
+
+def main() -> None:
+    """Main function to run the scraper."""
+    scraper = BookScraper()
+    scraper.scrape_books()
 
 
 if __name__ == "__main__":
-    scrape_books()
-
-# ... (all the import statements) ...
-
-def scrape_books():
-    # ... (the rest of the scraping code is the same) ...
-
-    # Save the data to a CSV file in the 'data' subfolder
-    csv_file = '../data/scraped_books.csv' # <-- This line is updated
-    # ... (the rest of the code for writing the CSV file) ...
+    main()
