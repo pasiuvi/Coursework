@@ -49,7 +49,7 @@ class BookScraper:
         """Set up logging configuration for the scraper."""
         logging.basicConfig(
             level=logging.INFO,
-            format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
+            format='%(asctime)s - %(levelname)s - %(message)s',
             handlers=[
                 logging.StreamHandler(),
                 logging.FileHandler('scraper.log')
@@ -82,18 +82,33 @@ class BookScraper:
         """
         self.logger.debug(f"Fetching page: {url}")
         try:
-            response = self.session.get(url)
+            response = self.session.get(url, timeout=30)
             response.raise_for_status()
             self.logger.debug(f"Successfully fetched page: {url} (Status: {response.status_code})")
             return BeautifulSoup(response.content, 'html.parser')
         except requests.exceptions.HTTPError as e:
-            if response.status_code == 404:
-                self.logger.info("Reached end of pages (404 error)")
+            if hasattr(e, 'response') and e.response.status_code == 404:
+                self.logger.info(f"Reached end of pages - Page {url} not found (404)")
                 return None
             self.logger.error(f"HTTP error occurred while fetching {url}: {e}")
             return None
+        except requests.exceptions.Timeout:
+            self.logger.warning(f"Timeout occurred while fetching {url}, retrying once...")
+            try:
+                response = self.session.get(url, timeout=60)
+                response.raise_for_status()
+                return BeautifulSoup(response.content, 'html.parser')
+            except Exception as retry_e:
+                self.logger.error(f"Retry failed for {url}: {retry_e}")
+                return None
+        except requests.exceptions.ConnectionError as e:
+            self.logger.error(f"Connection error occurred while fetching {url}: {e}")
+            return None
         except requests.exceptions.RequestException as e:
             self.logger.error(f"Request error occurred while fetching {url}: {e}")
+            return None
+        except Exception as e:
+            self.logger.error(f"Unexpected error occurred while fetching {url}: {e}")
             return None
     
     def _extract_title(self, book_element) -> str:
@@ -254,7 +269,7 @@ class BookScraper:
             'category': details['category']
         }
         
-        self.logger.info(f"Successfully extracted data for book: '{title}' - £{price}, {rating}/5 stars, Category: {details['category']}")
+        self.logger.info(f"Successfully extracted: '{title}'")
         return book_data
     
     def _save_to_csv(self, books_data: List[Dict[str, any]]) -> None:
@@ -292,50 +307,66 @@ class BookScraper:
         self.logger.info("Starting book scraping process")
         all_books = []
         page_num = 1
-        limited_pages = 1  # Limit to first page for demonstration
+        limited_pages = 0  # Set to 0 to scrape all pages, or positive number to limit
         books_processed = 0
 
-        while page_num <= limited_pages:
-            url = self.BASE_URL.format(page_num)
-            self.logger.info(f"Scraping page {page_num}: {url}")
-            
-            soup = self._fetch_page(url)
-            if soup is None:
-                self.logger.warning(f"Failed to fetch page {page_num}, stopping scraper")
+        while limited_pages == 0 or page_num <= limited_pages:
+            try:
+                url = self.BASE_URL.format(page_num)
+                self.logger.info(f"Scraping page {page_num}: {url}")
+                
+                soup = self._fetch_page(url)
+                if soup is None:
+                    self.logger.info(f"No more pages available. Stopped at page {page_num}")
+                    break
+                
+                books = soup.find_all('article', class_='product_pod')
+                if not books:
+                    self.logger.info(f"No books found on page {page_num}. Reached end of content.")
+                    break
+                
+                self.logger.info(f"Found {len(books)} books on page {page_num}")
+                
+                page_books_processed = 0
+                for book in books:
+                    try:
+                        book_data = self._extract_book_data(book)
+                        all_books.append(book_data)
+                        books_processed += 1
+                        page_books_processed += 1
+                        self.logger.debug(f"Processed book {books_processed}: {book_data['title']}")
+                    except Exception as e:
+                        self.logger.error(f"Failed to process book {books_processed + 1} on page {page_num}: {e}")
+                        continue
+                
+                self.logger.info(f"Completed page {page_num}, successfully processed {page_books_processed}/{len(books)} books")
+                
+                # Add random delay between page requests (but not after the last page)
+                if limited_pages == 0 or page_num < limited_pages:
+                    self._random_delay()
+                
+            except KeyboardInterrupt:
+                self.logger.warning(f"Scraping interrupted by user at page {page_num}")
                 break
-            
-            books = soup.find_all('article', class_='product_pod')
-            if not books:
-                self.logger.warning("No books found on current page, stopping")
-                break
-            
-            self.logger.info(f"Found {len(books)} books on page {page_num}")
-            
-            for book in books:
-                try:
-                    book_data = self._extract_book_data(book)
-                    all_books.append(book_data)
-                    books_processed += 1
-                    self.logger.debug(f"Processed book {books_processed}: {book_data['title']}")
-                except Exception as e:
-                    self.logger.error(f"Failed to process book {books_processed + 1}: {e}")
-                    continue
-            
-            self.logger.info(f"Completed page {page_num}, processed {len(books)} books")
-            
-            # Add random delay between page requests
-            if page_num < limited_pages:
-                self._random_delay()
+            except Exception as e:
+                self.logger.error(f"Unexpected error on page {page_num}: {e}")
+                self.logger.info("Attempting to continue with next page...")
+                
             page_num += 1
         
         # Save the data to CSV file
-        if all_books:
-            self._save_to_csv(all_books)
-            self.logger.info(f"Scraping complete! Total books processed: {len(all_books)}")
-        else:
-            self.logger.warning("No books were scraped successfully")
-        
-        print(f"Scraping complete! {len(all_books)} books saved to {self.output_file}")
+        try:
+            if all_books:
+                self._save_to_csv(all_books)
+                self.logger.info(f"Scraping complete! Total books processed: {len(all_books)} from {page_num - 1} pages")
+                print(f"Scraping complete! {len(all_books)} books saved to {self.output_file}")
+            else:
+                self.logger.warning("No books were scraped successfully")
+                print("Warning: No books were scraped. Please check the website or your connection.")
+        except Exception as e:
+            self.logger.error(f"Failed to save scraped data: {e}")
+            print(f"Error: Failed to save data - {e}")
+            raise
 
 
 def main() -> None:
