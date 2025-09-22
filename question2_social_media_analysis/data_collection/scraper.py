@@ -7,6 +7,7 @@ and saves the data to a CSV file.
 """
 
 import csv
+import logging
 import os
 import random
 import re
@@ -39,17 +40,34 @@ class BookScraper:
         """
         self.output_file = output_file
         self.session = requests.Session()
+        self._setup_logging()
         self._setup_session()
+        self.logger.info("BookScraper initialized successfully")
+        self.logger.info(f"Output file set to: {self.output_file}")
+    
+    def _setup_logging(self) -> None:
+        """Set up logging configuration for the scraper."""
+        logging.basicConfig(
+            level=logging.INFO,
+            format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
+            handlers=[
+                logging.StreamHandler(),
+                logging.FileHandler('scraper.log')
+            ]
+        )
+        self.logger = logging.getLogger(__name__)
     
     def _setup_session(self) -> None:
         """Set up the requests session with headers and configuration."""
         self.session.headers.update({
             'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36'
         })
+        self.logger.info("HTTP session configured with user agent")
     
     def _random_delay(self) -> None:
         """Apply a random delay between 1-3 seconds."""
         delay = random.uniform(1, 3)
+        self.logger.debug(f"Applying random delay of {delay:.2f} seconds")
         time.sleep(delay)
     
     def _fetch_page(self, url: str) -> Optional[BeautifulSoup]:
@@ -62,18 +80,20 @@ class BookScraper:
         Returns:
             BeautifulSoup object if successful, None otherwise
         """
+        self.logger.debug(f"Fetching page: {url}")
         try:
             response = self.session.get(url)
             response.raise_for_status()
+            self.logger.debug(f"Successfully fetched page: {url} (Status: {response.status_code})")
             return BeautifulSoup(response.content, 'html.parser')
         except requests.exceptions.HTTPError as e:
             if response.status_code == 404:
-                print("End of pages reached.")
+                self.logger.info("Reached end of pages (404 error)")
                 return None
-            print(f"HTTP error occurred: {e}")
+            self.logger.error(f"HTTP error occurred while fetching {url}: {e}")
             return None
         except requests.exceptions.RequestException as e:
-            print(f"Request error occurred: {e}")
+            self.logger.error(f"Request error occurred while fetching {url}: {e}")
             return None
     
     def _extract_title(self, book_element) -> str:
@@ -87,8 +107,11 @@ class BookScraper:
             Book title as string
         """
         try:
-            return book_element.h3.a['title']
+            title = book_element.h3.a['title']
+            self.logger.debug(f"Extracted title: {title}")
+            return title
         except (AttributeError, KeyError):
+            self.logger.warning("Failed to extract book title, using default")
             return "Unknown Title"
     
     def _extract_price(self, book_element) -> float:
@@ -105,9 +128,11 @@ class BookScraper:
             price_str = book_element.find('p', class_='price_color').text
             # Remove all non-numeric characters except decimal point
             price_numeric = re.sub(r'[^\d.]', '', price_str)
-            return float(price_numeric)
+            price = float(price_numeric)
+            self.logger.debug(f"Extracted price: £{price}")
+            return price
         except (ValueError, AttributeError) as e:
-            print(f"Error processing price: {e}")
+            self.logger.warning(f"Failed to extract price: {e}")
             return 0.0
     
     def _extract_rating(self, book_element) -> int:
@@ -124,8 +149,11 @@ class BookScraper:
             rating_map = {'One': 1, 'Two': 2, 'Three': 3, 'Four': 4, 'Five': 5}
             rating_tag = book_element.find('p', class_=re.compile(r'star-rating'))
             rating_class = rating_tag['class'][1]  # e.g., 'Three'
-            return rating_map.get(rating_class, 0)
+            rating = rating_map.get(rating_class, 0)
+            self.logger.debug(f"Extracted rating: {rating}/5 stars")
+            return rating
         except (AttributeError, IndexError, TypeError):
+            self.logger.warning("Failed to extract rating, using default value 0")
             return 0
     
     def _extract_book_details(self, book_element) -> Dict[str, str]:
@@ -143,22 +171,26 @@ class BookScraper:
         try:
             book_relative_url = book_element.h3.a['href']
             book_url = urljoin(self.DETAIL_BASE_URL, book_relative_url.replace('../', ''))
+            self.logger.debug(f"Fetching book details from: {book_url}")
             book_soup = self._fetch_page(book_url)
             
             if book_soup is None:
+                self.logger.warning("Failed to fetch book detail page")
                 return details
             
             # Extract category
             category = self._extract_category(book_soup)
             if category:
                 details["category"] = category
+                self.logger.debug(f"Extracted category: {category}")
             
             # Extract availability
             availability = self._extract_availability(book_soup)
             details["availability"] = availability
+            self.logger.debug(f"Extracted availability: {'In Stock' if availability else 'Out of Stock'}")
             
         except (AttributeError, KeyError) as e:
-            print(f"Error getting book details: {e}")
+            self.logger.error(f"Error getting book details: {e}")
         
         return details
     
@@ -208,18 +240,22 @@ class BookScraper:
         Returns:
             Dictionary containing all book information
         """
+        self.logger.debug("Starting book data extraction")
         title = self._extract_title(book_element)
         price = self._extract_price(book_element)
         rating = self._extract_rating(book_element)
         details = self._extract_book_details(book_element)
         
-        return {
+        book_data = {
             'title': title,
             'price': price,
             'rating': rating,
             'availability': details['availability'],
             'category': details['category']
         }
+        
+        self.logger.info(f"Successfully extracted data for book: '{title}' - £{price}, {rating}/5 stars, Category: {details['category']}")
+        return book_data
     
     def _save_to_csv(self, books_data: List[Dict[str, any]]) -> None:
         """
@@ -228,15 +264,23 @@ class BookScraper:
         Args:
             books_data: List of dictionaries containing book information
         """
+        self.logger.info(f"Saving {len(books_data)} books to CSV file: {self.output_file}")
+        
         # Create directory if it doesn't exist
         os.makedirs(os.path.dirname(self.output_file), exist_ok=True)
+        self.logger.debug(f"Created output directory: {os.path.dirname(self.output_file)}")
         
         fieldnames = ['title', 'price', 'rating', 'availability', 'category']
         
-        with open(self.output_file, 'w', newline='', encoding='utf-8') as f:
-            writer = csv.DictWriter(f, fieldnames=fieldnames)
-            writer.writeheader()
-            writer.writerows(books_data)
+        try:
+            with open(self.output_file, 'w', newline='', encoding='utf-8') as f:
+                writer = csv.DictWriter(f, fieldnames=fieldnames)
+                writer.writeheader()
+                writer.writerows(books_data)
+            self.logger.info(f"Successfully saved {len(books_data)} books to {self.output_file}")
+        except Exception as e:
+            self.logger.error(f"Failed to save data to CSV: {e}")
+            raise
     
     def scrape_books(self) -> None:
         """
@@ -245,40 +289,65 @@ class BookScraper:
         This method iterates through all pages, extracts book data,
         and saves it to a CSV file.
         """
+        self.logger.info("Starting book scraping process")
         all_books = []
         page_num = 1
-        limited_pages = 1  # Limit to first 50 pages for demonstration
+        limited_pages = 1  # Limit to first page for demonstration
+        books_processed = 0
 
         while page_num <= limited_pages:
             url = self.BASE_URL.format(page_num)
-            print(f"Scraping page {page_num}...")
+            self.logger.info(f"Scraping page {page_num}: {url}")
             
             soup = self._fetch_page(url)
             if soup is None:
+                self.logger.warning(f"Failed to fetch page {page_num}, stopping scraper")
                 break
             
             books = soup.find_all('article', class_='product_pod')
             if not books:
-                print("No more books found. Stopping.")
+                self.logger.warning("No books found on current page, stopping")
                 break
             
+            self.logger.info(f"Found {len(books)} books on page {page_num}")
+            
             for book in books:
-                book_data = self._extract_book_data(book)
-                all_books.append(book_data)
+                try:
+                    book_data = self._extract_book_data(book)
+                    all_books.append(book_data)
+                    books_processed += 1
+                    self.logger.debug(f"Processed book {books_processed}: {book_data['title']}")
+                except Exception as e:
+                    self.logger.error(f"Failed to process book {books_processed + 1}: {e}")
+                    continue
+            
+            self.logger.info(f"Completed page {page_num}, processed {len(books)} books")
             
             # Add random delay between page requests
-            self._random_delay()
+            if page_num < limited_pages:
+                self._random_delay()
             page_num += 1
         
         # Save the data to CSV file
-        self._save_to_csv(all_books)
+        if all_books:
+            self._save_to_csv(all_books)
+            self.logger.info(f"Scraping complete! Total books processed: {len(all_books)}")
+        else:
+            self.logger.warning("No books were scraped successfully")
+        
         print(f"Scraping complete! {len(all_books)} books saved to {self.output_file}")
 
 
 def main() -> None:
     """Main function to run the scraper."""
-    scraper = BookScraper()
-    scraper.scrape_books()
+    print("Starting Book Scraper...")
+    try:
+        scraper = BookScraper()
+        scraper.scrape_books()
+        print("Scraping completed successfully!")
+    except Exception as e:
+        print(f"Scraping failed with error: {e}")
+        logging.error(f"Scraping failed: {e}")
 
 
 if __name__ == "__main__":
