@@ -125,7 +125,7 @@ class BookScraper:
     
     def _extract_book_details(self, book_element) -> Dict[str, str]:
         """
-        Extract detailed information from book's detail page.
+        Extract detailed information from book's detail page
         
         Args:
             book_element: BeautifulSoup element containing book data
