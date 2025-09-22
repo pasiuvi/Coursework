@@ -8,6 +8,7 @@ and saves the data to a CSV file.
 
 import csv
 import os
+import random
 import re
 import time
 from typing import Dict, List, Optional
@@ -28,7 +29,6 @@ class BookScraper:
     # Class constants
     BASE_URL = "http://books.toscrape.com/catalogue/page-{}.html"
     DETAIL_BASE_URL = "http://books.toscrape.com/catalogue/"
-    DEFAULT_DELAY = 1  # seconds between requests
     
     def __init__(self, output_file: str = 'question2_social_media_analysis/data/scraped_books.csv'):
         """
@@ -46,6 +46,11 @@ class BookScraper:
         self.session.headers.update({
             'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36'
         })
+    
+    def _random_delay(self) -> None:
+        """Apply a random delay between 1-3 seconds."""
+        delay = random.uniform(1, 3)
+        time.sleep(delay)
     
     def _fetch_page(self, url: str) -> Optional[BeautifulSoup]:
         """
@@ -125,7 +130,7 @@ class BookScraper:
     
     def _extract_book_details(self, book_element) -> Dict[str, str]:
         """
-        Extract detailed information from book's detail page
+        Extract detailed information from book's detail page.
         
         Args:
             book_element: BeautifulSoup element containing book data
@@ -242,7 +247,7 @@ class BookScraper:
         """
         all_books = []
         page_num = 1
-        limited_pages = 2  # Limit to first 50 pages for demonstration
+        limited_pages = 1  # Limit to first 50 pages for demonstration
 
         while page_num <= limited_pages:
             url = self.BASE_URL.format(page_num)
@@ -261,8 +266,8 @@ class BookScraper:
                 book_data = self._extract_book_data(book)
                 all_books.append(book_data)
             
-            # Be a good web citizen by adding a delay between requests
-            time.sleep(self.DEFAULT_DELAY)
+            # Add random delay between page requests
+            self._random_delay()
             page_num += 1
         
         # Save the data to CSV file
