@@ -96,7 +96,9 @@ python pipeline.py
 # Scrape specific number of pages
 python pipeline.py --pages 5
 
-# Scrape all available pages (unlimited)
+
+# Scrape all available pages (unlimited until last page)
+
 python pipeline.py --pages 0
 
 # Skip scraping and use existing data
@@ -111,7 +113,8 @@ python pipeline.py --pages 10 --skip-scraping
 # Run only the scraper (specify pages)
 python pipeline.py --step scraper --pages 3
 
-# Run only the scraper (all pages)
+
+# Run only the scraper with unlimited pages
 python pipeline.py --step scraper --pages 0
 
 # Run only the data cleaner
@@ -126,9 +129,13 @@ python pipeline.py --step visualizer
 
 ##### Command Line Arguments
 The pipeline accepts the following arguments:
-- `--pages N`: Number of pages to scrape (default: 1, use 0 for unlimited/all available pages)
+
+- `--pages N`: Number of pages to scrape (default: 1, use 0 for unlimited scraping until last page)
 - `--skip-scraping`: Skip scraping and use existing data files
 - `--step STEP`: Run only a specific step (choices: scraper, cleaner, analyzer, visualizer)
+
+**Note**: When `--pages 0` is specified, the scraper will continue until it reaches the last available page on the website (unlimited scraping).
+
 
 ##### Option 3: Run Components Directly (Alternative)
 ```bash
