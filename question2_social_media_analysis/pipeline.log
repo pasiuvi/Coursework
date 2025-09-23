@@ -1,0 +1,1334 @@
+2025-09-24 00:45:16,084 - INFO - Clearing existing data and visualizations...
+2025-09-24 00:45:16,085 - INFO - Cleared data folder: C:\Users\User\Documents\GitHub\Coursework\question2_social_media_analysis\data
+2025-09-24 00:45:16,085 - INFO - Cleared visualizations folder: C:\Users\User\Documents\GitHub\Coursework\question2_social_media_analysis\visualizations\output_visualizations
+2025-09-24 00:45:16,086 - INFO - ********************************************************************************
+2025-09-24 00:45:16,086 - INFO - STARTING SOCIAL MEDIA ANALYSIS PIPELINE
+2025-09-24 00:45:16,086 - INFO - ********************************************************************************
+2025-09-24 00:45:16,086 - INFO - 
+============================================================
+2025-09-24 00:45:16,087 - INFO - STEP 1: RUNNING WEB SCRAPER
+2025-09-24 00:45:16,087 - INFO - ============================================================
+
+2025-09-24 00:45:16,087 - INFO - HTTP session configured with user agent
+2025-09-24 00:45:16,088 - INFO - BookScraper initialized successfully
+2025-09-24 00:45:16,088 - INFO - Output file set to: C:\Users\User\Documents\GitHub\Coursework\question2_social_media_analysis\data\scraped_books.csv
+2025-09-24 00:45:16,088 - INFO - Max pages to scrape: 3
+2025-09-24 00:45:16,088 - INFO - Starting book scraping process
+2025-09-24 00:45:16,089 - INFO - Scraping page 1: http://books.toscrape.com/catalogue/page-1.html
+2025-09-24 00:45:18,087 - INFO - Found 20 books on page 1
+2025-09-24 00:45:18,364 - INFO - Successfully extracted: 'A Light in the Attic'
+2025-09-24 00:45:18,630 - INFO - Successfully extracted: 'Tipping the Velvet'
+2025-09-24 00:45:18,893 - INFO - Successfully extracted: 'Soumission'
+2025-09-24 00:45:19,168 - INFO - Successfully extracted: 'Sharp Objects'
+2025-09-24 00:45:19,436 - INFO - Successfully extracted: 'Sapiens: A Brief History of Humankind'
+2025-09-24 00:45:19,709 - INFO - Successfully extracted: 'The Requiem Red'
+2025-09-24 00:45:19,975 - INFO - Successfully extracted: 'The Dirty Little Secrets of Getting Your Dream Job'
+2025-09-24 00:45:20,245 - INFO - Successfully extracted: 'The Coming Woman: A Novel Based on the Life of the Infamous Feminist, Victoria Woodhull'
+2025-09-24 00:45:20,527 - INFO - Successfully extracted: 'The Boys in the Boat: Nine Americans and Their Epic Quest for Gold at the 1936 Berlin Olympics'
+2025-09-24 00:45:20,794 - INFO - Successfully extracted: 'The Black Maria'
+2025-09-24 00:45:21,063 - INFO - Successfully extracted: 'Starving Hearts (Triangular Trade Trilogy, #1)'
+2025-09-24 00:45:21,327 - INFO - Successfully extracted: 'Shakespeare's Sonnets'
+2025-09-24 00:45:21,598 - INFO - Successfully extracted: 'Set Me Free'
+2025-09-24 00:45:21,870 - INFO - Successfully extracted: 'Scott Pilgrim's Precious Little Life (Scott Pilgrim #1)'
+2025-09-24 00:45:22,135 - INFO - Successfully extracted: 'Rip it Up and Start Again'
+2025-09-24 00:45:22,402 - INFO - Successfully extracted: 'Our Band Could Be Your Life: Scenes from the American Indie Underground, 1981-1991'
+2025-09-24 00:45:22,673 - INFO - Successfully extracted: 'Olio'
+2025-09-24 00:45:22,937 - INFO - Successfully extracted: 'Mesaerion: The Best Science Fiction Stories 1800-1849'
+2025-09-24 00:45:23,203 - INFO - Successfully extracted: 'Libertarianism for Beginners'
+2025-09-24 00:45:23,476 - INFO - Successfully extracted: 'It's Only the Himalayas'
+2025-09-24 00:45:23,476 - INFO - Completed page 1, successfully processed 20/20 books
+2025-09-24 00:45:24,655 - INFO - Scraping page 2: http://books.toscrape.com/catalogue/page-2.html
+2025-09-24 00:45:25,445 - INFO - Found 20 books on page 2
+2025-09-24 00:45:25,714 - INFO - Successfully extracted: 'In Her Wake'
+2025-09-24 00:45:25,979 - INFO - Successfully extracted: 'How Music Works'
+2025-09-24 00:45:26,256 - INFO - Successfully extracted: 'Foolproof Preserving: A Guide to Small Batch Jams, Jellies, Pickles, Condiments, and More: A Foolproof Guide to Making Small Batch Jams, Jellies, Pickles, Condiments, and More'
+2025-09-24 00:45:26,526 - INFO - Successfully extracted: 'Chase Me (Paris Nights #2)'
+2025-09-24 00:45:26,796 - INFO - Successfully extracted: 'Black Dust'
+2025-09-24 00:45:27,068 - INFO - Successfully extracted: 'Birdsong: A Story in Pictures'
+2025-09-24 00:45:27,344 - INFO - Successfully extracted: 'America's Cradle of Quarterbacks: Western Pennsylvania's Football Factory from Johnny Unitas to Joe Montana'
+2025-09-24 00:45:27,611 - INFO - Successfully extracted: 'Aladdin and His Wonderful Lamp'
+2025-09-24 00:45:27,878 - INFO - Successfully extracted: 'Worlds Elsewhere: Journeys Around Shakespeare’s Globe'
+2025-09-24 00:45:28,146 - INFO - Successfully extracted: 'Wall and Piece'
+2025-09-24 00:45:28,411 - INFO - Successfully extracted: 'The Four Agreements: A Practical Guide to Personal Freedom'
+2025-09-24 00:45:28,687 - INFO - Successfully extracted: 'The Five Love Languages: How to Express Heartfelt Commitment to Your Mate'
+2025-09-24 00:45:28,957 - INFO - Successfully extracted: 'The Elephant Tree'
+2025-09-24 00:45:29,231 - INFO - Successfully extracted: 'The Bear and the Piano'
+2025-09-24 00:45:29,497 - INFO - Successfully extracted: 'Sophie's World'
+2025-09-24 00:45:29,764 - INFO - Successfully extracted: 'Penny Maybe'
+2025-09-24 00:45:30,033 - INFO - Successfully extracted: 'Maude (1883-1993):She Grew Up with the country'
+2025-09-24 00:45:30,300 - INFO - Successfully extracted: 'In a Dark, Dark Wood'
+2025-09-24 00:45:30,569 - INFO - Successfully extracted: 'Behind Closed Doors'
+2025-09-24 00:45:30,836 - INFO - Successfully extracted: 'You can't bury them all: Poems'
+2025-09-24 00:45:30,837 - INFO - Completed page 2, successfully processed 20/20 books
+2025-09-24 00:45:32,222 - INFO - Scraping page 3: http://books.toscrape.com/catalogue/page-3.html
+2025-09-24 00:45:33,016 - INFO - Found 20 books on page 3
+2025-09-24 00:45:33,282 - INFO - Successfully extracted: 'Slow States of Collapse: Poems'
+2025-09-24 00:45:33,547 - INFO - Successfully extracted: 'Reasons to Stay Alive'
+2025-09-24 00:45:33,837 - INFO - Successfully extracted: 'Private Paris (Private #10)'
+2025-09-24 00:45:34,106 - INFO - Successfully extracted: '#HigherSelfie: Wake Up Your Life. Free Your Soul. Find Your Tribe.'
+2025-09-24 00:45:34,372 - INFO - Successfully extracted: 'Without Borders (Wanderlove #1)'
+2025-09-24 00:45:34,642 - INFO - Successfully extracted: 'When We Collided'
+2025-09-24 00:45:34,909 - INFO - Successfully extracted: 'We Love You, Charlie Freeman'
+2025-09-24 00:45:35,176 - INFO - Successfully extracted: 'Untitled Collection: Sabbath Poems 2014'
+2025-09-24 00:45:35,444 - INFO - Successfully extracted: 'Unseen City: The Majesty of Pigeons, the Discreet Charm of Snails & Other Wonders of the Urban Wilderness'
+2025-09-24 00:45:35,717 - INFO - Successfully extracted: 'Unicorn Tracks'
+2025-09-24 00:45:35,983 - INFO - Successfully extracted: 'Unbound: How Eight Technologies Made Us Human, Transformed Society, and Brought Our World to the Brink'
+2025-09-24 00:45:36,249 - INFO - Successfully extracted: 'Tsubasa: WoRLD CHRoNiCLE 2 (Tsubasa WoRLD CHRoNiCLE #2)'
+2025-09-24 00:45:36,513 - INFO - Successfully extracted: 'Throwing Rocks at the Google Bus: How Growth Became the Enemy of Prosperity'
+2025-09-24 00:45:36,779 - INFO - Successfully extracted: 'This One Summer'
+2025-09-24 00:45:37,046 - INFO - Successfully extracted: 'Thirst'
+2025-09-24 00:45:37,316 - INFO - Successfully extracted: 'The Torch Is Passed: A Harding Family Story'
+2025-09-24 00:45:37,586 - INFO - Successfully extracted: 'The Secret of Dreadwillow Carse'
+2025-09-24 00:45:37,853 - INFO - Successfully extracted: 'The Pioneer Woman Cooks: Dinnertime: Comfort Classics, Freezer Food, 16-Minute Meals, and Other Delicious Ways to Solve Supper!'
+2025-09-24 00:45:38,129 - INFO - Successfully extracted: 'The Past Never Ends'
+2025-09-24 00:45:38,397 - INFO - Successfully extracted: 'The Natural History of Us (The Fine Art of Pretending #2)'
+2025-09-24 00:45:38,398 - INFO - Completed page 3, successfully processed 20/20 books
+2025-09-24 00:45:38,399 - INFO - Saving 60 books to CSV file: C:\Users\User\Documents\GitHub\Coursework\question2_social_media_analysis\data\scraped_books.csv
+2025-09-24 00:45:38,400 - INFO - Successfully saved 60 books to C:\Users\User\Documents\GitHub\Coursework\question2_social_media_analysis\data\scraped_books.csv
+2025-09-24 00:45:38,400 - INFO - Scraping complete! Total books processed: 60 from 3 pages
+2025-09-24 00:45:38,413 - INFO - Successfully scraped 60 books
+2025-09-24 00:45:38,413 - INFO - Data saved to: C:\Users\User\Documents\GitHub\Coursework\question2_social_media_analysis\data\scraped_books.csv
+
+2025-09-24 00:45:38,414 - INFO - 
+============================================================
+2025-09-24 00:45:38,414 - INFO - STEP 2: RUNNING DATA CLEANER
+2025-09-24 00:45:38,414 - INFO - ============================================================
+
+2025-09-24 00:45:38,428 - INFO - Cleaning completed. Final dataset: 60 rows
+2025-09-24 00:45:38,428 - INFO - Processing statistics: {'initial_rows': 60, 'currency_conversion': {'converted_prices': 60, 'assumed_usd': 0, 'rates_used': {'£': 1.27, '€': 1.1, '$': 1.0}}, 'duplicates_removed': 0, 'missing_handled': 0, 'final_rows': 60}
+
+2025-09-24 00:45:38,428 - INFO - 
+============================================================
+2025-09-24 00:45:38,429 - INFO - STEP 3: RUNNING STATISTICAL ANALYSIS
+2025-09-24 00:45:38,429 - INFO - ============================================================
+
+2025-09-24 00:45:38,462 - INFO - Analysis completed and saved to:
+2025-09-24 00:45:38,462 - INFO -   - JSON: C:\Users\User\Documents\GitHub\Coursework\question2_social_media_analysis\data\comprehensive_analysis_report_20250924_004516.json
+2025-09-24 00:45:38,462 - INFO -   - Markdown: C:\Users\User\Documents\GitHub\Coursework\question2_social_media_analysis\data\comprehensive_analysis_report_20250924_004516.md
+
+2025-09-24 00:45:38,463 - INFO - 
+============================================================
+2025-09-24 00:45:38,463 - INFO - STEP 4: GENERATING VISUALIZATIONS
+2025-09-24 00:45:38,463 - INFO - ============================================================
+
+2025-09-24 00:45:38,466 - INFO - Generating price distribution plots...
+2025-09-24 00:45:38,944 - INFO - Generating rating analysis plots...
+2025-09-24 00:45:39,340 - INFO - Generating category analysis plots...
+2025-09-24 00:45:39,746 - INFO - Generating correlation analysis...
+2025-09-24 00:45:39,999 - INFO - Generating comprehensive dashboard...
+2025-09-24 00:45:40,149 - INFO - All visualizations saved to: C:\Users\User\Documents\GitHub\Coursework\question2_social_media_analysis\visualizations\output_visualizations
+
+2025-09-24 00:45:40,149 - INFO - ********************************************************************************
+2025-09-24 00:45:40,150 - INFO - PIPELINE COMPLETED SUCCESSFULLY!
+2025-09-24 00:45:40,150 - INFO - Duration: 24.07 seconds
+2025-09-24 00:45:40,150 - INFO - Steps completed: scraping, cleaning, analysis, visualization
+2025-09-24 00:45:40,150 - INFO - ********************************************************************************
+2025-09-24 00:47:30,914 - INFO - Clearing existing data and visualizations...
+2025-09-24 00:47:30,916 - INFO - Cleared data folder: C:\Users\User\Documents\GitHub\Coursework\question2_social_media_analysis\data
+2025-09-24 00:47:30,918 - INFO - Cleared visualizations folder: C:\Users\User\Documents\GitHub\Coursework\question2_social_media_analysis\visualizations\output_visualizations
+2025-09-24 00:47:30,918 - INFO - ********************************************************************************
+2025-09-24 00:47:30,918 - INFO - STARTING SOCIAL MEDIA ANALYSIS PIPELINE
+2025-09-24 00:47:30,918 - INFO - ********************************************************************************
+2025-09-24 00:47:30,918 - INFO - 
+============================================================
+2025-09-24 00:47:30,919 - INFO - STEP 1: RUNNING WEB SCRAPER
+2025-09-24 00:47:30,919 - INFO - ============================================================
+
+2025-09-24 00:47:30,919 - INFO - HTTP session configured with user agent
+2025-09-24 00:47:30,920 - INFO - BookScraper initialized successfully
+2025-09-24 00:47:30,920 - INFO - Output file set to: C:\Users\User\Documents\GitHub\Coursework\question2_social_media_analysis\data\scraped_books.csv
+2025-09-24 00:47:30,920 - INFO - Max pages to scrape: unlimited
+2025-09-24 00:47:30,920 - INFO - Starting book scraping process
+2025-09-24 00:47:30,921 - INFO - Scraping page 1: http://books.toscrape.com/catalogue/page-1.html
+2025-09-24 00:47:32,034 - INFO - Found 20 books on page 1
+2025-09-24 00:47:32,301 - INFO - Successfully extracted: 'A Light in the Attic'
+2025-09-24 00:47:32,574 - INFO - Successfully extracted: 'Tipping the Velvet'
+2025-09-24 00:47:32,839 - INFO - Successfully extracted: 'Soumission'
+2025-09-24 00:47:33,101 - INFO - Successfully extracted: 'Sharp Objects'
+2025-09-24 00:47:33,372 - INFO - Successfully extracted: 'Sapiens: A Brief History of Humankind'
+2025-09-24 00:47:33,652 - INFO - Successfully extracted: 'The Requiem Red'
+2025-09-24 00:47:33,918 - INFO - Successfully extracted: 'The Dirty Little Secrets of Getting Your Dream Job'
+2025-09-24 00:47:34,197 - INFO - Successfully extracted: 'The Coming Woman: A Novel Based on the Life of the Infamous Feminist, Victoria Woodhull'
+2025-09-24 00:47:34,466 - INFO - Successfully extracted: 'The Boys in the Boat: Nine Americans and Their Epic Quest for Gold at the 1936 Berlin Olympics'
+2025-09-24 00:47:34,733 - INFO - Successfully extracted: 'The Black Maria'
+2025-09-24 00:47:35,013 - INFO - Successfully extracted: 'Starving Hearts (Triangular Trade Trilogy, #1)'
+2025-09-24 00:47:35,284 - INFO - Successfully extracted: 'Shakespeare's Sonnets'
+2025-09-24 00:47:35,562 - INFO - Successfully extracted: 'Set Me Free'
+2025-09-24 00:47:35,833 - INFO - Successfully extracted: 'Scott Pilgrim's Precious Little Life (Scott Pilgrim #1)'
+2025-09-24 00:47:36,099 - INFO - Successfully extracted: 'Rip it Up and Start Again'
+2025-09-24 00:47:36,363 - INFO - Successfully extracted: 'Our Band Could Be Your Life: Scenes from the American Indie Underground, 1981-1991'
+2025-09-24 00:47:36,631 - INFO - Successfully extracted: 'Olio'
+2025-09-24 00:47:36,894 - INFO - Successfully extracted: 'Mesaerion: The Best Science Fiction Stories 1800-1849'
+2025-09-24 00:47:37,163 - INFO - Successfully extracted: 'Libertarianism for Beginners'
+2025-09-24 00:47:37,449 - INFO - Successfully extracted: 'It's Only the Himalayas'
+2025-09-24 00:47:37,450 - INFO - Completed page 1, successfully processed 20/20 books
+2025-09-24 00:47:38,954 - INFO - Scraping page 2: http://books.toscrape.com/catalogue/page-2.html
+2025-09-24 00:47:39,740 - INFO - Found 20 books on page 2
+2025-09-24 00:47:40,009 - INFO - Successfully extracted: 'In Her Wake'
+2025-09-24 00:47:40,279 - INFO - Successfully extracted: 'How Music Works'
+2025-09-24 00:47:40,556 - INFO - Successfully extracted: 'Foolproof Preserving: A Guide to Small Batch Jams, Jellies, Pickles, Condiments, and More: A Foolproof Guide to Making Small Batch Jams, Jellies, Pickles, Condiments, and More'
+2025-09-24 00:47:40,832 - INFO - Successfully extracted: 'Chase Me (Paris Nights #2)'
+2025-09-24 00:47:41,100 - INFO - Successfully extracted: 'Black Dust'
+2025-09-24 00:47:41,370 - INFO - Successfully extracted: 'Birdsong: A Story in Pictures'
+2025-09-24 00:47:41,638 - INFO - Successfully extracted: 'America's Cradle of Quarterbacks: Western Pennsylvania's Football Factory from Johnny Unitas to Joe Montana'
+2025-09-24 00:47:41,902 - INFO - Successfully extracted: 'Aladdin and His Wonderful Lamp'
+2025-09-24 00:47:42,169 - INFO - Successfully extracted: 'Worlds Elsewhere: Journeys Around Shakespeare’s Globe'
+2025-09-24 00:47:42,453 - INFO - Successfully extracted: 'Wall and Piece'
+2025-09-24 00:47:42,731 - INFO - Successfully extracted: 'The Four Agreements: A Practical Guide to Personal Freedom'
+2025-09-24 00:47:43,015 - INFO - Successfully extracted: 'The Five Love Languages: How to Express Heartfelt Commitment to Your Mate'
+2025-09-24 00:47:43,289 - INFO - Successfully extracted: 'The Elephant Tree'
+2025-09-24 00:47:43,558 - INFO - Successfully extracted: 'The Bear and the Piano'
+2025-09-24 00:47:43,830 - INFO - Successfully extracted: 'Sophie's World'
+2025-09-24 00:47:44,103 - INFO - Successfully extracted: 'Penny Maybe'
+2025-09-24 00:47:44,372 - INFO - Successfully extracted: 'Maude (1883-1993):She Grew Up with the country'
+2025-09-24 00:47:44,652 - INFO - Successfully extracted: 'In a Dark, Dark Wood'
+2025-09-24 00:47:44,923 - INFO - Successfully extracted: 'Behind Closed Doors'
+2025-09-24 00:47:45,198 - INFO - Successfully extracted: 'You can't bury them all: Poems'
+2025-09-24 00:47:45,199 - INFO - Completed page 2, successfully processed 20/20 books
+2025-09-24 00:47:46,952 - INFO - Scraping page 3: http://books.toscrape.com/catalogue/page-3.html
+2025-09-24 00:47:47,748 - INFO - Found 20 books on page 3
+2025-09-24 00:47:48,017 - INFO - Successfully extracted: 'Slow States of Collapse: Poems'
+2025-09-24 00:47:48,307 - INFO - Successfully extracted: 'Reasons to Stay Alive'
+2025-09-24 00:47:48,582 - INFO - Successfully extracted: 'Private Paris (Private #10)'
+2025-09-24 00:47:48,859 - INFO - Successfully extracted: '#HigherSelfie: Wake Up Your Life. Free Your Soul. Find Your Tribe.'
+2025-09-24 00:47:49,129 - INFO - Successfully extracted: 'Without Borders (Wanderlove #1)'
+2025-09-24 00:47:49,400 - INFO - Successfully extracted: 'When We Collided'
+2025-09-24 00:47:49,666 - INFO - Successfully extracted: 'We Love You, Charlie Freeman'
+2025-09-24 00:47:49,934 - INFO - Successfully extracted: 'Untitled Collection: Sabbath Poems 2014'
+2025-09-24 00:47:50,216 - INFO - Successfully extracted: 'Unseen City: The Majesty of Pigeons, the Discreet Charm of Snails & Other Wonders of the Urban Wilderness'
+2025-09-24 00:47:50,490 - INFO - Successfully extracted: 'Unicorn Tracks'
+2025-09-24 00:47:50,757 - INFO - Successfully extracted: 'Unbound: How Eight Technologies Made Us Human, Transformed Society, and Brought Our World to the Brink'
+2025-09-24 00:47:51,041 - INFO - Successfully extracted: 'Tsubasa: WoRLD CHRoNiCLE 2 (Tsubasa WoRLD CHRoNiCLE #2)'
+2025-09-24 00:47:51,307 - INFO - Successfully extracted: 'Throwing Rocks at the Google Bus: How Growth Became the Enemy of Prosperity'
+2025-09-24 00:47:51,578 - INFO - Successfully extracted: 'This One Summer'
+2025-09-24 00:47:51,860 - INFO - Successfully extracted: 'Thirst'
+2025-09-24 00:47:52,147 - INFO - Successfully extracted: 'The Torch Is Passed: A Harding Family Story'
+2025-09-24 00:47:52,418 - INFO - Successfully extracted: 'The Secret of Dreadwillow Carse'
+2025-09-24 00:47:52,690 - INFO - Successfully extracted: 'The Pioneer Woman Cooks: Dinnertime: Comfort Classics, Freezer Food, 16-Minute Meals, and Other Delicious Ways to Solve Supper!'
+2025-09-24 00:47:52,962 - INFO - Successfully extracted: 'The Past Never Ends'
+2025-09-24 00:47:53,244 - INFO - Successfully extracted: 'The Natural History of Us (The Fine Art of Pretending #2)'
+2025-09-24 00:47:53,245 - INFO - Completed page 3, successfully processed 20/20 books
+2025-09-24 00:47:55,402 - INFO - Scraping page 4: http://books.toscrape.com/catalogue/page-4.html
+2025-09-24 00:47:56,190 - INFO - Found 20 books on page 4
+2025-09-24 00:47:56,485 - INFO - Successfully extracted: 'The Nameless City (The Nameless City #1)'
+2025-09-24 00:47:56,753 - INFO - Successfully extracted: 'The Murder That Never Was (Forensic Instincts #5)'
+2025-09-24 00:47:57,028 - INFO - Successfully extracted: 'The Most Perfect Thing: Inside (and Outside) a Bird's Egg'
+2025-09-24 00:47:57,307 - INFO - Successfully extracted: 'The Mindfulness and Acceptance Workbook for Anxiety: A Guide to Breaking Free from Anxiety, Phobias, and Worry Using Acceptance and Commitment Therapy'
+2025-09-24 00:47:57,575 - INFO - Successfully extracted: 'The Life-Changing Magic of Tidying Up: The Japanese Art of Decluttering and Organizing'
+2025-09-24 00:47:57,843 - INFO - Successfully extracted: 'The Inefficiency Assassin: Time Management Tactics for Working Smarter, Not Longer'
+2025-09-24 00:47:58,122 - INFO - Successfully extracted: 'The Gutsy Girl: Escapades for Your Life of Epic Adventure'
+2025-09-24 00:47:58,386 - INFO - Successfully extracted: 'The Electric Pencil: Drawings from Inside State Hospital No. 3'
+2025-09-24 00:47:58,658 - INFO - Successfully extracted: 'The Death of Humanity: and the Case for Life'
+2025-09-24 00:47:58,924 - INFO - Successfully extracted: 'The Bulletproof Diet: Lose up to a Pound a Day, Reclaim Energy and Focus, Upgrade Your Life'
+2025-09-24 00:47:59,204 - INFO - Successfully extracted: 'The Art Forger'
+2025-09-24 00:47:59,477 - INFO - Successfully extracted: 'The Age of Genius: The Seventeenth Century and the Birth of the Modern Mind'
+2025-09-24 00:47:59,742 - INFO - Successfully extracted: 'The Activist's Tao Te Ching: Ancient Advice for a Modern Revolution'
+2025-09-24 00:48:00,009 - INFO - Successfully extracted: 'Spark Joy: An Illustrated Master Class on the Art of Organizing and Tidying Up'
+2025-09-24 00:48:00,278 - INFO - Successfully extracted: 'Soul Reader'
+2025-09-24 00:48:00,556 - INFO - Successfully extracted: 'Security'
+2025-09-24 00:48:00,832 - INFO - Successfully extracted: 'Saga, Volume 6 (Saga (Collected Editions) #6)'
+2025-09-24 00:48:01,101 - INFO - Successfully extracted: 'Saga, Volume 5 (Saga (Collected Editions) #5)'
+2025-09-24 00:48:01,371 - INFO - Successfully extracted: 'Reskilling America: Learning to Labor in the Twenty-First Century'
+2025-09-24 00:48:01,644 - INFO - Successfully extracted: 'Rat Queens, Vol. 3: Demons (Rat Queens (Collected Editions) #11-15)'
+2025-09-24 00:48:01,645 - INFO - Completed page 4, successfully processed 20/20 books
+2025-09-24 00:48:03,634 - INFO - Scraping page 5: http://books.toscrape.com/catalogue/page-5.html
+2025-09-24 00:48:04,427 - INFO - Found 20 books on page 5
+2025-09-24 00:48:04,707 - INFO - Successfully extracted: 'Princess Jellyfish 2-in-1 Omnibus, Vol. 01 (Princess Jellyfish 2-in-1 Omnibus #1)'
+2025-09-24 00:48:04,973 - INFO - Successfully extracted: 'Princess Between Worlds (Wide-Awake Princess #5)'
+2025-09-24 00:48:05,240 - INFO - Successfully extracted: 'Pop Gun War, Volume 1: Gift'
+2025-09-24 00:48:05,512 - INFO - Successfully extracted: 'Political Suicide: Missteps, Peccadilloes, Bad Calls, Backroom Hijinx, Sordid Pasts, Rotten Breaks, and Just Plain Dumb Mistakes in the Annals of American Politics'
+2025-09-24 00:48:05,782 - INFO - Successfully extracted: 'Patience'
+2025-09-24 00:48:06,048 - INFO - Successfully extracted: 'Outcast, Vol. 1: A Darkness Surrounds Him (Outcast #1)'
+2025-09-24 00:48:06,316 - INFO - Successfully extracted: 'orange: The Complete Collection 1 (orange: The Complete Collection #1)'
+2025-09-24 00:48:06,587 - INFO - Successfully extracted: 'Online Marketing for Busy Authors: A Step-By-Step Guide'
+2025-09-24 00:48:06,853 - INFO - Successfully extracted: 'On a Midnight Clear'
+2025-09-24 00:48:07,123 - INFO - Successfully extracted: 'Obsidian (Lux #1)'
+2025-09-24 00:48:07,389 - INFO - Successfully extracted: 'My Paris Kitchen: Recipes and Stories'
+2025-09-24 00:48:07,658 - INFO - Successfully extracted: 'Masks and Shadows'
+2025-09-24 00:48:07,923 - INFO - Successfully extracted: 'Mama Tried: Traditional Italian Cooking for the Screwed, Crude, Vegan, and Tattooed'
+2025-09-24 00:48:08,192 - INFO - Successfully extracted: 'Lumberjanes, Vol. 2: Friendship to the Max (Lumberjanes #5-8)'
+2025-09-24 00:48:08,457 - INFO - Successfully extracted: 'Lumberjanes, Vol. 1: Beware the Kitten Holy (Lumberjanes #1-4)'
+2025-09-24 00:48:08,724 - INFO - Successfully extracted: 'Lumberjanes Vol. 3: A Terrible Plan (Lumberjanes #9-12)'
+2025-09-24 00:48:08,992 - INFO - Successfully extracted: 'Layered: Baking, Building, and Styling Spectacular Cakes'
+2025-09-24 00:48:09,272 - INFO - Successfully extracted: 'Judo: Seven Steps to Black Belt (an Introductory Guide for Beginners)'
+2025-09-24 00:48:09,541 - INFO - Successfully extracted: 'Join'
+2025-09-24 00:48:09,807 - INFO - Successfully extracted: 'In the Country We Love: My Family Divided'
+2025-09-24 00:48:09,808 - INFO - Completed page 5, successfully processed 20/20 books
+2025-09-24 00:48:11,782 - INFO - Scraping page 6: http://books.toscrape.com/catalogue/page-6.html
+2025-09-24 00:48:12,590 - INFO - Found 20 books on page 6
+2025-09-24 00:48:12,869 - INFO - Successfully extracted: 'Immunity: How Elie Metchnikoff Changed the Course of Modern Medicine'
+2025-09-24 00:48:13,133 - INFO - Successfully extracted: 'I Hate Fairyland, Vol. 1: Madly Ever After (I Hate Fairyland (Compilations) #1-5)'
+2025-09-24 00:48:13,401 - INFO - Successfully extracted: 'I am a Hero Omnibus Volume 1'
+2025-09-24 00:48:13,668 - INFO - Successfully extracted: 'How to Be Miserable: 40 Strategies You Already Use'
+2025-09-24 00:48:13,943 - INFO - Successfully extracted: 'Her Backup Boyfriend (The Sorensen Family #1)'
+2025-09-24 00:48:14,207 - INFO - Successfully extracted: 'Giant Days, Vol. 2 (Giant Days #5-8)'
+2025-09-24 00:48:14,476 - INFO - Successfully extracted: 'Forever and Forever: The Courtship of Henry Longfellow and Fanny Appleton'
+2025-09-24 00:48:14,741 - INFO - Successfully extracted: 'First and First (Five Boroughs #3)'
+2025-09-24 00:48:15,007 - INFO - Successfully extracted: 'Fifty Shades Darker (Fifty Shades #2)'
+2025-09-24 00:48:15,278 - INFO - Successfully extracted: 'Everydata: The Misinformation Hidden in the Little Data You Consume Every Day'
+2025-09-24 00:48:15,549 - INFO - Successfully extracted: 'Don't Be a Jerk: And Other Practical Advice from Dogen, Japan's Greatest Zen Master'
+2025-09-24 00:48:15,819 - INFO - Successfully extracted: 'Danganronpa Volume 1'
+2025-09-24 00:48:16,088 - INFO - Successfully extracted: 'Crown of Midnight (Throne of Glass #2)'
+2025-09-24 00:48:16,362 - INFO - Successfully extracted: 'Codename Baboushka, Volume 1: The Conclave of Death'
+2025-09-24 00:48:16,637 - INFO - Successfully extracted: 'Camp Midnight'
+2025-09-24 00:48:16,907 - INFO - Successfully extracted: 'Call the Nurse: True Stories of a Country Nurse on a Scottish Isle'
+2025-09-24 00:48:17,174 - INFO - Successfully extracted: 'Burning'
+2025-09-24 00:48:17,444 - INFO - Successfully extracted: 'Bossypants'
+2025-09-24 00:48:17,711 - INFO - Successfully extracted: 'Bitch Planet, Vol. 1: Extraordinary Machine (Bitch Planet (Collected Editions))'
+2025-09-24 00:48:17,975 - INFO - Successfully extracted: 'Avatar: The Last Airbender: Smoke and Shadow, Part 3 (Smoke and Shadow #3)'
+2025-09-24 00:48:17,976 - INFO - Completed page 6, successfully processed 20/20 books
+2025-09-24 00:48:20,793 - INFO - Scraping page 7: http://books.toscrape.com/catalogue/page-7.html
+2025-09-24 00:48:21,580 - INFO - Found 20 books on page 7
+2025-09-24 00:48:21,848 - INFO - Successfully extracted: 'Algorithms to Live By: The Computer Science of Human Decisions'
+2025-09-24 00:48:22,119 - INFO - Successfully extracted: 'A World of Flavor: Your Gluten Free Passport'
+2025-09-24 00:48:22,401 - INFO - Successfully extracted: 'A Piece of Sky, a Grain of Rice: A Memoir in Four Meditations'
+2025-09-24 00:48:22,671 - INFO - Successfully extracted: 'A Murder in Time'
+2025-09-24 00:48:22,948 - INFO - Successfully extracted: 'A Flight of Arrows (The Pathfinders #2)'
+2025-09-24 00:48:23,220 - INFO - Successfully extracted: 'A Fierce and Subtle Poison'
+2025-09-24 00:48:23,489 - INFO - Successfully extracted: 'A Court of Thorns and Roses (A Court of Thorns and Roses #1)'
+2025-09-24 00:48:23,825 - INFO - Successfully extracted: '(Un)Qualified: How God Uses Broken People to Do Big Things'
+2025-09-24 00:48:24,091 - INFO - Successfully extracted: 'You Are What You Love: The Spiritual Power of Habit'
+2025-09-24 00:48:24,364 - INFO - Successfully extracted: 'William Shakespeare's Star Wars: Verily, A New Hope (William Shakespeare's Star Wars #4)'
+2025-09-24 00:48:24,637 - INFO - Successfully extracted: 'Tuesday Nights in 1980'
+2025-09-24 00:48:24,915 - INFO - Successfully extracted: 'Tracing Numbers on a Train'
+2025-09-24 00:48:25,181 - INFO - Successfully extracted: 'Throne of Glass (Throne of Glass #1)'
+2025-09-24 00:48:25,452 - INFO - Successfully extracted: 'Thomas Jefferson and the Tripoli Pirates: The Forgotten War That Changed American History'
+2025-09-24 00:48:25,722 - INFO - Successfully extracted: 'Thirteen Reasons Why'
+2025-09-24 00:48:25,991 - INFO - Successfully extracted: 'The White Cat and the Monk: A Retelling of the Poem “Pangur Bán”'
+2025-09-24 00:48:26,264 - INFO - Successfully extracted: 'The Wedding Dress'
+2025-09-24 00:48:26,540 - INFO - Successfully extracted: 'The Vacationers'
+2025-09-24 00:48:26,805 - INFO - Successfully extracted: 'The Third Wave: An Entrepreneur’s Vision of the Future'
+2025-09-24 00:48:27,087 - INFO - Successfully extracted: 'The Stranger'
+2025-09-24 00:48:27,088 - INFO - Completed page 7, successfully processed 20/20 books
+2025-09-24 00:48:28,579 - INFO - Scraping page 8: http://books.toscrape.com/catalogue/page-8.html
+2025-09-24 00:48:29,380 - INFO - Found 20 books on page 8
+2025-09-24 00:48:29,649 - INFO - Successfully extracted: 'The Shadow Hero (The Shadow Hero)'
+2025-09-24 00:48:29,919 - INFO - Successfully extracted: 'The Secret (The Secret #1)'
+2025-09-24 00:48:30,194 - INFO - Successfully extracted: 'The Regional Office Is Under Attack!'
+2025-09-24 00:48:30,469 - INFO - Successfully extracted: 'The Psychopath Test: A Journey Through the Madness Industry'
+2025-09-24 00:48:30,752 - INFO - Successfully extracted: 'The Project'
+2025-09-24 00:48:31,026 - INFO - Successfully extracted: 'The Power of Now: A Guide to Spiritual Enlightenment'
+2025-09-24 00:48:31,307 - INFO - Successfully extracted: 'The Omnivore's Dilemma: A Natural History of Four Meals'
+2025-09-24 00:48:31,576 - INFO - Successfully extracted: 'The Nerdy Nummies Cookbook: Sweet Treats for the Geek in All of Us'
+2025-09-24 00:48:31,861 - INFO - Successfully extracted: 'The Murder of Roger Ackroyd (Hercule Poirot #4)'
+2025-09-24 00:48:32,130 - INFO - Successfully extracted: 'The Mistake (Off-Campus #2)'
+2025-09-24 00:48:32,404 - INFO - Successfully extracted: 'The Matchmaker's Playbook (Wingmen Inc. #1)'
+2025-09-24 00:48:32,671 - INFO - Successfully extracted: 'The Love and Lemons Cookbook: An Apple-to-Zucchini Celebration of Impromptu Cooking'
+2025-09-24 00:48:32,943 - INFO - Successfully extracted: 'The Long Shadow of Small Ghosts: Murder and Memory in an American City'
+2025-09-24 00:48:33,215 - INFO - Successfully extracted: 'The Kite Runner'
+2025-09-24 00:48:33,497 - INFO - Successfully extracted: 'The House by the Lake'
+2025-09-24 00:48:33,767 - INFO - Successfully extracted: 'The Glittering Court (The Glittering Court #1)'
+2025-09-24 00:48:34,037 - INFO - Successfully extracted: 'The Girl on the Train'
+2025-09-24 00:48:34,306 - INFO - Successfully extracted: 'The Genius of Birds'
+2025-09-24 00:48:34,577 - INFO - Successfully extracted: 'The Emerald Mystery'
+2025-09-24 00:48:34,847 - INFO - Successfully extracted: 'The Cookies & Cups Cookbook: 125+ sweet & savory recipes reminding you to Always Eat Dessert First'
+2025-09-24 00:48:34,848 - INFO - Completed page 8, successfully processed 20/20 books
+2025-09-24 00:48:36,711 - INFO - Scraping page 9: http://books.toscrape.com/catalogue/page-9.html
+2025-09-24 00:48:37,518 - INFO - Found 20 books on page 9
+2025-09-24 00:48:37,793 - INFO - Successfully extracted: 'The Bridge to Consciousness: I'm Writing the Bridge Between Science and Our Old and New Beliefs.'
+2025-09-24 00:48:38,072 - INFO - Successfully extracted: 'The Artist's Way: A Spiritual Path to Higher Creativity'
+2025-09-24 00:48:38,345 - INFO - Successfully extracted: 'The Art of War'
+2025-09-24 00:48:38,618 - INFO - Successfully extracted: 'The Argonauts'
+2025-09-24 00:48:38,892 - INFO - Successfully extracted: 'The 10% Entrepreneur: Live Your Startup Dream Without Quitting Your Day Job'
+2025-09-24 00:48:39,160 - INFO - Successfully extracted: 'Suddenly in Love (Lake Haven #1)'
+2025-09-24 00:48:39,428 - INFO - Successfully extracted: 'Something More Than This'
+2025-09-24 00:48:39,698 - INFO - Successfully extracted: 'Soft Apocalypse'
+2025-09-24 00:48:39,968 - INFO - Successfully extracted: 'So You've Been Publicly Shamed'
+2025-09-24 00:48:40,249 - INFO - Successfully extracted: 'Shoe Dog: A Memoir by the Creator of NIKE'
+2025-09-24 00:48:40,522 - INFO - Successfully extracted: 'Shobu Samurai, Project Aryoku (#3)'
+2025-09-24 00:48:40,790 - INFO - Successfully extracted: 'Secrets and Lace (Fatal Hearts #1)'
+2025-09-24 00:48:41,059 - INFO - Successfully extracted: 'Scarlett Epstein Hates It Here'
+2025-09-24 00:48:41,329 - INFO - Successfully extracted: 'Romero and Juliet: A Tragic Tale of Love and Zombies'
+2025-09-24 00:48:41,605 - INFO - Successfully extracted: 'Redeeming Love'
+2025-09-24 00:48:41,877 - INFO - Successfully extracted: 'Poses for Artists Volume 1 - Dynamic and Sitting Poses: An Essential Reference for Figure Drawing and the Human Form'
+2025-09-24 00:48:42,157 - INFO - Successfully extracted: 'Poems That Make Grown Women Cry'
+2025-09-24 00:48:42,434 - INFO - Successfully extracted: 'Nightingale, Sing'
+2025-09-24 00:48:42,739 - INFO - Successfully extracted: 'Night Sky with Exit Wounds'
+2025-09-24 00:48:43,016 - INFO - Successfully extracted: 'Mrs. Houdini'
+2025-09-24 00:48:43,017 - INFO - Completed page 9, successfully processed 20/20 books
+2025-09-24 00:48:45,611 - INFO - Scraping page 10: http://books.toscrape.com/catalogue/page-10.html
+2025-09-24 00:48:46,444 - INFO - Found 20 books on page 10
+2025-09-24 00:48:46,730 - INFO - Successfully extracted: 'Modern Romance'
+2025-09-24 00:48:47,004 - INFO - Successfully extracted: 'Miss Peregrine’s Home for Peculiar Children (Miss Peregrine’s Peculiar Children #1)'
+2025-09-24 00:48:47,307 - INFO - Successfully extracted: 'Louisa: The Extraordinary Life of Mrs. Adams'
+2025-09-24 00:48:47,623 - INFO - Successfully extracted: 'Little Red'
+2025-09-24 00:48:47,892 - INFO - Successfully extracted: 'Library of Souls (Miss Peregrine’s Peculiar Children #3)'
+2025-09-24 00:48:48,161 - INFO - Successfully extracted: 'Large Print Heart of the Pride'
+2025-09-24 00:48:48,433 - INFO - Successfully extracted: 'I Had a Nice Time And Other Lies...: How to find love & sh*t like that'
+2025-09-24 00:48:48,704 - INFO - Successfully extracted: 'Hollow City (Miss Peregrine’s Peculiar Children #2)'
+2025-09-24 00:48:48,973 - INFO - Successfully extracted: 'Grumbles'
+2025-09-24 00:48:49,244 - INFO - Successfully extracted: 'Full Moon over Noah’s Ark: An Odyssey to Mount Ararat and Beyond'
+2025-09-24 00:48:49,527 - INFO - Successfully extracted: 'Frostbite (Vampire Academy #2)'
+2025-09-24 00:48:49,802 - INFO - Successfully extracted: 'Follow You Home'
+2025-09-24 00:48:50,071 - INFO - Successfully extracted: 'First Steps for New Christians (Print Edition)'
+2025-09-24 00:48:50,340 - INFO - Successfully extracted: 'Finders Keepers (Bill Hodges Trilogy #2)'
+2025-09-24 00:48:50,610 - INFO - Successfully extracted: 'Fables, Vol. 1: Legends in Exile (Fables #1)'
+2025-09-24 00:48:50,880 - INFO - Successfully extracted: 'Eureka Trivia 6.0'
+2025-09-24 00:48:51,152 - INFO - Successfully extracted: 'Drive: The Surprising Truth About What Motivates Us'
+2025-09-24 00:48:51,422 - INFO - Successfully extracted: 'Done Rubbed Out (Reightman & Bailey #1)'
+2025-09-24 00:48:51,694 - INFO - Successfully extracted: 'Doing It Over (Most Likely To #1)'
+2025-09-24 00:48:51,971 - INFO - Successfully extracted: 'Deliciously Ella Every Day: Quick and Easy Recipes for Gluten-Free Snacks, Packed Lunches, and Simple Meals'
+2025-09-24 00:48:51,972 - INFO - Completed page 10, successfully processed 20/20 books
+2025-09-24 00:48:53,444 - INFO - Scraping page 11: http://books.toscrape.com/catalogue/page-11.html
+2025-09-24 00:48:54,247 - INFO - Found 20 books on page 11
+2025-09-24 00:48:54,515 - INFO - Successfully extracted: 'Dark Notes'
+2025-09-24 00:48:54,792 - INFO - Successfully extracted: 'Daring Greatly: How the Courage to Be Vulnerable Transforms the Way We Live, Love, Parent, and Lead'
+2025-09-24 00:48:55,089 - INFO - Successfully extracted: 'Close to You'
+2025-09-24 00:48:55,371 - INFO - Successfully extracted: 'Chasing Heaven: What Dying Taught Me About Living'
+2025-09-24 00:48:55,645 - INFO - Successfully extracted: 'Big Magic: Creative Living Beyond Fear'
+2025-09-24 00:48:55,916 - INFO - Successfully extracted: 'Becoming Wise: An Inquiry into the Mystery and Art of Living'
+2025-09-24 00:48:56,186 - INFO - Successfully extracted: 'Beauty Restored (Riley Family Legacy Novellas #3)'
+2025-09-24 00:48:56,457 - INFO - Successfully extracted: 'Batman: The Long Halloween (Batman)'
+2025-09-24 00:48:56,728 - INFO - Successfully extracted: 'Batman: The Dark Knight Returns (Batman)'
+2025-09-24 00:48:56,997 - INFO - Successfully extracted: 'Ayumi's Violin'
+2025-09-24 00:48:57,268 - INFO - Successfully extracted: 'Anonymous'
+2025-09-24 00:48:57,543 - INFO - Successfully extracted: 'Amy Meets the Saints and Sages'
+2025-09-24 00:48:57,811 - INFO - Successfully extracted: 'Amid the Chaos'
+2025-09-24 00:48:58,081 - INFO - Successfully extracted: 'Amatus'
+2025-09-24 00:48:58,355 - INFO - Successfully extracted: 'Agnostic: A Spirited Manifesto'
+2025-09-24 00:48:58,628 - INFO - Successfully extracted: 'Zealot: The Life and Times of Jesus of Nazareth'
+2025-09-24 00:48:58,903 - INFO - Successfully extracted: 'You (You #1)'
+2025-09-24 00:48:59,176 - INFO - Successfully extracted: 'Wonder Woman: Earth One, Volume One (Wonder Woman: Earth One #1)'
+2025-09-24 00:48:59,449 - INFO - Successfully extracted: 'Wild Swans'
+2025-09-24 00:48:59,735 - INFO - Successfully extracted: 'Why the Right Went Wrong: Conservatism--From Goldwater to the Tea Party and Beyond'
+2025-09-24 00:48:59,736 - INFO - Completed page 11, successfully processed 20/20 books
+2025-09-24 00:49:02,413 - INFO - Scraping page 12: http://books.toscrape.com/catalogue/page-12.html
+2025-09-24 00:49:03,223 - INFO - Found 20 books on page 12
+2025-09-24 00:49:03,492 - INFO - Successfully extracted: 'Whole Lotta Creativity Going On: 60 Fun and Unusual Exercises to Awaken and Strengthen Your Creativity'
+2025-09-24 00:49:03,765 - INFO - Successfully extracted: 'What's It Like in Space?: Stories from Astronauts Who've Been There'
+2025-09-24 00:49:04,034 - INFO - Successfully extracted: 'We Are Robin, Vol. 1: The Vigilante Business (We Are Robin #1)'
+2025-09-24 00:49:04,312 - INFO - Successfully extracted: 'Walt Disney's Alice in Wonderland'
+2025-09-24 00:49:04,580 - INFO - Successfully extracted: 'V for Vendetta (V for Vendetta Complete)'
+2025-09-24 00:49:04,851 - INFO - Successfully extracted: 'Until Friday Night (The Field Party #1)'
+2025-09-24 00:49:05,124 - INFO - Successfully extracted: 'Unbroken: A World War II Story of Survival, Resilience, and Redemption'
+2025-09-24 00:49:05,396 - INFO - Successfully extracted: 'Twenty Yawns'
+2025-09-24 00:49:05,663 - INFO - Successfully extracted: 'Through the Woods'
+2025-09-24 00:49:05,935 - INFO - Successfully extracted: 'This Is Where It Ends'
+2025-09-24 00:49:06,213 - INFO - Successfully extracted: 'The Year of Magical Thinking'
+2025-09-24 00:49:06,486 - INFO - Successfully extracted: 'The Wright Brothers'
+2025-09-24 00:49:06,754 - INFO - Successfully extracted: 'The White Queen (The Cousins' War #1)'
+2025-09-24 00:49:07,025 - INFO - Successfully extracted: 'The Wedding Pact (The O'Malleys #2)'
+2025-09-24 00:49:07,295 - INFO - Successfully extracted: 'The Time Keeper'
+2025-09-24 00:49:07,569 - INFO - Successfully extracted: 'The Testament of Mary'
+2025-09-24 00:49:07,839 - INFO - Successfully extracted: 'The Star-Touched Queen'
+2025-09-24 00:49:08,119 - INFO - Successfully extracted: 'The Songs of the Gods'
+2025-09-24 00:49:08,390 - INFO - Successfully extracted: 'The Song of Achilles'
+2025-09-24 00:49:08,659 - INFO - Successfully extracted: 'The Rosie Project (Don Tillman #1)'
+2025-09-24 00:49:08,660 - INFO - Completed page 12, successfully processed 20/20 books
+2025-09-24 00:49:11,355 - INFO - Scraping page 13: http://books.toscrape.com/catalogue/page-13.html
+2025-09-24 00:49:12,160 - INFO - Found 20 books on page 13
+2025-09-24 00:49:12,436 - INFO - Successfully extracted: 'The Power of Habit: Why We Do What We Do in Life and Business'
+2025-09-24 00:49:12,709 - INFO - Successfully extracted: 'The Marriage of Opposites'
+2025-09-24 00:49:12,984 - INFO - Successfully extracted: 'The Lucifer Effect: Understanding How Good People Turn Evil'
+2025-09-24 00:49:13,260 - INFO - Successfully extracted: 'The Long Haul (Diary of a Wimpy Kid #9)'
+2025-09-24 00:49:13,530 - INFO - Successfully extracted: 'The Loney'
+2025-09-24 00:49:13,803 - INFO - Successfully extracted: 'The Literature Book (Big Ideas Simply Explained)'
+2025-09-24 00:49:14,076 - INFO - Successfully extracted: 'The Last Mile (Amos Decker #2)'
+2025-09-24 00:49:14,351 - INFO - Successfully extracted: 'The Immortal Life of Henrietta Lacks'
+2025-09-24 00:49:14,624 - INFO - Successfully extracted: 'The Hidden Oracle (The Trials of Apollo #1)'
+2025-09-24 00:49:14,894 - INFO - Successfully extracted: 'The Help Yourself Cookbook for Kids: 60 Easy Plant-Based Recipes Kids Can Make to Stay Healthy and Save the Earth'
+2025-09-24 00:49:15,174 - INFO - Successfully extracted: 'The Guilty (Will Robie #4)'
+2025-09-24 00:49:15,446 - INFO - Successfully extracted: 'The First Hostage (J.B. Collins #2)'
+2025-09-24 00:49:15,714 - INFO - Successfully extracted: 'The Dovekeepers'
+2025-09-24 00:49:15,984 - INFO - Successfully extracted: 'The Darkest Lie'
+2025-09-24 00:49:16,256 - INFO - Successfully extracted: 'The Bane Chronicles (The Bane Chronicles #1-11)'
+2025-09-24 00:49:16,541 - INFO - Successfully extracted: 'The Bad-Ass Librarians of Timbuktu: And Their Race to Save the World’s Most Precious Manuscripts'
+2025-09-24 00:49:16,810 - INFO - Successfully extracted: 'The 14th Colony (Cotton Malone #11)'
+2025-09-24 00:49:17,079 - INFO - Successfully extracted: 'That Darkness (Gardiner and Renner #1)'
+2025-09-24 00:49:17,682 - INFO - Successfully extracted: 'Tastes Like Fear (DI Marnie Rome #3)'
+2025-09-24 00:49:17,961 - INFO - Successfully extracted: 'Take Me with You'
+2025-09-24 00:49:17,962 - INFO - Completed page 13, successfully processed 20/20 books
+2025-09-24 00:49:20,325 - INFO - Scraping page 14: http://books.toscrape.com/catalogue/page-14.html
+2025-09-24 00:49:21,132 - INFO - Found 20 books on page 14
+2025-09-24 00:49:21,407 - INFO - Successfully extracted: 'Swell: A Year of Waves'
+2025-09-24 00:49:21,678 - INFO - Successfully extracted: 'Superman Vol. 1: Before Truth (Superman by Gene Luen Yang #1)'
+2025-09-24 00:49:21,948 - INFO - Successfully extracted: 'Still Life with Bread Crumbs'
+2025-09-24 00:49:22,225 - INFO - Successfully extracted: 'Steve Jobs'
+2025-09-24 00:49:22,498 - INFO - Successfully extracted: 'Sorting the Beef from the Bull: The Science of Food Fraud Forensics'
+2025-09-24 00:49:22,773 - INFO - Successfully extracted: 'Someone Like You (The Harrisons #2)'
+2025-09-24 00:49:23,045 - INFO - Successfully extracted: 'So Cute It Hurts!!, Vol. 6 (So Cute It Hurts!! #6)'
+2025-09-24 00:49:23,330 - INFO - Successfully extracted: 'Shtum'
+2025-09-24 00:49:23,603 - INFO - Successfully extracted: 'See America: A Celebration of Our National Parks & Treasured Sites'
+2025-09-24 00:49:23,879 - INFO - Successfully extracted: 'salt.'
+2025-09-24 00:49:24,149 - INFO - Successfully extracted: 'Robin War'
+2025-09-24 00:49:24,417 - INFO - Successfully extracted: 'Red Hood/Arsenal, Vol. 1: Open for Business (Red Hood/Arsenal #1)'
+2025-09-24 00:49:24,690 - INFO - Successfully extracted: 'Rain Fish'
+2025-09-24 00:49:24,968 - INFO - Successfully extracted: 'Quarter Life Poetry: Poems for the Young, Broke and Hangry'
+2025-09-24 00:49:25,237 - INFO - Successfully extracted: 'Pet Sematary'
+2025-09-24 00:49:25,512 - INFO - Successfully extracted: 'Overload: How to Unplug, Unwind, and Unleash Yourself from the Pressure of Stress'
+2025-09-24 00:49:25,782 - INFO - Successfully extracted: 'Once Was a Time'
+2025-09-24 00:49:26,050 - INFO - Successfully extracted: 'Old School (Diary of a Wimpy Kid #10)'
+2025-09-24 00:49:26,317 - INFO - Successfully extracted: 'No Dream Is Too High: Life Lessons From a Man Who Walked on the Moon'
+2025-09-24 00:49:26,590 - INFO - Successfully extracted: 'Naruto (3-in-1 Edition), Vol. 14: Includes Vols. 40, 41 & 42 (Naruto: Omnibus #14)'
+2025-09-24 00:49:26,592 - INFO - Completed page 14, successfully processed 20/20 books
+2025-09-24 00:49:28,511 - INFO - Scraping page 15: http://books.toscrape.com/catalogue/page-15.html
+2025-09-24 00:49:29,323 - INFO - Found 20 books on page 15
+2025-09-24 00:49:29,669 - INFO - Successfully extracted: 'My Name Is Lucy Barton'
+2025-09-24 00:49:29,941 - INFO - Successfully extracted: 'My Mrs. Brown'
+2025-09-24 00:49:30,208 - INFO - Successfully extracted: 'My Kind of Crazy'
+2025-09-24 00:49:30,490 - INFO - Successfully extracted: 'Mr. Mercedes (Bill Hodges Trilogy #1)'
+2025-09-24 00:49:30,764 - INFO - Successfully extracted: 'More Than Music (Chasing the Dream #1)'
+2025-09-24 00:49:31,033 - INFO - Successfully extracted: 'Made to Stick: Why Some Ideas Survive and Others Die'
+2025-09-24 00:49:31,303 - INFO - Successfully extracted: 'Luis Paints the World'
+2025-09-24 00:49:31,583 - INFO - Successfully extracted: 'Luckiest Girl Alive'
+2025-09-24 00:49:31,854 - INFO - Successfully extracted: 'Lowriders to the Center of the Earth (Lowriders in Space #2)'
+2025-09-24 00:49:32,126 - INFO - Successfully extracted: 'Love Is a Mix Tape (Music #1)'
+2025-09-24 00:49:32,399 - INFO - Successfully extracted: 'Looking for Lovely: Collecting the Moments that Matter'
+2025-09-24 00:49:32,673 - INFO - Successfully extracted: 'Living Leadership by Insight: A Good Leader Achieves, a Great Leader Builds Monuments'
+2025-09-24 00:49:32,944 - INFO - Successfully extracted: 'Let It Out: A Journey Through Journaling'
+2025-09-24 00:49:33,223 - INFO - Successfully extracted: 'Lady Midnight (The Dark Artifices #1)'
+2025-09-24 00:49:33,507 - INFO - Successfully extracted: 'It's All Easy: Healthy, Delicious Weeknight Meals in under 30 Minutes'
+2025-09-24 00:49:33,777 - INFO - Successfully extracted: 'Island of Dragons (Unwanteds #7)'
+2025-09-24 00:49:34,045 - INFO - Successfully extracted: 'I Know What I'm Doing -- and Other Lies I Tell Myself: Dispatches from a Life Under Construction'
+2025-09-24 00:49:34,314 - INFO - Successfully extracted: 'I Am Pilgrim (Pilgrim #1)'
+2025-09-24 00:49:34,591 - INFO - Successfully extracted: 'Hyperbole and a Half: Unfortunate Situations, Flawed Coping Mechanisms, Mayhem, and Other Things That Happened'
+2025-09-24 00:49:34,860 - INFO - Successfully extracted: 'Hush, Hush (Hush, Hush #1)'
+2025-09-24 00:49:34,861 - INFO - Completed page 15, successfully processed 20/20 books
+2025-09-24 00:49:36,631 - INFO - Scraping page 16: http://books.toscrape.com/catalogue/page-16.html
+2025-09-24 00:49:37,442 - INFO - Found 20 books on page 16
+2025-09-24 00:49:37,722 - INFO - Successfully extracted: 'Hold Your Breath (Search and Rescue #1)'
+2025-09-24 00:49:37,996 - INFO - Successfully extracted: 'Hamilton: The Revolution'
+2025-09-24 00:49:38,272 - INFO - Successfully extracted: 'Greek Mythic History'
+2025-09-24 00:49:38,541 - INFO - Successfully extracted: 'God: The Most Unpleasant Character in All Fiction'
+2025-09-24 00:49:38,814 - INFO - Successfully extracted: 'Glory over Everything: Beyond The Kitchen House'
+2025-09-24 00:49:39,084 - INFO - Successfully extracted: 'Feathers: Displays of Brilliant Plumage'
+2025-09-24 00:49:39,367 - INFO - Successfully extracted: 'Far & Away: Places on the Brink of Change: Seven Continents, Twenty-Five Years'
+2025-09-24 00:49:39,636 - INFO - Successfully extracted: 'Every Last Word'
+2025-09-24 00:49:39,910 - INFO - Successfully extracted: 'Eligible (The Austen Project #4)'
+2025-09-24 00:49:40,186 - INFO - Successfully extracted: 'El Deafo'
+2025-09-24 00:49:40,459 - INFO - Successfully extracted: 'Eight Hundred Grapes'
+2025-09-24 00:49:40,735 - INFO - Successfully extracted: 'Eaternity: More than 150 Deliciously Easy Vegan Recipes for a Long, Healthy, Satisfied, Joyful Life'
+2025-09-24 00:49:41,017 - INFO - Successfully extracted: 'Eat Fat, Get Thin'
+2025-09-24 00:49:41,286 - INFO - Successfully extracted: 'Don't Get Caught'
+2025-09-24 00:49:41,557 - INFO - Successfully extracted: 'Doctor Sleep (The Shining #2)'
+2025-09-24 00:49:41,828 - INFO - Successfully extracted: 'Demigods & Magicians: Percy and Annabeth Meet the Kanes (Percy Jackson & Kane Chronicles Crossover #1-3)'
+2025-09-24 00:49:42,107 - INFO - Successfully extracted: 'Dear Mr. Knightley'
+2025-09-24 00:49:42,420 - INFO - Successfully extracted: 'Daily Fantasy Sports'
+2025-09-24 00:49:42,694 - INFO - Successfully extracted: 'Crazy Love: Overwhelmed by a Relentless God'
+2025-09-24 00:49:42,970 - INFO - Successfully extracted: 'Cometh the Hour (The Clifton Chronicles #6)'
+2025-09-24 00:49:42,971 - INFO - Completed page 16, successfully processed 20/20 books
+2025-09-24 00:49:44,432 - INFO - Scraping page 17: http://books.toscrape.com/catalogue/page-17.html
+2025-09-24 00:49:45,265 - INFO - Found 20 books on page 17
+2025-09-24 00:49:45,536 - INFO - Successfully extracted: 'Code Name Verity (Code Name Verity #1)'
+2025-09-24 00:49:45,809 - INFO - Successfully extracted: 'Clockwork Angel (The Infernal Devices #1)'
+2025-09-24 00:49:46,087 - INFO - Successfully extracted: 'City of Glass (The Mortal Instruments #3)'
+2025-09-24 00:49:46,360 - INFO - Successfully extracted: 'City of Fallen Angels (The Mortal Instruments #4)'
+2025-09-24 00:49:46,629 - INFO - Successfully extracted: 'City of Bones (The Mortal Instruments #1)'
+2025-09-24 00:49:46,900 - INFO - Successfully extracted: 'City of Ashes (The Mortal Instruments #2)'
+2025-09-24 00:49:47,176 - INFO - Successfully extracted: 'Cell'
+2025-09-24 00:49:47,451 - INFO - Successfully extracted: 'Catching Jordan (Hundred Oaks)'
+2025-09-24 00:49:47,742 - INFO - Successfully extracted: 'Carry On, Warrior: Thoughts on Life Unarmed'
+2025-09-24 00:49:48,021 - INFO - Successfully extracted: 'Carrie'
+2025-09-24 00:49:48,296 - INFO - Successfully extracted: 'Buying In: The Secret Dialogue Between What We Buy and Who We Are'
+2025-09-24 00:49:48,583 - INFO - Successfully extracted: 'Brain on Fire: My Month of Madness'
+2025-09-24 00:49:48,863 - INFO - Successfully extracted: 'Batman: Europa'
+2025-09-24 00:49:49,138 - INFO - Successfully extracted: 'Barefoot Contessa Back to Basics'
+2025-09-24 00:49:49,409 - INFO - Successfully extracted: 'Barefoot Contessa at Home: Everyday Recipes You'll Make Over and Over Again'
+2025-09-24 00:49:49,679 - INFO - Successfully extracted: 'Balloon Animals'
+2025-09-24 00:49:49,957 - INFO - Successfully extracted: 'Art Ops Vol. 1'
+2025-09-24 00:49:50,237 - INFO - Successfully extracted: 'Aristotle and Dante Discover the Secrets of the Universe (Aristotle and Dante Discover the Secrets of the Universe #1)'
+2025-09-24 00:49:50,507 - INFO - Successfully extracted: 'Angels Walking (Angels Walking #1)'
+2025-09-24 00:49:50,776 - INFO - Successfully extracted: 'Angels & Demons (Robert Langdon #1)'
+2025-09-24 00:49:50,777 - INFO - Completed page 17, successfully processed 20/20 books
+2025-09-24 00:49:53,104 - INFO - Scraping page 18: http://books.toscrape.com/catalogue/page-18.html
+2025-09-24 00:49:53,918 - INFO - Found 20 books on page 18
+2025-09-24 00:49:54,194 - INFO - Successfully extracted: 'All the Light We Cannot See'
+2025-09-24 00:49:54,464 - INFO - Successfully extracted: 'Adulthood Is a Myth: A "Sarah's Scribbles" Collection'
+2025-09-24 00:49:54,736 - INFO - Successfully extracted: 'Abstract City'
+2025-09-24 00:49:55,007 - INFO - Successfully extracted: 'A Time of Torment (Charlie Parker #14)'
+2025-09-24 00:49:55,284 - INFO - Successfully extracted: 'A Study in Scarlet (Sherlock Holmes #1)'
+2025-09-24 00:49:55,563 - INFO - Successfully extracted: 'A Series of Catastrophes and Miracles: A True Story of Love, Science, and Cancer'
+2025-09-24 00:49:55,834 - INFO - Successfully extracted: 'A People's History of the United States'
+2025-09-24 00:49:56,150 - INFO - Successfully extracted: 'A Man Called Ove'
+2025-09-24 00:49:56,422 - INFO - Successfully extracted: 'A Distant Mirror: The Calamitous 14th Century'
+2025-09-24 00:49:56,696 - INFO - Successfully extracted: 'A Brush of Wings (Angels Walking #3)'
+2025-09-24 00:49:56,975 - INFO - Successfully extracted: '1491: New Revelations of the Americas Before Columbus'
+2025-09-24 00:49:57,257 - INFO - Successfully extracted: 'The Three Searches, Meaning, and the Story'
+2025-09-24 00:49:57,530 - INFO - Successfully extracted: 'Searching for Meaning in Gailana'
+2025-09-24 00:49:57,815 - INFO - Successfully extracted: 'Rook'
+2025-09-24 00:49:58,097 - INFO - Successfully extracted: 'My Kitchen Year: 136 Recipes That Saved My Life'
+2025-09-24 00:49:58,372 - INFO - Successfully extracted: '13 Hours: The Inside Account of What Really Happened In Benghazi'
+2025-09-24 00:49:58,648 - INFO - Successfully extracted: 'Will You Won't You Want Me?'
+2025-09-24 00:49:58,922 - INFO - Successfully extracted: 'Tipping Point for Planet Earth: How Close Are We to the Edge?'
+2025-09-24 00:49:59,203 - INFO - Successfully extracted: 'The Star-Touched Queen'
+2025-09-24 00:49:59,486 - INFO - Successfully extracted: 'The Silent Sister (Riley MacPherson #1)'
+2025-09-24 00:49:59,487 - INFO - Completed page 18, successfully processed 20/20 books
+2025-09-24 00:50:02,322 - INFO - Scraping page 19: http://books.toscrape.com/catalogue/page-19.html
+2025-09-24 00:50:03,142 - INFO - Found 20 books on page 19
+2025-09-24 00:50:03,415 - INFO - Successfully extracted: 'The Midnight Watch: A Novel of the Titanic and the Californian'
+2025-09-24 00:50:03,689 - INFO - Successfully extracted: 'The Lonely City: Adventures in the Art of Being Alone'
+2025-09-24 00:50:03,977 - INFO - Successfully extracted: 'The Gray Rhino: How to Recognize and Act on the Obvious Dangers We Ignore'
+2025-09-24 00:50:04,259 - INFO - Successfully extracted: 'The Golden Condom: And Other Essays on Love Lost and Found'
+2025-09-24 00:50:04,532 - INFO - Successfully extracted: 'The Epidemic (The Program 0.6)'
+2025-09-24 00:50:04,808 - INFO - Successfully extracted: 'The Dinner Party'
+2025-09-24 00:50:05,083 - INFO - Successfully extracted: 'The Diary of a Young Girl'
+2025-09-24 00:50:05,353 - INFO - Successfully extracted: 'The Children'
+2025-09-24 00:50:05,626 - INFO - Successfully extracted: 'Stars Above (The Lunar Chronicles #4.5)'
+2025-09-24 00:50:05,898 - INFO - Successfully extracted: 'Snatched: How A Drug Queen Went Undercover for the DEA and Was Kidnapped By Colombian Guerillas'
+2025-09-24 00:50:06,176 - INFO - Successfully extracted: 'Raspberry Pi Electronics Projects for the Evil Genius'
+2025-09-24 00:50:06,456 - INFO - Successfully extracted: 'Quench Your Own Thirst: Business Lessons Learned Over a Beer or Two'
+2025-09-24 00:50:06,727 - INFO - Successfully extracted: 'Psycho: Sanitarium (Psycho #1.5)'
+2025-09-24 00:50:07,006 - INFO - Successfully extracted: 'Poisonous (Max Revere Novels #3)'
+2025-09-24 00:50:07,289 - INFO - Successfully extracted: 'One with You (Crossfire #5)'
+2025-09-24 00:50:07,558 - INFO - Successfully extracted: 'No Love Allowed (Dodge Cove #1)'
+2025-09-24 00:50:07,831 - INFO - Successfully extracted: 'Murder at the 42nd Street Library (Raymond Ambler #1)'
+2025-09-24 00:50:08,103 - INFO - Successfully extracted: 'Most Wanted'
+2025-09-24 00:50:08,376 - INFO - Successfully extracted: 'Love, Lies and Spies'
+2025-09-24 00:50:08,649 - INFO - Successfully extracted: 'How to Speak Golf: An Illustrated Guide to Links Lingo'
+2025-09-24 00:50:08,650 - INFO - Completed page 19, successfully processed 20/20 books
+2025-09-24 00:50:09,793 - INFO - Scraping page 20: http://books.toscrape.com/catalogue/page-20.html
+2025-09-24 00:50:10,606 - INFO - Found 20 books on page 20
+2025-09-24 00:50:10,874 - INFO - Successfully extracted: 'Hide Away (Eve Duncan #20)'
+2025-09-24 00:50:11,151 - INFO - Successfully extracted: 'Furiously Happy: A Funny Book About Horrible Things'
+2025-09-24 00:50:11,430 - INFO - Successfully extracted: 'Everyday Italian: 125 Simple and Delicious Recipes'
+2025-09-24 00:50:11,704 - INFO - Successfully extracted: 'Equal Is Unfair: America's Misguided Fight Against Income Inequality'
+2025-09-24 00:50:11,978 - INFO - Successfully extracted: 'Eleanor & Park'
+2025-09-24 00:50:12,254 - INFO - Successfully extracted: 'Dirty (Dive Bar #1)'
+2025-09-24 00:50:12,536 - INFO - Successfully extracted: 'Can You Keep a Secret? (Fear Street Relaunch #4)'
+2025-09-24 00:50:12,807 - INFO - Successfully extracted: 'Boar Island (Anna Pigeon #19)'
+2025-09-24 00:50:13,079 - INFO - Successfully extracted: 'A Paris Apartment'
+2025-09-24 00:50:13,356 - INFO - Successfully extracted: 'A la Mode: 120 Recipes in 60 Pairings: Pies, Tarts, Cakes, Crisps, and More Topped with Ice Cream, Gelato, Frozen Custard, and More'
+2025-09-24 00:50:13,628 - INFO - Successfully extracted: 'Troublemaker: Surviving Hollywood and Scientology'
+2025-09-24 00:50:13,899 - INFO - Successfully extracted: 'The Widow'
+2025-09-24 00:50:14,174 - INFO - Successfully extracted: 'The Sleep Revolution: Transforming Your Life, One Night at a Time'
+2025-09-24 00:50:14,448 - INFO - Successfully extracted: 'The Improbability of Love'
+2025-09-24 00:50:14,722 - INFO - Successfully extracted: 'The Art of Startup Fundraising'
+2025-09-24 00:50:14,995 - INFO - Successfully extracted: 'Take Me Home Tonight (Rock Star Romance #3)'
+2025-09-24 00:50:15,277 - INFO - Successfully extracted: 'Sleeping Giants (Themis Files #1)'
+2025-09-24 00:50:15,550 - INFO - Successfully extracted: 'Setting the World on Fire: The Brief, Astonishing Life of St. Catherine of Siena'
+2025-09-24 00:50:15,838 - INFO - Successfully extracted: 'Playing with Fire'
+2025-09-24 00:50:16,117 - INFO - Successfully extracted: 'Off the Hook (Fishing for Trouble #1)'
+2025-09-24 00:50:16,118 - INFO - Completed page 20, successfully processed 20/20 books
+2025-09-24 00:50:17,745 - INFO - Scraping page 21: http://books.toscrape.com/catalogue/page-21.html
+2025-09-24 00:50:18,546 - INFO - Found 20 books on page 21
+2025-09-24 00:50:18,816 - INFO - Successfully extracted: 'Mothering Sunday'
+2025-09-24 00:50:19,089 - INFO - Successfully extracted: 'Mother, Can You Not?'
+2025-09-24 00:50:19,364 - INFO - Successfully extracted: 'M Train'
+2025-09-24 00:50:19,636 - INFO - Successfully extracted: 'Lilac Girls'
+2025-09-24 00:50:19,907 - INFO - Successfully extracted: 'Lies and Other Acts of Love'
+2025-09-24 00:50:20,182 - INFO - Successfully extracted: 'Lab Girl'
+2025-09-24 00:50:20,452 - INFO - Successfully extracted: 'Keep Me Posted'
+2025-09-24 00:50:20,730 - INFO - Successfully extracted: 'It Didn't Start with You: How Inherited Family Trauma Shapes Who We Are and How to End the Cycle'
+2025-09-24 00:50:21,013 - INFO - Successfully extracted: 'Grey (Fifty Shades #4)'
+2025-09-24 00:50:21,285 - INFO - Successfully extracted: 'Exit, Pursued by a Bear'
+2025-09-24 00:50:21,558 - INFO - Successfully extracted: 'Daredevils'
+2025-09-24 00:50:21,844 - INFO - Successfully extracted: 'Cravings: Recipes for What You Want to Eat'
+2025-09-24 00:50:22,121 - INFO - Successfully extracted: 'Born for This: How to Find the Work You Were Meant to Do'
+2025-09-24 00:50:22,400 - INFO - Successfully extracted: 'Arena'
+2025-09-24 00:50:22,675 - INFO - Successfully extracted: 'Adultery'
+2025-09-24 00:50:22,956 - INFO - Successfully extracted: 'A Mother's Reckoning: Living in the Aftermath of Tragedy'
+2025-09-24 00:50:23,231 - INFO - Successfully extracted: 'A Gentleman's Position (Society of Gentlemen #3)'
+2025-09-24 00:50:23,507 - INFO - Successfully extracted: '11/22/63'
+2025-09-24 00:50:23,785 - INFO - Successfully extracted: '10% Happier: How I Tamed the Voice in My Head, Reduced Stress Without Losing My Edge, and Found Self-Help That Actually Works'
+2025-09-24 00:50:24,055 - INFO - Successfully extracted: '10-Day Green Smoothie Cleanse: Lose Up to 15 Pounds in 10 Days!'
+2025-09-24 00:50:24,056 - INFO - Completed page 21, successfully processed 20/20 books
+2025-09-24 00:50:25,216 - INFO - Scraping page 22: http://books.toscrape.com/catalogue/page-22.html
+2025-09-24 00:50:26,027 - INFO - Found 20 books on page 22
+2025-09-24 00:50:26,311 - INFO - Successfully extracted: 'Without Shame'
+2025-09-24 00:50:26,661 - INFO - Successfully extracted: 'Watchmen'
+2025-09-24 00:50:26,931 - INFO - Successfully extracted: 'Unlimited Intuition Now'
+2025-09-24 00:50:27,207 - INFO - Successfully extracted: 'Underlying Notes'
+2025-09-24 00:50:27,479 - INFO - Successfully extracted: 'The Shack'
+2025-09-24 00:50:27,757 - INFO - Successfully extracted: 'The New Brand You: Your New Image Makes the Sale for You'
+2025-09-24 00:50:28,037 - INFO - Successfully extracted: 'The Moosewood Cookbook: Recipes from Moosewood Restaurant, Ithaca, New York'
+2025-09-24 00:50:28,312 - INFO - Successfully extracted: 'The Flowers Lied'
+2025-09-24 00:50:28,589 - INFO - Successfully extracted: 'The Fabric of the Cosmos: Space, Time, and the Texture of Reality'
+2025-09-24 00:50:28,859 - INFO - Successfully extracted: 'The Book of Mormon'
+2025-09-24 00:50:29,132 - INFO - Successfully extracted: 'The Art and Science of Low Carbohydrate Living'
+2025-09-24 00:50:29,408 - INFO - Successfully extracted: 'The Alien Club'
+2025-09-24 00:50:29,682 - INFO - Successfully extracted: 'Suzie Snowflake: One beautiful flake (a self-esteem story)'
+2025-09-24 00:50:29,956 - INFO - Successfully extracted: 'Nap-a-Roo'
+2025-09-24 00:50:30,230 - INFO - Successfully extracted: 'NaNo What Now? Finding your editing process, revising your NaNoWriMo book and building a writing career through publishing and beyond'
+2025-09-24 00:50:30,504 - INFO - Successfully extracted: 'Modern Day Fables'
+2025-09-24 00:50:30,788 - INFO - Successfully extracted: 'If I Gave You God's Phone Number....: Searching for Spirituality in America'
+2025-09-24 00:50:31,057 - INFO - Successfully extracted: 'Fruits Basket, Vol. 9 (Fruits Basket #9)'
+2025-09-24 00:50:31,327 - INFO - Successfully extracted: 'Dress Your Family in Corduroy and Denim'
+2025-09-24 00:50:31,607 - INFO - Successfully extracted: 'Don't Forget Steven'
+2025-09-24 00:50:31,608 - INFO - Completed page 22, successfully processed 20/20 books
+2025-09-24 00:50:33,298 - INFO - Scraping page 23: http://books.toscrape.com/catalogue/page-23.html
+2025-09-24 00:50:34,116 - INFO - Found 20 books on page 23
+2025-09-24 00:50:34,400 - INFO - Successfully extracted: 'Chernobyl 01:23:40: The Incredible True Story of the World's Worst Nuclear Disaster'
+2025-09-24 00:50:34,679 - INFO - Successfully extracted: 'Art and Fear: Observations on the Perils (and Rewards) of Artmaking'
+2025-09-24 00:50:34,970 - INFO - Successfully extracted: 'A Shard of Ice (The Black Symphony Saga #1)'
+2025-09-24 00:50:35,248 - INFO - Successfully extracted: 'A Hero's Curse (The Unseen Chronicles #1)'
+2025-09-24 00:50:35,525 - INFO - Successfully extracted: '23 Degrees South: A Tropical Tale of Changing Whether...'
+2025-09-24 00:50:35,798 - INFO - Successfully extracted: 'Zero to One: Notes on Startups, or How to Build the Future'
+2025-09-24 00:50:36,071 - INFO - Successfully extracted: 'Why Not Me?'
+2025-09-24 00:50:36,345 - INFO - Successfully extracted: 'When Breath Becomes Air'
+2025-09-24 00:50:36,615 - INFO - Successfully extracted: 'Vagabonding: An Uncommon Guide to the Art of Long-Term World Travel'
+2025-09-24 00:50:36,885 - INFO - Successfully extracted: 'The Unlikely Pilgrimage of Harold Fry (Harold Fry #1)'
+2025-09-24 00:50:37,165 - INFO - Successfully extracted: 'The New Drawing on the Right Side of the Brain'
+2025-09-24 00:50:37,450 - INFO - Successfully extracted: 'The Midnight Assassin: Panic, Scandal, and the Hunt for America's First Serial Killer'
+2025-09-24 00:50:37,719 - INFO - Successfully extracted: 'The Martian (The Martian #1)'
+2025-09-24 00:50:37,991 - INFO - Successfully extracted: 'The High Mountains of Portugal'
+2025-09-24 00:50:38,262 - INFO - Successfully extracted: 'The Grownup'
+2025-09-24 00:50:38,534 - INFO - Successfully extracted: 'The E-Myth Revisited: Why Most Small Businesses Don't Work and What to Do About It'
+2025-09-24 00:50:38,815 - INFO - Successfully extracted: 'South of Sunshine'
+2025-09-24 00:50:39,087 - INFO - Successfully extracted: 'Smarter Faster Better: The Secrets of Being Productive in Life and Business'
+2025-09-24 00:50:39,361 - INFO - Successfully extracted: 'Silence in the Dark (Logan Point #4)'
+2025-09-24 00:50:39,645 - INFO - Successfully extracted: 'Shadows of the Past (Logan Point #1)'
+2025-09-24 00:50:39,646 - INFO - Completed page 23, successfully processed 20/20 books
+2025-09-24 00:50:41,370 - INFO - Scraping page 24: http://books.toscrape.com/catalogue/page-24.html
+2025-09-24 00:50:42,192 - INFO - Found 20 books on page 24
+2025-09-24 00:50:42,461 - INFO - Successfully extracted: 'Roller Girl'
+2025-09-24 00:50:42,730 - INFO - Successfully extracted: 'Rising Strong'
+2025-09-24 00:50:43,004 - INFO - Successfully extracted: 'Proofs of God: Classical Arguments from Tertullian to Barth'
+2025-09-24 00:50:43,275 - INFO - Successfully extracted: 'Please Kill Me: The Uncensored Oral History of Punk'
+2025-09-24 00:50:43,555 - INFO - Successfully extracted: 'Out of Print: City Lights Spotlight No. 14'
+2025-09-24 00:50:43,828 - INFO - Successfully extracted: 'My Life Next Door (My Life Next Door )'
+2025-09-24 00:50:44,109 - INFO - Successfully extracted: 'Miller's Valley'
+2025-09-24 00:50:44,397 - INFO - Successfully extracted: 'Man's Search for Meaning'
+2025-09-24 00:50:44,672 - INFO - Successfully extracted: 'Love That Boy: What Two Presidents, Eight Road Trips, and My Son Taught Me About a Parent's Expectations'
+2025-09-24 00:50:44,955 - INFO - Successfully extracted: 'Living Forward: A Proven Plan to Stop Drifting and Get the Life You Want'
+2025-09-24 00:50:45,229 - INFO - Successfully extracted: 'Les Fleurs du Mal'
+2025-09-24 00:50:45,501 - INFO - Successfully extracted: 'Left Behind (Left Behind #1)'
+2025-09-24 00:50:45,781 - INFO - Successfully extracted: 'Kill 'Em and Leave: Searching for James Brown and the American Soul'
+2025-09-24 00:50:46,060 - INFO - Successfully extracted: 'Kierkegaard: A Christian Missionary to Christians'
+2025-09-24 00:50:46,340 - INFO - Successfully extracted: 'John Vassos: Industrial Design for Modern Life'
+2025-09-24 00:50:46,616 - INFO - Successfully extracted: 'I'll Give You the Sun'
+2025-09-24 00:50:46,905 - INFO - Successfully extracted: 'I Will Find You'
+2025-09-24 00:50:47,180 - INFO - Successfully extracted: 'Hystopia: A Novel'
+2025-09-24 00:50:47,456 - INFO - Successfully extracted: 'Howl and Other Poems'
+2025-09-24 00:50:47,728 - INFO - Successfully extracted: 'History of Beauty'
+2025-09-24 00:50:47,729 - INFO - Completed page 24, successfully processed 20/20 books
+2025-09-24 00:50:50,435 - INFO - Scraping page 25: http://books.toscrape.com/catalogue/page-25.html
+2025-09-24 00:50:51,237 - INFO - Found 20 books on page 25
+2025-09-24 00:50:51,508 - INFO - Successfully extracted: 'Heaven is for Real: A Little Boy's Astounding Story of His Trip to Heaven and Back'
+2025-09-24 00:50:51,789 - INFO - Successfully extracted: 'Future Shock (Future Shock #1)'
+2025-09-24 00:50:52,075 - INFO - Successfully extracted: 'Ender's Game (The Ender Quintet #1)'
+2025-09-24 00:50:52,349 - INFO - Successfully extracted: 'Diary of a Citizen Scientist: Chasing Tiger Beetles and Other New Ways of Engaging the World'
+2025-09-24 00:50:52,634 - INFO - Successfully extracted: 'Death by Leisure: A Cautionary Tale'
+2025-09-24 00:50:52,911 - INFO - Successfully extracted: 'Brilliant Beacons: A History of the American Lighthouse'
+2025-09-24 00:50:53,183 - INFO - Successfully extracted: 'Brazen: The Courage to Find the You That's Been Hiding'
+2025-09-24 00:50:53,456 - INFO - Successfully extracted: 'Between the World and Me'
+2025-09-24 00:50:53,730 - INFO - Successfully extracted: 'Being Mortal: Medicine and What Matters in the End'
+2025-09-24 00:50:54,008 - INFO - Successfully extracted: 'A Murder Over a Girl: Justice, Gender, Junior High'
+2025-09-24 00:50:54,280 - INFO - Successfully extracted: '32 Yolks'
+2025-09-24 00:50:54,553 - INFO - Successfully extracted: '"Most Blessed of the Patriarchs": Thomas Jefferson and the Empire of the Imagination'
+2025-09-24 00:50:54,829 - INFO - Successfully extracted: 'You Are a Badass: How to Stop Doubting Your Greatness and Start Living an Awesome Life'
+2025-09-24 00:50:55,113 - INFO - Successfully extracted: 'Wildlife of New York: A Five-Borough Coloring Book'
+2025-09-24 00:50:55,405 - INFO - Successfully extracted: 'What Happened on Beale Street (Secrets of the South Mysteries #2)'
+2025-09-24 00:50:55,690 - INFO - Successfully extracted: 'Unreasonable Hope: Finding Faith in the God Who Brings Purpose to Your Pain'
+2025-09-24 00:50:55,968 - INFO - Successfully extracted: 'Under the Tuscan Sun'
+2025-09-24 00:50:56,252 - INFO - Successfully extracted: 'Toddlers Are A**holes: It's Not Your Fault'
+2025-09-24 00:50:56,526 - INFO - Successfully extracted: 'The Year of Living Biblically: One Man's Humble Quest to Follow the Bible as Literally as Possible'
+2025-09-24 00:50:56,805 - INFO - Successfully extracted: 'The Whale'
+2025-09-24 00:50:56,806 - INFO - Completed page 25, successfully processed 20/20 books
+2025-09-24 00:50:58,110 - INFO - Scraping page 26: http://books.toscrape.com/catalogue/page-26.html
+2025-09-24 00:50:58,926 - INFO - Found 20 books on page 26
+2025-09-24 00:50:59,202 - INFO - Successfully extracted: 'The Story of Art'
+2025-09-24 00:50:59,497 - INFO - Successfully extracted: 'The Origin of Species'
+2025-09-24 00:50:59,768 - INFO - Successfully extracted: 'The Great Gatsby'
+2025-09-24 00:51:00,042 - INFO - Successfully extracted: 'The Good Girl'
+2025-09-24 00:51:00,315 - INFO - Successfully extracted: 'The Glass Castle'
+2025-09-24 00:51:00,589 - INFO - Successfully extracted: 'The Faith of Christopher Hitchens: The Restless Soul of the World's Most Notorious Atheist'
+2025-09-24 00:51:00,876 - INFO - Successfully extracted: 'The Drowning Girls'
+2025-09-24 00:51:01,146 - INFO - Successfully extracted: 'The Constant Princess (The Tudor Court #1)'
+2025-09-24 00:51:01,415 - INFO - Successfully extracted: 'The Bourne Identity (Jason Bourne #1)'
+2025-09-24 00:51:01,686 - INFO - Successfully extracted: 'The Bachelor Girl's Guide to Murder (Herringford and Watts Mysteries #1)'
+2025-09-24 00:51:01,955 - INFO - Successfully extracted: 'The Art Book'
+2025-09-24 00:51:02,223 - INFO - Successfully extracted: 'The 7 Habits of Highly Effective People: Powerful Lessons in Personal Change'
+2025-09-24 00:51:02,521 - INFO - Successfully extracted: 'Team of Rivals: The Political Genius of Abraham Lincoln'
+2025-09-24 00:51:02,789 - INFO - Successfully extracted: 'Steal Like an Artist: 10 Things Nobody Told You About Being Creative'
+2025-09-24 00:51:03,058 - INFO - Successfully extracted: 'Sit, Stay, Love'
+2025-09-24 00:51:03,325 - INFO - Successfully extracted: 'Sister Dear'
+2025-09-24 00:51:03,594 - INFO - Successfully extracted: 'Shrunken Treasures: Literary Classics, Short, Sweet, and Silly'
+2025-09-24 00:51:03,859 - INFO - Successfully extracted: 'Rich Dad, Poor Dad'
+2025-09-24 00:51:04,128 - INFO - Successfully extracted: 'Raymie Nightingale'
+2025-09-24 00:51:04,403 - INFO - Successfully extracted: 'Playing from the Heart'
+2025-09-24 00:51:04,404 - INFO - Completed page 26, successfully processed 20/20 books
+2025-09-24 00:51:06,376 - INFO - Scraping page 27: http://books.toscrape.com/catalogue/page-27.html
+2025-09-24 00:51:07,384 - INFO - Found 20 books on page 27
+2025-09-24 00:51:07,677 - INFO - Successfully extracted: 'Nightstruck: A Novel'
+2025-09-24 00:51:07,997 - INFO - Successfully extracted: 'Naturally Lean: 125 Nourishing Gluten-Free, Plant-Based Recipes--All Under 300 Calories'
+2025-09-24 00:51:08,288 - INFO - Successfully extracted: 'Meternity'
+2025-09-24 00:51:08,571 - INFO - Successfully extracted: 'Memoirs of a Geisha'
+2025-09-24 00:51:08,850 - INFO - Successfully extracted: 'Like Never Before (Walker Family #2)'
+2025-09-24 00:51:09,117 - INFO - Successfully extracted: 'Life of Pi'
+2025-09-24 00:51:09,388 - INFO - Successfully extracted: 'Leave This Song Behind: Teen Poetry at Its Best'
+2025-09-24 00:51:09,653 - INFO - Successfully extracted: 'King's Folly (The Kinsman Chronicles #1)'
+2025-09-24 00:51:09,928 - INFO - Successfully extracted: 'John Adams'
+2025-09-24 00:51:10,262 - INFO - Successfully extracted: 'How to Cook Everything Vegetarian: Simple Meatless Recipes for Great Food (How to Cook Everything)'
+2025-09-24 00:51:10,530 - INFO - Successfully extracted: 'How to Be a Domestic Goddess: Baking and the Art of Comfort Cooking'
+2025-09-24 00:51:10,806 - INFO - Successfully extracted: 'Good in Bed (Cannie Shapiro #1)'
+2025-09-24 00:51:11,072 - INFO - Successfully extracted: 'Fruits Basket, Vol. 7 (Fruits Basket #7)'
+2025-09-24 00:51:11,356 - INFO - Successfully extracted: 'For the Love: Fighting for Grace in a World of Impossible Standards'
+2025-09-24 00:51:11,623 - INFO - Successfully extracted: 'Finding God in the Ruins: How God Redeems Pain'
+2025-09-24 00:51:11,887 - INFO - Successfully extracted: 'Every Heart a Doorway (Every Heart A Doorway #1)'
+2025-09-24 00:51:12,153 - INFO - Successfully extracted: 'Delivering the Truth (Quaker Midwife Mystery #1)'
+2025-09-24 00:51:12,418 - INFO - Successfully extracted: 'Counted With the Stars (Out from Egypt #1)'
+2025-09-24 00:51:12,697 - INFO - Successfully extracted: 'Chronicles, Vol. 1'
+2025-09-24 00:51:12,967 - INFO - Successfully extracted: 'Blue Like Jazz: Nonreligious Thoughts on Christian Spirituality'
+2025-09-24 00:51:12,968 - INFO - Completed page 27, successfully processed 20/20 books
+2025-09-24 00:51:14,702 - INFO - Scraping page 28: http://books.toscrape.com/catalogue/page-28.html
+2025-09-24 00:51:15,506 - INFO - Found 20 books on page 28
+2025-09-24 00:51:15,777 - INFO - Successfully extracted: 'Benjamin Franklin: An American Life'
+2025-09-24 00:51:16,044 - INFO - Successfully extracted: 'At The Existentialist Café: Freedom, Being, and apricot cocktails with: Jean-Paul Sartre, Simone de Beauvoir, Albert Camus, Martin Heidegger, Edmund Husserl, Karl Jaspers, Maurice Merleau-Ponty and others'
+2025-09-24 00:51:16,318 - INFO - Successfully extracted: 'A Summer In Europe'
+2025-09-24 00:51:16,602 - INFO - Successfully extracted: 'A Short History of Nearly Everything'
+2025-09-24 00:51:16,874 - INFO - Successfully extracted: 'A Gathering of Shadows (Shades of Magic #2)'
+2025-09-24 00:51:17,141 - INFO - Successfully extracted: 'The Sound Of Love'
+2025-09-24 00:51:17,407 - INFO - Successfully extracted: 'The Rise and Fall of the Third Reich: A History of Nazi Germany'
+2025-09-24 00:51:17,673 - INFO - Successfully extracted: 'The Perks of Being a Wallflower'
+2025-09-24 00:51:17,941 - INFO - Successfully extracted: 'The Mysterious Affair at Styles (Hercule Poirot #1)'
+2025-09-24 00:51:18,208 - INFO - Successfully extracted: 'The Man Who Mistook His Wife for a Hat and Other Clinical Tales'
+2025-09-24 00:51:18,479 - INFO - Successfully extracted: 'The Makings of a Fatherless Child'
+2025-09-24 00:51:18,744 - INFO - Successfully extracted: 'The Joy of Cooking'
+2025-09-24 00:51:19,013 - INFO - Successfully extracted: 'The Invention of Wings'
+2025-09-24 00:51:19,281 - INFO - Successfully extracted: 'The Hobbit (Middle-Earth Universe)'
+2025-09-24 00:51:19,548 - INFO - Successfully extracted: 'The Great Railway Bazaar'
+2025-09-24 00:51:19,831 - INFO - Successfully extracted: 'The Golden Compass (His Dark Materials #1)'
+2025-09-24 00:51:20,098 - INFO - Successfully extracted: 'The God Delusion'
+2025-09-24 00:51:20,368 - INFO - Successfully extracted: 'The Girl You Left Behind (The Girl You Left Behind #1)'
+2025-09-24 00:51:20,636 - INFO - Successfully extracted: 'The Fellowship of the Ring (The Lord of the Rings #1)'
+2025-09-24 00:51:20,912 - INFO - Successfully extracted: 'The Collected Poems of W.B. Yeats (The Collected Works of W.B. Yeats #1)'
+2025-09-24 00:51:20,913 - INFO - Completed page 28, successfully processed 20/20 books
+2025-09-24 00:51:22,752 - INFO - Scraping page 29: http://books.toscrape.com/catalogue/page-29.html
+2025-09-24 00:51:23,547 - INFO - Found 20 books on page 29
+2025-09-24 00:51:23,817 - INFO - Successfully extracted: 'The Barefoot Contessa Cookbook'
+2025-09-24 00:51:24,091 - INFO - Successfully extracted: 'Tell the Wolves I'm Home'
+2025-09-24 00:51:24,357 - INFO - Successfully extracted: 'Ship Leaves Harbor: Essays on Travel by a Recovering Journeyman'
+2025-09-24 00:51:24,690 - INFO - Successfully extracted: 'Pride and Prejudice'
+2025-09-24 00:51:24,957 - INFO - Successfully extracted: 'Musicophilia: Tales of Music and the Brain'
+2025-09-24 00:51:25,223 - INFO - Successfully extracted: 'Mere Christianity'
+2025-09-24 00:51:25,500 - INFO - Successfully extracted: 'Me Before You (Me Before You #1)'
+2025-09-24 00:51:25,771 - INFO - Successfully extracted: 'In the Woods (Dublin Murder Squad #1)'
+2025-09-24 00:51:26,037 - INFO - Successfully extracted: 'In Cold Blood'
+2025-09-24 00:51:26,304 - INFO - Successfully extracted: 'How to Stop Worrying and Start Living'
+2025-09-24 00:51:26,575 - INFO - Successfully extracted: 'Give It Back'
+2025-09-24 00:51:26,843 - INFO - Successfully extracted: 'Girl, Interrupted'
+2025-09-24 00:51:27,120 - INFO - Successfully extracted: 'Fun Home: A Family Tragicomic'
+2025-09-24 00:51:27,392 - INFO - Successfully extracted: 'Fruits Basket, Vol. 6 (Fruits Basket #6)'
+2025-09-24 00:51:27,666 - INFO - Successfully extracted: 'Deception Point'
+2025-09-24 00:51:27,935 - INFO - Successfully extracted: 'Death Note, Vol. 6: Give-and-Take (Death Note #6)'
+2025-09-24 00:51:28,215 - INFO - Successfully extracted: 'Catherine the Great: Portrait of a Woman'
+2025-09-24 00:51:28,490 - INFO - Successfully extracted: 'Better Homes and Gardens New Cook Book'
+2025-09-24 00:51:28,759 - INFO - Successfully extracted: 'An Unquiet Mind: A Memoir of Moods and Madness'
+2025-09-24 00:51:29,025 - INFO - Successfully extracted: 'A Year in Provence (Provence #1)'
+2025-09-24 00:51:29,026 - INFO - Completed page 29, successfully processed 20/20 books
+2025-09-24 00:51:31,317 - INFO - Scraping page 30: http://books.toscrape.com/catalogue/page-30.html
+2025-09-24 00:51:32,117 - INFO - Found 20 books on page 30
+2025-09-24 00:51:32,385 - INFO - Successfully extracted: 'World Without End (The Pillars of the Earth #2)'
+2025-09-24 00:51:32,654 - INFO - Successfully extracted: 'Will Grayson, Will Grayson (Will Grayson, Will Grayson)'
+2025-09-24 00:51:32,920 - INFO - Successfully extracted: 'Why Save the Bankers?: And Other Essays on Our Economic and Political Crisis'
+2025-09-24 00:51:33,188 - INFO - Successfully extracted: 'Where She Went (If I Stay #2)'
+2025-09-24 00:51:33,464 - INFO - Successfully extracted: 'What If?: Serious Scientific Answers to Absurd Hypothetical Questions'
+2025-09-24 00:51:33,748 - INFO - Successfully extracted: 'Two Summers'
+2025-09-24 00:51:34,024 - INFO - Successfully extracted: 'This Is Your Brain on Music: The Science of a Human Obsession'
+2025-09-24 00:51:34,289 - INFO - Successfully extracted: 'The Secret Garden'
+2025-09-24 00:51:34,563 - INFO - Successfully extracted: 'The Raven King (The Raven Cycle #4)'
+2025-09-24 00:51:34,832 - INFO - Successfully extracted: 'The Raven Boys (The Raven Cycle #1)'
+2025-09-24 00:51:35,102 - INFO - Successfully extracted: 'The Power Greens Cookbook: 140 Delicious Superfood Recipes'
+2025-09-24 00:51:35,371 - INFO - Successfully extracted: 'The Metamorphosis'
+2025-09-24 00:51:35,636 - INFO - Successfully extracted: 'The Mathews Men: Seven Brothers and the War Against Hitler's U-boats'
+2025-09-24 00:51:35,906 - INFO - Successfully extracted: 'The Little Paris Bookshop'
+2025-09-24 00:51:36,184 - INFO - Successfully extracted: 'The Hiding Place'
+2025-09-24 00:51:36,451 - INFO - Successfully extracted: 'The Grand Design'
+2025-09-24 00:51:36,720 - INFO - Successfully extracted: 'The Firm'
+2025-09-24 00:51:36,984 - INFO - Successfully extracted: 'The Fault in Our Stars'
+2025-09-24 00:51:37,259 - INFO - Successfully extracted: 'The False Prince (The Ascendance Trilogy #1)'
+2025-09-24 00:51:37,526 - INFO - Successfully extracted: 'The Expatriates'
+2025-09-24 00:51:37,527 - INFO - Completed page 30, successfully processed 20/20 books
+2025-09-24 00:51:40,176 - INFO - Scraping page 31: http://books.toscrape.com/catalogue/page-31.html
+2025-09-24 00:51:40,974 - INFO - Found 20 books on page 31
+2025-09-24 00:51:41,248 - INFO - Successfully extracted: 'The Dream Thieves (The Raven Cycle #2)'
+2025-09-24 00:51:41,525 - INFO - Successfully extracted: 'The Darkest Corners'
+2025-09-24 00:51:41,794 - INFO - Successfully extracted: 'The Crossover'
+2025-09-24 00:51:42,061 - INFO - Successfully extracted: 'The 5th Wave (The 5th Wave #1)'
+2025-09-24 00:51:42,331 - INFO - Successfully extracted: 'Tell the Wind and Fire'
+2025-09-24 00:51:42,597 - INFO - Successfully extracted: 'Tell Me Three Things'
+2025-09-24 00:51:42,872 - INFO - Successfully extracted: 'Talking to Girls About Duran Duran: One Young Man's Quest for True Love and a Cooler Haircut'
+2025-09-24 00:51:43,136 - INFO - Successfully extracted: 'Siddhartha'
+2025-09-24 00:51:43,401 - INFO - Successfully extracted: 'Shiver (The Wolves of Mercy Falls #1)'
+2025-09-24 00:51:43,672 - INFO - Successfully extracted: 'Remember Me?'
+2025-09-24 00:51:43,943 - INFO - Successfully extracted: 'Red Dragon (Hannibal Lecter #1)'
+2025-09-24 00:51:44,215 - INFO - Successfully extracted: 'Peak: Secrets from the New Science of Expertise'
+2025-09-24 00:51:44,491 - INFO - Successfully extracted: 'My Mother Was Nuts'
+2025-09-24 00:51:44,760 - INFO - Successfully extracted: 'Mexican Today: New and Rediscovered Recipes for Contemporary Kitchens'
+2025-09-24 00:51:45,034 - INFO - Successfully extracted: 'Maybe Something Beautiful: How Art Transformed a Neighborhood'
+2025-09-24 00:51:45,313 - INFO - Successfully extracted: 'Lola and the Boy Next Door (Anna and the French Kiss #2)'
+2025-09-24 00:51:45,587 - INFO - Successfully extracted: 'Logan Kade (Fallen Crest High #5.5)'
+2025-09-24 00:51:45,865 - INFO - Successfully extracted: 'Last One Home (New Beginnings #1)'
+2025-09-24 00:51:46,142 - INFO - Successfully extracted: 'Killing Floor (Jack Reacher #1)'
+2025-09-24 00:51:46,411 - INFO - Successfully extracted: 'Kill the Boy Band'
+2025-09-24 00:51:46,412 - INFO - Completed page 31, successfully processed 20/20 books
+2025-09-24 00:51:47,989 - INFO - Scraping page 32: http://books.toscrape.com/catalogue/page-32.html
+2025-09-24 00:51:48,794 - INFO - Found 20 books on page 32
+2025-09-24 00:51:49,058 - INFO - Successfully extracted: 'Isla and the Happily Ever After (Anna and the French Kiss #3)'
+2025-09-24 00:51:49,325 - INFO - Successfully extracted: 'If I Stay (If I Stay #1)'
+2025-09-24 00:51:49,595 - INFO - Successfully extracted: 'I Know Why the Caged Bird Sings (Maya Angelou's Autobiography #1)'
+2025-09-24 00:51:49,859 - INFO - Successfully extracted: 'Harry Potter and the Deathly Hallows (Harry Potter #7)'
+2025-09-24 00:51:50,127 - INFO - Successfully extracted: 'Fruits Basket, Vol. 5 (Fruits Basket #5)'
+2025-09-24 00:51:50,394 - INFO - Successfully extracted: 'Foundation (Foundation (Publication Order) #1)'
+2025-09-24 00:51:50,662 - INFO - Successfully extracted: 'Fool Me Once'
+2025-09-24 00:51:50,941 - INFO - Successfully extracted: 'Find Her (Detective D.D. Warren #8)'
+2025-09-24 00:51:51,216 - INFO - Successfully extracted: 'Evicted: Poverty and Profit in the American City'
+2025-09-24 00:51:51,496 - INFO - Successfully extracted: 'Drama'
+2025-09-24 00:51:51,767 - INFO - Successfully extracted: 'Dracula the Un-Dead'
+2025-09-24 00:51:52,043 - INFO - Successfully extracted: 'Digital Fortress'
+2025-09-24 00:51:52,308 - INFO - Successfully extracted: 'Death Note, Vol. 5: Whiteout (Death Note #5)'
+2025-09-24 00:51:52,579 - INFO - Successfully extracted: 'Data, A Love Story: How I Gamed Online Dating to Meet My Match'
+2025-09-24 00:51:52,847 - INFO - Successfully extracted: 'Critique of Pure Reason'
+2025-09-24 00:51:53,113 - INFO - Successfully extracted: 'Booked'
+2025-09-24 00:51:53,395 - INFO - Successfully extracted: 'Blue Lily, Lily Blue (The Raven Cycle #3)'
+2025-09-24 00:51:53,672 - INFO - Successfully extracted: 'Approval Junkie: Adventures in Caring Too Much'
+2025-09-24 00:51:53,940 - INFO - Successfully extracted: 'An Abundance of Katherines'
+2025-09-24 00:51:54,217 - INFO - Successfully extracted: 'America's War for the Greater Middle East: A Military History'
+2025-09-24 00:51:54,218 - INFO - Completed page 32, successfully processed 20/20 books
+2025-09-24 00:51:56,442 - INFO - Scraping page 33: http://books.toscrape.com/catalogue/page-33.html
+2025-09-24 00:51:57,371 - INFO - Found 20 books on page 33
+2025-09-24 00:51:57,688 - INFO - Successfully extracted: 'Alight (The Generations Trilogy #2)'
+2025-09-24 00:51:57,959 - INFO - Successfully extracted: 'A Girl's Guide to Moving On (New Beginnings #2)'
+2025-09-24 00:51:58,261 - INFO - Successfully extracted: 'A Game of Thrones (A Song of Ice and Fire #1)'
+2025-09-24 00:51:58,525 - INFO - Successfully extracted: 'A Feast for Crows (A Song of Ice and Fire #4)'
+2025-09-24 00:51:58,792 - INFO - Successfully extracted: 'A Clash of Kings (A Song of Ice and Fire #2)'
+2025-09-24 00:51:59,057 - INFO - Successfully extracted: 'Vogue Colors A to Z: A Fashion Coloring Book'
+2025-09-24 00:51:59,337 - INFO - Successfully extracted: 'The Shining (The Shining #1)'
+2025-09-24 00:51:59,608 - INFO - Successfully extracted: 'The Pilgrim's Progress'
+2025-09-24 00:51:59,891 - INFO - Successfully extracted: 'The Perfect Play (Play by Play #1)'
+2025-09-24 00:52:00,158 - INFO - Successfully extracted: 'The Passion of Dolssa'
+2025-09-24 00:52:00,426 - INFO - Successfully extracted: 'The Jazz of Physics: The Secret Link Between Music and the Structure of the Universe'
+2025-09-24 00:52:00,697 - INFO - Successfully extracted: 'The Hunger Games (The Hunger Games #1)'
+2025-09-24 00:52:00,965 - INFO - Successfully extracted: 'The Hound of the Baskervilles (Sherlock Holmes #5)'
+2025-09-24 00:52:01,235 - INFO - Successfully extracted: 'The Gunning of America: Business and the Making of American Gun Culture'
+2025-09-24 00:52:01,504 - INFO - Successfully extracted: 'The Geography of Bliss: One Grump's Search for the Happiest Places in the World'
+2025-09-24 00:52:01,785 - INFO - Successfully extracted: 'The Demonists (Demonist #1)'
+2025-09-24 00:52:02,054 - INFO - Successfully extracted: 'The Demon Prince of Momochi House, Vol. 4 (The Demon Prince of Momochi House #4)'
+2025-09-24 00:52:02,320 - INFO - Successfully extracted: 'The Bone Hunters (Lexy Vaughan & Steven Macaulay #2)'
+2025-09-24 00:52:02,588 - INFO - Successfully extracted: 'The Beast (Black Dagger Brotherhood #14)'
+2025-09-24 00:52:02,853 - INFO - Successfully extracted: 'Some Women'
+2025-09-24 00:52:02,854 - INFO - Completed page 33, successfully processed 20/20 books
+2025-09-24 00:52:05,570 - INFO - Scraping page 34: http://books.toscrape.com/catalogue/page-34.html
+2025-09-24 00:52:06,375 - INFO - Found 20 books on page 34
+2025-09-24 00:52:06,644 - INFO - Successfully extracted: 'Shopaholic Ties the Knot (Shopaholic #3)'
+2025-09-24 00:52:06,913 - INFO - Successfully extracted: 'Paper and Fire (The Great Library #2)'
+2025-09-24 00:52:07,178 - INFO - Successfully extracted: 'Outlander (Outlander #1)'
+2025-09-24 00:52:07,453 - INFO - Successfully extracted: 'Orchestra of Exiles: The Story of Bronislaw Huberman, the Israel Philharmonic, and the One Thousand Jews He Saved from Nazi Horrors'
+2025-09-24 00:52:07,719 - INFO - Successfully extracted: 'No One Here Gets Out Alive'
+2025-09-24 00:52:07,990 - INFO - Successfully extracted: 'Night Shift (Night Shift #1-20)'
+2025-09-24 00:52:08,258 - INFO - Successfully extracted: 'Needful Things'
+2025-09-24 00:52:08,540 - INFO - Successfully extracted: 'Mockingjay (The Hunger Games #3)'
+2025-09-24 00:52:08,811 - INFO - Successfully extracted: 'Misery'
+2025-09-24 00:52:09,080 - INFO - Successfully extracted: 'Little Women (Little Women #1)'
+2025-09-24 00:52:09,346 - INFO - Successfully extracted: 'It'
+2025-09-24 00:52:09,619 - INFO - Successfully extracted: 'Harry Potter and the Sorcerer's Stone (Harry Potter #1)'
+2025-09-24 00:52:09,888 - INFO - Successfully extracted: 'Harry Potter and the Prisoner of Azkaban (Harry Potter #3)'
+2025-09-24 00:52:10,154 - INFO - Successfully extracted: 'Harry Potter and the Order of the Phoenix (Harry Potter #5)'
+2025-09-24 00:52:10,421 - INFO - Successfully extracted: 'Harry Potter and the Half-Blood Prince (Harry Potter #6)'
+2025-09-24 00:52:10,697 - INFO - Successfully extracted: 'Harry Potter and the Chamber of Secrets (Harry Potter #2)'
+2025-09-24 00:52:10,964 - INFO - Successfully extracted: 'Gone with the Wind'
+2025-09-24 00:52:11,240 - INFO - Successfully extracted: 'God Is Not Great: How Religion Poisons Everything'
+2025-09-24 00:52:11,506 - INFO - Successfully extracted: 'Girl With a Pearl Earring'
+2025-09-24 00:52:11,779 - INFO - Successfully extracted: 'Fruits Basket, Vol. 4 (Fruits Basket #4)'
+2025-09-24 00:52:11,780 - INFO - Completed page 34, successfully processed 20/20 books
+2025-09-24 00:52:12,944 - INFO - Scraping page 35: http://books.toscrape.com/catalogue/page-35.html
+2025-09-24 00:52:13,746 - INFO - Found 20 books on page 35
+2025-09-24 00:52:14,017 - INFO - Successfully extracted: 'Far From True (Promise Falls Trilogy #2)'
+2025-09-24 00:52:14,291 - INFO - Successfully extracted: 'Dark Lover (Black Dagger Brotherhood #1)'
+2025-09-24 00:52:14,559 - INFO - Successfully extracted: 'Confessions of a Shopaholic (Shopaholic #1)'
+2025-09-24 00:52:14,839 - INFO - Successfully extracted: 'Changing the Game (Play by Play #2)'
+2025-09-24 00:52:15,112 - INFO - Successfully extracted: 'Candide'
+2025-09-24 00:52:15,379 - INFO - Successfully extracted: 'Can You Keep a Secret?'
+2025-09-24 00:52:15,665 - INFO - Successfully extracted: 'Atlas Shrugged'
+2025-09-24 00:52:15,952 - INFO - Successfully extracted: 'Animal Farm'
+2025-09-24 00:52:16,231 - INFO - Successfully extracted: 'A Walk to Remember'
+2025-09-24 00:52:16,499 - INFO - Successfully extracted: 'A New Earth: Awakening to Your Life's Purpose'
+2025-09-24 00:52:16,772 - INFO - Successfully extracted: 'A History of God: The 4,000-Year Quest of Judaism, Christianity, and Islam'
+2025-09-24 00:52:17,044 - INFO - Successfully extracted: ''Salem's Lot'
+2025-09-24 00:52:17,318 - INFO - Successfully extracted: 'Zero History (Blue Ant #3)'
+2025-09-24 00:52:17,587 - INFO - Successfully extracted: 'Wuthering Heights'
+2025-09-24 00:52:17,858 - INFO - Successfully extracted: 'World War Z: An Oral History of the Zombie War'
+2025-09-24 00:52:18,130 - INFO - Successfully extracted: 'Wild: From Lost to Found on the Pacific Crest Trail'
+2025-09-24 00:52:18,404 - INFO - Successfully extracted: 'Where'd You Go, Bernadette'
+2025-09-24 00:52:18,675 - INFO - Successfully extracted: 'When You Are Engulfed in Flames'
+2025-09-24 00:52:18,946 - INFO - Successfully extracted: 'We the People: The Modern-Day Figures Who Have Reshaped and Affirmed the Founding Fathers' Vision of America'
+2025-09-24 00:52:19,217 - INFO - Successfully extracted: 'We Are All Completely Beside Ourselves'
+2025-09-24 00:52:19,218 - INFO - Completed page 35, successfully processed 20/20 books
+2025-09-24 00:52:21,136 - INFO - Scraping page 36: http://books.toscrape.com/catalogue/page-36.html
+2025-09-24 00:52:21,945 - INFO - Found 20 books on page 36
+2025-09-24 00:52:22,224 - INFO - Successfully extracted: 'Walk the Edge (Thunder Road #2)'
+2025-09-24 00:52:22,492 - INFO - Successfully extracted: 'Voyager (Outlander #3)'
+2025-09-24 00:52:22,766 - INFO - Successfully extracted: 'Very Good Lives: The Fringe Benefits of Failure and the Importance of Imagination'
+2025-09-24 00:52:23,040 - INFO - Successfully extracted: 'Vegan Vegetarian Omnivore: Dinner for Everyone at the Table'
+2025-09-24 00:52:23,372 - INFO - Successfully extracted: 'Unstuffed: Decluttering Your Home, Mind, and Soul'
+2025-09-24 00:52:23,639 - INFO - Successfully extracted: 'Under the Banner of Heaven: A Story of Violent Faith'
+2025-09-24 00:52:23,938 - INFO - Successfully extracted: 'Two Boys Kissing'
+2025-09-24 00:52:24,208 - INFO - Successfully extracted: 'Twilight (Twilight #1)'
+2025-09-24 00:52:26,671 - INFO - Successfully extracted: 'Twenties Girl'
+2025-09-24 00:52:31,492 - INFO - Successfully extracted: 'Trespassing Across America: One Man's Epic, Never-Done-Before (and Sort of Illegal) Hike Across the Heartland'
+2025-09-24 00:52:32,740 - INFO - Successfully extracted: 'Three-Martini Lunch'
+2025-09-24 00:52:33,008 - INFO - Successfully extracted: 'Thinking, Fast and Slow'
+2025-09-24 00:52:33,293 - INFO - Successfully extracted: 'The Wild Robot'
+2025-09-24 00:52:33,570 - INFO - Successfully extracted: 'The Wicked + The Divine, Vol. 3: Commercial Suicide (The Wicked + The Divine)'
+2025-09-24 00:52:33,862 - INFO - Successfully extracted: 'The Undomestic Goddess'
+2025-09-24 00:52:34,137 - INFO - Successfully extracted: 'The Travelers'
+2025-09-24 00:52:34,409 - INFO - Successfully extracted: 'The Tipping Point: How Little Things Can Make a Big Difference'
+2025-09-24 00:52:34,680 - INFO - Successfully extracted: 'The Thing About Jellyfish'
+2025-09-24 00:52:34,952 - INFO - Successfully extracted: 'The Stand'
+2025-09-24 00:52:36,308 - INFO - Successfully extracted: 'The Smitten Kitchen Cookbook'
+2025-09-24 00:52:36,309 - INFO - Completed page 36, successfully processed 20/20 books
+2025-09-24 00:52:37,750 - INFO - Scraping page 37: http://books.toscrape.com/catalogue/page-37.html
+2025-09-24 00:52:38,555 - INFO - Found 20 books on page 37
+2025-09-24 00:52:38,830 - INFO - Successfully extracted: 'The Silkworm (Cormoran Strike #2)'
+2025-09-24 00:52:39,100 - INFO - Successfully extracted: 'The Sandman, Vol. 3: Dream Country (The Sandman (volumes) #3)'
+2025-09-24 00:52:39,369 - INFO - Successfully extracted: 'The Rose & the Dagger (The Wrath and the Dawn #2)'
+2025-09-24 00:52:39,638 - INFO - Successfully extracted: 'The Road to Little Dribbling: Adventures of an American in Britain (Notes From a Small Island #2)'
+2025-09-24 00:52:39,905 - INFO - Successfully extracted: 'The Rise of Theodore Roosevelt (Theodore Roosevelt #1)'
+2025-09-24 00:52:40,181 - INFO - Successfully extracted: 'The Restaurant at the End of the Universe (Hitchhiker's Guide to the Galaxy #2)'
+2025-09-24 00:52:40,451 - INFO - Successfully extracted: 'The Rest Is Noise: Listening to the Twentieth Century'
+2025-09-24 00:52:40,720 - INFO - Successfully extracted: 'The Red Tent'
+2025-09-24 00:52:41,001 - INFO - Successfully extracted: 'The Purpose Driven Life: What on Earth Am I Here for?'
+2025-09-24 00:52:41,275 - INFO - Successfully extracted: 'The Purest Hook (Second Circle Tattoos #3)'
+2025-09-24 00:52:41,549 - INFO - Successfully extracted: 'The Picture of Dorian Gray'
+2025-09-24 00:52:41,816 - INFO - Successfully extracted: 'The Paris Wife'
+2025-09-24 00:52:42,083 - INFO - Successfully extracted: 'The Obsession'
+2025-09-24 00:52:42,366 - INFO - Successfully extracted: 'The Nightingale'
+2025-09-24 00:52:42,635 - INFO - Successfully extracted: 'The New Guy (and Other Senior Year Distractions)'
+2025-09-24 00:52:42,906 - INFO - Successfully extracted: 'The Nanny Diaries (Nanny #1)'
+2025-09-24 00:52:43,174 - INFO - Successfully extracted: 'The Name of God is Mercy'
+2025-09-24 00:52:43,456 - INFO - Successfully extracted: 'The Maze Runner (The Maze Runner #1)'
+2025-09-24 00:52:43,725 - INFO - Successfully extracted: 'The Lover's Dictionary'
+2025-09-24 00:52:43,991 - INFO - Successfully extracted: 'The Lonely Ones'
+2025-09-24 00:52:43,992 - INFO - Completed page 37, successfully processed 20/20 books
+2025-09-24 00:52:46,415 - INFO - Scraping page 38: http://books.toscrape.com/catalogue/page-38.html
+2025-09-24 00:52:47,206 - INFO - Found 20 books on page 38
+2025-09-24 00:52:47,522 - INFO - Successfully extracted: 'The Lean Startup: How Today's Entrepreneurs Use Continuous Innovation to Create Radically Successful Businesses'
+2025-09-24 00:52:47,835 - INFO - Successfully extracted: 'The Last Painting of Sara de Vos'
+2025-09-24 00:52:48,140 - INFO - Successfully extracted: 'The Land of 10,000 Madonnas'
+2025-09-24 00:52:48,426 - INFO - Successfully extracted: 'The Infinities'
+2025-09-24 00:52:48,736 - INFO - Successfully extracted: 'The Husband's Secret'
+2025-09-24 00:52:49,011 - INFO - Successfully extracted: 'The Hitchhiker's Guide to the Galaxy (Hitchhiker's Guide to the Galaxy #1)'
+2025-09-24 00:52:49,279 - INFO - Successfully extracted: 'The Guns of August'
+2025-09-24 00:52:49,547 - INFO - Successfully extracted: 'The Guernsey Literary and Potato Peel Pie Society'
+2025-09-24 00:52:49,813 - INFO - Successfully extracted: 'The Goldfinch'
+2025-09-24 00:52:50,093 - INFO - Successfully extracted: 'The Giver (The Giver Quartet #1)'
+2025-09-24 00:52:50,363 - INFO - Successfully extracted: 'The Girl with All the Gifts'
+2025-09-24 00:52:50,630 - INFO - Successfully extracted: 'The Girl Who Played with Fire (Millennium Trilogy #2)'
+2025-09-24 00:52:50,902 - INFO - Successfully extracted: 'The Girl Who Kicked the Hornet's Nest (Millennium Trilogy #3)'
+2025-09-24 00:52:51,169 - INFO - Successfully extracted: 'The Exiled'
+2025-09-24 00:52:51,442 - INFO - Successfully extracted: 'The End of Faith: Religion, Terror, and the Future of Reason'
+2025-09-24 00:52:51,708 - INFO - Successfully extracted: 'The Elegant Universe: Superstrings, Hidden Dimensions, and the Quest for the Ultimate Theory'
+2025-09-24 00:52:51,980 - INFO - Successfully extracted: 'The Disappearing Spoon: And Other True Tales of Madness, Love, and the History of the World from the Periodic Table of the Elements'
+2025-09-24 00:52:52,248 - INFO - Successfully extracted: 'The Devil Wears Prada (The Devil Wears Prada #1)'
+2025-09-24 00:52:52,517 - INFO - Successfully extracted: 'The Demon-Haunted World: Science as a Candle in the Dark'
+2025-09-24 00:52:52,787 - INFO - Successfully extracted: 'The Day the Crayons Came Home (Crayons)'
+2025-09-24 00:52:52,788 - INFO - Completed page 38, successfully processed 20/20 books
+2025-09-24 00:52:54,068 - INFO - Scraping page 39: http://books.toscrape.com/catalogue/page-39.html
+2025-09-24 00:52:54,861 - INFO - Found 20 books on page 39
+2025-09-24 00:52:55,130 - INFO - Successfully extracted: 'The Da Vinci Code (Robert Langdon #2)'
+2025-09-24 00:52:55,409 - INFO - Successfully extracted: 'The Cuckoo's Calling (Cormoran Strike #1)'
+2025-09-24 00:52:55,683 - INFO - Successfully extracted: 'The Complete Stories and Poems (The Works of Edgar Allan Poe [Cameo Edition])'
+2025-09-24 00:52:57,508 - INFO - Successfully extracted: 'The Complete Poems'
+2025-09-24 00:52:58,092 - INFO - Successfully extracted: 'The Catcher in the Rye'
+2025-09-24 00:52:58,505 - INFO - Successfully extracted: 'The Cat in the Hat (Beginner Books B-1)'
+2025-09-24 00:52:58,771 - INFO - Successfully extracted: 'The Case for Christ (Cases for Christianity)'
+2025-09-24 00:52:59,048 - INFO - Successfully extracted: 'The Book Thief'
+2025-09-24 00:52:59,325 - INFO - Successfully extracted: 'The Book of Basketball: The NBA According to The Sports Guy'
+2025-09-24 00:52:59,592 - INFO - Successfully extracted: 'The Blind Side: Evolution of a Game'
+2025-09-24 00:52:59,865 - INFO - Successfully extracted: 'The Autobiography of Malcolm X'
+2025-09-24 00:53:00,154 - INFO - Successfully extracted: 'The Art of Simple Food: Notes, Lessons, and Recipes from a Delicious Revolution'
+2025-09-24 00:53:00,439 - INFO - Successfully extracted: 'The Art of Fielding'
+2025-09-24 00:53:00,737 - INFO - Successfully extracted: 'Surely You're Joking, Mr. Feynman!: Adventures of a Curious Character'
+2025-09-24 00:53:01,058 - INFO - Successfully extracted: 'Stiff: The Curious Lives of Human Cadavers'
+2025-09-24 00:53:01,561 - INFO - Successfully extracted: 'Spilled Milk: Based on a True Story'
+2025-09-24 00:53:02,709 - INFO - Successfully extracted: 'Something Borrowed (Darcy & Rachel #1)'
+2025-09-24 00:53:04,029 - INFO - Successfully extracted: 'Something Blue (Darcy & Rachel #2)'
+2025-09-24 00:53:04,587 - INFO - Successfully extracted: 'Soldier (Talon #3)'
+2025-09-24 00:53:05,114 - INFO - Successfully extracted: 'Shopaholic & Baby (Shopaholic #5)'
+2025-09-24 00:53:05,115 - INFO - Completed page 39, successfully processed 20/20 books
+2025-09-24 00:53:06,664 - INFO - Scraping page 40: http://books.toscrape.com/catalogue/page-40.html
+2025-09-24 00:53:07,719 - INFO - Found 20 books on page 40
+2025-09-24 00:53:08,253 - INFO - Successfully extracted: 'Seven Days in the Art World'
+2025-09-24 00:53:08,776 - INFO - Successfully extracted: 'Seven Brief Lessons on Physics'
+2025-09-24 00:53:09,300 - INFO - Successfully extracted: 'Scarlet (The Lunar Chronicles #2)'
+2025-09-24 00:53:09,581 - INFO - Successfully extracted: 'Sarah's Key'
+2025-09-24 00:53:10,101 - INFO - Successfully extracted: 'Saga, Volume 3 (Saga (Collected Editions) #3)'
+2025-09-24 00:53:10,367 - INFO - Successfully extracted: 'Running with Scissors'
+2025-09-24 00:53:10,890 - INFO - Successfully extracted: 'Rogue Lawyer (Rogue Lawyer #1)'
+2025-09-24 00:53:11,167 - INFO - Successfully extracted: 'Rise of the Rocket Girls: The Women Who Propelled Us, from Missiles to the Moon to Mars'
+2025-09-24 00:53:11,433 - INFO - Successfully extracted: 'Rework'
+2025-09-24 00:53:11,699 - INFO - Successfully extracted: 'Reservations for Two'
+2025-09-24 00:53:11,970 - INFO - Successfully extracted: 'Red: The True Story of Red Riding Hood'
+2025-09-24 00:53:12,234 - INFO - Successfully extracted: 'Ready Player One'
+2025-09-24 00:53:12,756 - INFO - Successfully extracted: 'Quiet: The Power of Introverts in a World That Can't Stop Talking'
+2025-09-24 00:53:13,023 - INFO - Successfully extracted: 'Prodigy: The Graphic Novel (Legend: The Graphic Novel #2)'
+2025-09-24 00:53:13,299 - INFO - Successfully extracted: 'Persepolis: The Story of a Childhood (Persepolis #1-2)'
+2025-09-24 00:53:13,568 - INFO - Successfully extracted: 'Packing for Mars: The Curious Science of Life in the Void'
+2025-09-24 00:53:13,839 - INFO - Successfully extracted: 'Outliers: The Story of Success'
+2025-09-24 00:53:14,107 - INFO - Successfully extracted: 'Original Fake'
+2025-09-24 00:53:14,378 - INFO - Successfully extracted: 'Orange Is the New Black'
+2025-09-24 00:53:14,644 - INFO - Successfully extracted: 'One for the Money (Stephanie Plum #1)'
+2025-09-24 00:53:14,645 - INFO - Completed page 40, successfully processed 20/20 books
+2025-09-24 00:53:17,337 - INFO - Scraping page 41: http://books.toscrape.com/catalogue/page-41.html
+2025-09-24 00:53:18,147 - INFO - Found 20 books on page 41
+2025-09-24 00:53:18,418 - INFO - Successfully extracted: 'Notes from a Small Island (Notes From a Small Island #1)'
+2025-09-24 00:53:18,693 - INFO - Successfully extracted: 'Night (The Night Trilogy #1)'
+2025-09-24 00:53:18,959 - INFO - Successfully extracted: 'Neither Here nor There: Travels in Europe'
+2025-09-24 00:53:19,225 - INFO - Successfully extracted: 'Naked'
+2025-09-24 00:53:19,493 - INFO - Successfully extracted: 'Morning Star (Red Rising #3)'
+2025-09-24 00:53:19,758 - INFO - Successfully extracted: 'Miracles from Heaven: A Little Girl, Her Journey to Heaven, and Her Amazing Story of Healing'
+2025-09-24 00:53:20,035 - INFO - Successfully extracted: 'Midnight Riot (Peter Grant/ Rivers of London - books #1)'
+2025-09-24 00:53:20,307 - INFO - Successfully extracted: 'Me Talk Pretty One Day'
+2025-09-24 00:53:20,576 - INFO - Successfully extracted: 'Manuscript Found in Accra'
+2025-09-24 00:53:20,845 - INFO - Successfully extracted: 'Lust & Wonder'
+2025-09-24 00:53:21,111 - INFO - Successfully extracted: 'Lila (Gilead #3)'
+2025-09-24 00:53:21,395 - INFO - Successfully extracted: 'Life, the Universe and Everything (Hitchhiker's Guide to the Galaxy #3)'
+2025-09-24 00:53:21,663 - INFO - Successfully extracted: 'Life Without a Recipe'
+2025-09-24 00:53:21,928 - INFO - Successfully extracted: 'Life After Life'
+2025-09-24 00:53:22,196 - INFO - Successfully extracted: 'Letter to a Christian Nation'
+2025-09-24 00:53:22,467 - INFO - Successfully extracted: 'Let's Pretend This Never Happened: A Mostly True Memoir'
+2025-09-24 00:53:22,731 - INFO - Successfully extracted: 'Legend (Legend #1)'
+2025-09-24 00:53:23,001 - INFO - Successfully extracted: 'Lean In: Women, Work, and the Will to Lead'
+2025-09-24 00:53:23,277 - INFO - Successfully extracted: 'Lamb: The Gospel According to Biff, Christ's Childhood Pal'
+2025-09-24 00:53:23,544 - INFO - Successfully extracted: 'Lady Renegades (Rebel Belle #3)'
+2025-09-24 00:53:23,545 - INFO - Completed page 41, successfully processed 20/20 books
+2025-09-24 00:53:26,537 - INFO - Scraping page 42: http://books.toscrape.com/catalogue/page-42.html
+2025-09-24 00:53:27,336 - INFO - Found 20 books on page 42
+2025-09-24 00:53:27,611 - INFO - Successfully extracted: 'Jurassic Park (Jurassic Park #1)'
+2025-09-24 00:53:27,888 - INFO - Successfully extracted: 'It's Never Too Late to Begin Again: Discovering Creativity and Meaning at Midlife and Beyond'
+2025-09-24 00:53:28,155 - INFO - Successfully extracted: 'Is Everyone Hanging Out Without Me? (And Other Concerns)'
+2025-09-24 00:53:28,427 - INFO - Successfully extracted: 'Into the Wild'
+2025-09-24 00:53:28,693 - INFO - Successfully extracted: 'Inferno (Robert Langdon #4)'
+2025-09-24 00:53:28,964 - INFO - Successfully extracted: 'In the Garden of Beasts: Love, Terror, and an American Family in Hitler's Berlin'
+2025-09-24 00:53:29,237 - INFO - Successfully extracted: 'If I Run (If I Run #1)'
+2025-09-24 00:53:29,502 - INFO - Successfully extracted: 'I've Got Your Number'
+2025-09-24 00:53:29,768 - INFO - Successfully extracted: 'I Am Malala: The Girl Who Stood Up for Education and Was Shot by the Taliban'
+2025-09-24 00:53:30,043 - INFO - Successfully extracted: 'Hungry Girl Clean & Hungry: Easy All-Natural Recipes for Healthy Eating in the Real World'
+2025-09-24 00:53:30,313 - INFO - Successfully extracted: 'House of Lost Worlds: Dinosaurs, Dynasties, and the Story of Life on Earth'
+2025-09-24 00:53:30,581 - INFO - Successfully extracted: 'House of Leaves'
+2025-09-24 00:53:30,854 - INFO - Successfully extracted: 'Horrible Bear!'
+2025-09-24 00:53:31,121 - INFO - Successfully extracted: 'Holidays on Ice'
+2025-09-24 00:53:31,397 - INFO - Successfully extracted: 'Heir to the Sky'
+2025-09-24 00:53:31,664 - INFO - Successfully extracted: 'Green Eggs and Ham (Beginner Books B-16)'
+2025-09-24 00:53:31,929 - INFO - Successfully extracted: 'Grayson, Vol 3: Nemesis (Grayson #3)'
+2025-09-24 00:53:32,198 - INFO - Successfully extracted: 'Gratitude'
+2025-09-24 00:53:32,463 - INFO - Successfully extracted: 'Gone Girl'
+2025-09-24 00:53:32,730 - INFO - Successfully extracted: 'Golden (Heart of Dread #3)'
+2025-09-24 00:53:32,730 - INFO - Completed page 42, successfully processed 20/20 books
+2025-09-24 00:53:34,474 - INFO - Scraping page 43: http://books.toscrape.com/catalogue/page-43.html
+2025-09-24 00:53:35,262 - INFO - Found 20 books on page 43
+2025-09-24 00:53:35,530 - INFO - Successfully extracted: 'Girl in the Blue Coat'
+2025-09-24 00:53:35,802 - INFO - Successfully extracted: 'Fruits Basket, Vol. 3 (Fruits Basket #3)'
+2025-09-24 00:53:36,072 - INFO - Successfully extracted: 'Friday Night Lights: A Town, a Team, and a Dream'
+2025-09-24 00:53:36,344 - INFO - Successfully extracted: 'Fire Bound (Sea Haven/Sisters of the Heart #5)'
+2025-09-24 00:53:36,621 - INFO - Successfully extracted: 'Fifty Shades Freed (Fifty Shades #3)'
+2025-09-24 00:53:36,957 - INFO - Successfully extracted: 'Fellside'
+2025-09-24 00:53:37,225 - INFO - Successfully extracted: 'Extreme Prey (Lucas Davenport #26)'
+2025-09-24 00:53:37,495 - INFO - Successfully extracted: 'Eragon (The Inheritance Cycle #1)'
+2025-09-24 00:53:37,767 - INFO - Successfully extracted: 'Eclipse (Twilight #3)'
+2025-09-24 00:53:38,042 - INFO - Successfully extracted: 'Dune (Dune #1)'
+2025-09-24 00:53:38,310 - INFO - Successfully extracted: 'Dracula'
+2025-09-24 00:53:38,587 - INFO - Successfully extracted: 'Do Androids Dream of Electric Sheep? (Blade Runner #1)'
+2025-09-24 00:53:38,860 - INFO - Successfully extracted: 'Disrupted: My Misadventure in the Start-Up Bubble'
+2025-09-24 00:53:39,153 - INFO - Successfully extracted: 'Dead Wake: The Last Crossing of the Lusitania'
+2025-09-24 00:53:39,421 - INFO - Successfully extracted: 'David and Goliath: Underdogs, Misfits, and the Art of Battling Giants'
+2025-09-24 00:53:39,691 - INFO - Successfully extracted: 'Darkfever (Fever #1)'
+2025-09-24 00:53:39,958 - INFO - Successfully extracted: 'Dark Places'
+2025-09-24 00:53:40,230 - INFO - Successfully extracted: 'Crazy Rich Asians (Crazy Rich Asians #1)'
+2025-09-24 00:53:40,499 - INFO - Successfully extracted: 'Counting Thyme'
+2025-09-24 00:53:40,770 - INFO - Successfully extracted: 'Cosmos'
+2025-09-24 00:53:40,771 - INFO - Completed page 43, successfully processed 20/20 books
+2025-09-24 00:53:42,348 - INFO - Scraping page 44: http://books.toscrape.com/catalogue/page-44.html
+2025-09-24 00:53:43,146 - INFO - Found 20 books on page 44
+2025-09-24 00:53:43,416 - INFO - Successfully extracted: 'Civilization and Its Discontents'
+2025-09-24 00:53:43,688 - INFO - Successfully extracted: 'Cinder (The Lunar Chronicles #1)'
+2025-09-24 00:53:43,964 - INFO - Successfully extracted: 'Catastrophic Happiness: Finding Joy in Childhood's Messy Years'
+2025-09-24 00:53:44,242 - INFO - Successfully extracted: 'Career of Evil (Cormoran Strike #3)'
+2025-09-24 00:53:44,511 - INFO - Successfully extracted: 'Breaking Dawn (Twilight #4)'
+2025-09-24 00:53:44,779 - INFO - Successfully extracted: 'Brave Enough'
+2025-09-24 00:53:45,051 - INFO - Successfully extracted: 'Boy Meets Boy'
+2025-09-24 00:53:45,327 - INFO - Successfully extracted: 'Born to Run: A Hidden Tribe, Superathletes, and the Greatest Race the World Has Never Seen'
+2025-09-24 00:53:45,596 - INFO - Successfully extracted: 'Blink: The Power of Thinking Without Thinking'
+2025-09-24 00:53:45,868 - INFO - Successfully extracted: 'Black Flags: The Rise of ISIS'
+2025-09-24 00:53:46,137 - INFO - Successfully extracted: 'Black Butler, Vol. 1 (Black Butler #1)'
+2025-09-24 00:53:46,420 - INFO - Successfully extracted: 'Big Little Lies'
+2025-09-24 00:53:46,691 - INFO - Successfully extracted: 'Between Shades of Gray'
+2025-09-24 00:53:46,971 - INFO - Successfully extracted: 'Best of My Love (Fool's Gold #20)'
+2025-09-24 00:53:47,242 - INFO - Successfully extracted: 'Beowulf'
+2025-09-24 00:53:47,509 - INFO - Successfully extracted: 'Beautiful Creatures (Caster Chronicles #1)'
+2025-09-24 00:53:47,777 - INFO - Successfully extracted: 'Awkward'
+2025-09-24 00:53:48,043 - INFO - Successfully extracted: 'Ash'
+2025-09-24 00:53:48,311 - INFO - Successfully extracted: 'Are We There Yet?'
+2025-09-24 00:53:48,581 - INFO - Successfully extracted: 'Are We Smart Enough to Know How Smart Animals Are?'
+2025-09-24 00:53:48,582 - INFO - Completed page 44, successfully processed 20/20 books
+2025-09-24 00:53:51,318 - INFO - Scraping page 45: http://books.toscrape.com/catalogue/page-45.html
+2025-09-24 00:53:52,118 - INFO - Found 20 books on page 45
+2025-09-24 00:53:52,391 - INFO - Successfully extracted: 'Annie on My Mind'
+2025-09-24 00:53:52,660 - INFO - Successfully extracted: 'And Then There Were None'
+2025-09-24 00:53:52,927 - INFO - Successfully extracted: 'A Walk in the Woods: Rediscovering America on the Appalachian Trail'
+2025-09-24 00:53:53,206 - INFO - Successfully extracted: 'A Visit from the Goon Squad'
+2025-09-24 00:53:53,476 - INFO - Successfully extracted: 'A Storm of Swords (A Song of Ice and Fire #3)'
+2025-09-24 00:53:53,748 - INFO - Successfully extracted: 'A Heartbreaking Work of Staggering Genius'
+2025-09-24 00:53:54,029 - INFO - Successfully extracted: '8 Keys to Mental Health Through Exercise'
+2025-09-24 00:53:54,297 - INFO - Successfully extracted: '#GIRLBOSS'
+2025-09-24 00:53:54,571 - INFO - Successfully extracted: 'The Suffragettes (Little Black Classics, #96)'
+2025-09-24 00:53:54,838 - INFO - Successfully extracted: 'The Sense of an Ending'
+2025-09-24 00:53:55,122 - INFO - Successfully extracted: 'The Sandman, Vol. 2: The Doll's House (The Sandman (volumes) #2)'
+2025-09-24 00:53:55,393 - INFO - Successfully extracted: 'The Course of Love'
+2025-09-24 00:53:55,665 - INFO - Successfully extracted: 'Sugar Rush (Offensive Line #2)'
+2025-09-24 00:53:55,951 - INFO - Successfully extracted: 'Saga, Volume 2 (Saga (Collected Editions) #2)'
+2025-09-24 00:53:56,221 - INFO - Successfully extracted: 'Run, Spot, Run: The Ethics of Keeping Pets'
+2025-09-24 00:53:56,501 - INFO - Successfully extracted: 'New Moon (Twilight #2)'
+2025-09-24 00:53:56,770 - INFO - Successfully extracted: 'Life'
+2025-09-24 00:53:57,037 - INFO - Successfully extracted: 'Kindle Paperwhite User's Guide'
+2025-09-24 00:53:57,310 - INFO - Successfully extracted: 'H is for Hawk'
+2025-09-24 00:53:57,581 - INFO - Successfully extracted: 'Girl Online On Tour (Girl Online #2)'
+2025-09-24 00:53:57,582 - INFO - Completed page 45, successfully processed 20/20 books
+2025-09-24 00:53:59,527 - INFO - Scraping page 46: http://books.toscrape.com/catalogue/page-46.html
+2025-09-24 00:54:00,330 - INFO - Found 20 books on page 46
+2025-09-24 00:54:00,601 - INFO - Successfully extracted: 'Fruits Basket, Vol. 2 (Fruits Basket #2)'
+2025-09-24 00:54:00,874 - INFO - Successfully extracted: 'Diary of a Minecraft Zombie Book 1: A Scare of a Dare (An Unofficial Minecraft Book)'
+2025-09-24 00:54:01,143 - INFO - Successfully extracted: 'Y: The Last Man, Vol. 1: Unmanned (Y: The Last Man #1)'
+2025-09-24 00:54:01,411 - INFO - Successfully extracted: 'While You Were Mine'
+2025-09-24 00:54:01,677 - INFO - Successfully extracted: 'Where Lightning Strikes (Bleeding Stars #3)'
+2025-09-24 00:54:01,952 - INFO - Successfully extracted: 'When I'm Gone'
+2025-09-24 00:54:02,232 - INFO - Successfully extracted: 'Ways of Seeing'
+2025-09-24 00:54:02,502 - INFO - Successfully extracted: 'Vampire Knight, Vol. 1 (Vampire Knight #1)'
+2025-09-24 00:54:02,773 - INFO - Successfully extracted: 'Vampire Girl (Vampire Girl #1)'
+2025-09-24 00:54:03,041 - INFO - Successfully extracted: 'Twenty Love Poems and a Song of Despair'
+2025-09-24 00:54:03,319 - INFO - Successfully extracted: 'Travels with Charley: In Search of America'
+2025-09-24 00:54:03,598 - INFO - Successfully extracted: 'Three Wishes (River of Time: California #1)'
+2025-09-24 00:54:03,868 - INFO - Successfully extracted: 'This One Moment (Pushing Limits #1)'
+2025-09-24 00:54:04,140 - INFO - Successfully extracted: 'The Zombie Room'
+2025-09-24 00:54:04,419 - INFO - Successfully extracted: 'The Wicked + The Divine, Vol. 1: The Faust Act (The Wicked + The Divine)'
+2025-09-24 00:54:04,690 - INFO - Successfully extracted: 'The Tumor'
+2025-09-24 00:54:04,958 - INFO - Successfully extracted: 'The Story of Hong Gildong'
+2025-09-24 00:54:05,225 - INFO - Successfully extracted: 'The Silent Wife'
+2025-09-24 00:54:05,500 - INFO - Successfully extracted: 'The Silent Twin (Detective Jennifer Knight #3)'
+2025-09-24 00:54:05,774 - INFO - Successfully extracted: 'The Selfish Gene'
+2025-09-24 00:54:05,775 - INFO - Completed page 46, successfully processed 20/20 books
+2025-09-24 00:54:07,930 - INFO - Scraping page 47: http://books.toscrape.com/catalogue/page-47.html
+2025-09-24 00:54:08,727 - INFO - Found 20 books on page 47
+2025-09-24 00:54:09,007 - INFO - Successfully extracted: 'The Secret Healer'
+2025-09-24 00:54:09,279 - INFO - Successfully extracted: 'The Sandman, Vol. 1: Preludes and Nocturnes (The Sandman (volumes) #1)'
+2025-09-24 00:54:09,549 - INFO - Successfully extracted: 'The Republic'
+2025-09-24 00:54:09,823 - INFO - Successfully extracted: 'The Odyssey'
+2025-09-24 00:54:10,092 - INFO - Successfully extracted: 'The No. 1 Ladies' Detective Agency (No. 1 Ladies' Detective Agency #1)'
+2025-09-24 00:54:10,362 - INFO - Successfully extracted: 'The Nicomachean Ethics'
+2025-09-24 00:54:10,632 - INFO - Successfully extracted: 'The Name of the Wind (The Kingkiller Chronicle #1)'
+2025-09-24 00:54:10,899 - INFO - Successfully extracted: 'The Mirror & the Maze (The Wrath and the Dawn #1.5)'
+2025-09-24 00:54:11,173 - INFO - Successfully extracted: 'The Little Prince'
+2025-09-24 00:54:11,442 - INFO - Successfully extracted: 'The Light of the Fireflies'
+2025-09-24 00:54:11,710 - INFO - Successfully extracted: 'The Last Girl (The Dominion Trilogy #1)'
+2025-09-24 00:54:11,978 - INFO - Successfully extracted: 'The Iliad'
+2025-09-24 00:54:12,248 - INFO - Successfully extracted: 'The Hook Up (Game On #1)'
+2025-09-24 00:54:12,514 - INFO - Successfully extracted: 'The Haters'
+2025-09-24 00:54:12,782 - INFO - Successfully extracted: 'The Girl You Lost'
+2025-09-24 00:54:13,051 - INFO - Successfully extracted: 'The Girl In The Ice (DCI Erika Foster #1)'
+2025-09-24 00:54:13,332 - INFO - Successfully extracted: 'The End of the Jesus Era (An Investigation #1)'
+2025-09-24 00:54:13,600 - INFO - Successfully extracted: 'The Edge of Reason (Bridget Jones #2)'
+2025-09-24 00:54:13,866 - INFO - Successfully extracted: 'The Complete Maus (Maus #1-2)'
+2025-09-24 00:54:14,149 - INFO - Successfully extracted: 'The Communist Manifesto'
+2025-09-24 00:54:14,150 - INFO - Completed page 47, successfully processed 20/20 books
+2025-09-24 00:54:16,866 - INFO - Scraping page 48: http://books.toscrape.com/catalogue/page-48.html
+2025-09-24 00:54:17,659 - INFO - Found 20 books on page 48
+2025-09-24 00:54:17,928 - INFO - Successfully extracted: 'The Bhagavad Gita'
+2025-09-24 00:54:18,197 - INFO - Successfully extracted: 'The Bette Davis Club'
+2025-09-24 00:54:18,464 - INFO - Successfully extracted: 'The Art of Not Breathing'
+2025-09-24 00:54:18,730 - INFO - Successfully extracted: 'Taking Shots (Assassins #1)'
+2025-09-24 00:54:19,002 - INFO - Successfully extracted: 'Starlark'
+2025-09-24 00:54:19,271 - INFO - Successfully extracted: 'Skip Beat!, Vol. 01 (Skip Beat! #1)'
+2025-09-24 00:54:19,539 - INFO - Successfully extracted: 'Sister Sable (The Mad Queen #1)'
+2025-09-24 00:54:19,811 - INFO - Successfully extracted: 'Shatter Me (Shatter Me #1)'
+2025-09-24 00:54:20,095 - INFO - Successfully extracted: 'Shameless'
+2025-09-24 00:54:20,361 - INFO - Successfully extracted: 'Shadow Rites (Jane Yellowrock #10)'
+2025-09-24 00:54:20,631 - INFO - Successfully extracted: 'Settling the Score (The Summer Games #1)'
+2025-09-24 00:54:20,899 - INFO - Successfully extracted: 'Sense and Sensibility'
+2025-09-24 00:54:21,168 - INFO - Successfully extracted: 'Saga, Volume 1 (Saga (Collected Editions) #1)'
+2025-09-24 00:54:21,433 - INFO - Successfully extracted: 'Rhythm, Chord & Malykhin'
+2025-09-24 00:54:21,701 - INFO - Successfully extracted: 'Rat Queens, Vol. 1: Sass & Sorcery (Rat Queens (Collected Editions) #1-5)'
+2025-09-24 00:54:21,967 - INFO - Successfully extracted: 'Paradise Lost (Paradise #1)'
+2025-09-24 00:54:22,233 - INFO - Successfully extracted: 'Paper Girls, Vol. 1 (Paper Girls #1-5)'
+2025-09-24 00:54:22,509 - INFO - Successfully extracted: 'Ouran High School Host Club, Vol. 1 (Ouran High School Host Club #1)'
+2025-09-24 00:54:22,782 - INFO - Successfully extracted: 'Origins (Alphas 0.5)'
+2025-09-24 00:54:23,053 - INFO - Successfully extracted: 'One Second (Seven #7)'
+2025-09-24 00:54:23,054 - INFO - Completed page 48, successfully processed 20/20 books
+2025-09-24 00:54:24,938 - INFO - Scraping page 49: http://books.toscrape.com/catalogue/page-49.html
+2025-09-24 00:54:25,797 - INFO - Found 20 books on page 49
+2025-09-24 00:54:26,138 - INFO - Successfully extracted: 'On the Road (Duluoz Legend)'
+2025-09-24 00:54:26,435 - INFO - Successfully extracted: 'Old Records Never Die: One Man's Quest for His Vinyl and His Past'
+2025-09-24 00:54:26,703 - INFO - Successfully extracted: 'Off Sides (Off #1)'
+2025-09-24 00:54:26,974 - INFO - Successfully extracted: 'Of Mice and Men'
+2025-09-24 00:54:27,241 - INFO - Successfully extracted: 'Myriad (Prentor #1)'
+2025-09-24 00:54:27,524 - INFO - Successfully extracted: 'My Perfect Mistake (Over the Top #1)'
+2025-09-24 00:54:27,805 - INFO - Successfully extracted: 'Ms. Marvel, Vol. 1: No Normal (Ms. Marvel (2014-2015) #1)'
+2025-09-24 00:54:28,075 - INFO - Successfully extracted: 'Meditations'
+2025-09-24 00:54:28,345 - INFO - Successfully extracted: 'Matilda'
+2025-09-24 00:54:28,615 - INFO - Successfully extracted: 'Lost Among the Living'
+2025-09-24 00:54:28,883 - INFO - Successfully extracted: 'Lord of the Flies'
+2025-09-24 00:54:29,149 - INFO - Successfully extracted: 'Listen to Me (Fusion #1)'
+2025-09-24 00:54:29,418 - INFO - Successfully extracted: 'Kitchens of the Great Midwest'
+2025-09-24 00:54:29,689 - INFO - Successfully extracted: 'Jane Eyre'
+2025-09-24 00:54:29,963 - INFO - Successfully extracted: 'Imperfect Harmony'
+2025-09-24 00:54:30,232 - INFO - Successfully extracted: 'Icing (Aces Hockey #2)'
+2025-09-24 00:54:30,505 - INFO - Successfully extracted: 'Hawkeye, Vol. 1: My Life as a Weapon (Hawkeye #1)'
+2025-09-24 00:54:30,775 - INFO - Successfully extracted: 'Having the Barbarian's Baby (Ice Planet Barbarians #7.5)'
+2025-09-24 00:54:31,044 - INFO - Successfully extracted: 'Giant Days, Vol. 1 (Giant Days #1-4)'
+2025-09-24 00:54:31,310 - INFO - Successfully extracted: 'Fruits Basket, Vol. 1 (Fruits Basket #1)'
+2025-09-24 00:54:31,311 - INFO - Completed page 49, successfully processed 20/20 books
+2025-09-24 00:54:33,318 - INFO - Scraping page 50: http://books.toscrape.com/catalogue/page-50.html
+2025-09-24 00:54:34,120 - INFO - Found 20 books on page 50
+2025-09-24 00:54:34,393 - INFO - Successfully extracted: 'Frankenstein'
+2025-09-24 00:54:34,664 - INFO - Successfully extracted: 'Forever Rockers (The Rocker #12)'
+2025-09-24 00:54:34,933 - INFO - Successfully extracted: 'Fighting Fate (Fighting #6)'
+2025-09-24 00:54:35,204 - INFO - Successfully extracted: 'Emma'
+2025-09-24 00:54:35,472 - INFO - Successfully extracted: 'Eat, Pray, Love'
+2025-09-24 00:54:35,739 - INFO - Successfully extracted: 'Deep Under (Walker Security #1)'
+2025-09-24 00:54:36,014 - INFO - Successfully extracted: 'Choosing Our Religion: The Spiritual Lives of America's Nones'
+2025-09-24 00:54:36,291 - INFO - Successfully extracted: 'Charlie and the Chocolate Factory (Charlie Bucket #1)'
+2025-09-24 00:54:36,568 - INFO - Successfully extracted: 'Charity's Cross (Charles Towne Belles #4)'
+2025-09-24 00:54:36,835 - INFO - Successfully extracted: 'Bright Lines'
+2025-09-24 00:54:37,116 - INFO - Successfully extracted: 'Bridget Jones's Diary (Bridget Jones #1)'
+2025-09-24 00:54:37,381 - INFO - Successfully extracted: 'Bounty (Colorado Mountain #7)'
+2025-09-24 00:54:37,660 - INFO - Successfully extracted: 'Blood Defense (Samantha Brinkman #1)'
+2025-09-24 00:54:37,926 - INFO - Successfully extracted: 'Bleach, Vol. 1: Strawberry and the Soul Reapers (Bleach #1)'
+2025-09-24 00:54:38,216 - INFO - Successfully extracted: 'Beyond Good and Evil'
+2025-09-24 00:54:38,482 - INFO - Successfully extracted: 'Alice in Wonderland (Alice's Adventures in Wonderland #1)'
+2025-09-24 00:54:38,749 - INFO - Successfully extracted: 'Ajin: Demi-Human, Volume 1 (Ajin: Demi-Human #1)'
+2025-09-24 00:54:39,017 - INFO - Successfully extracted: 'A Spy's Devotion (The Regency Spies of London #1)'
+2025-09-24 00:54:39,292 - INFO - Successfully extracted: '1st to Die (Women's Murder Club #1)'
+2025-09-24 00:54:39,560 - INFO - Successfully extracted: '1,000 Places to See Before You Die'
+2025-09-24 00:54:39,561 - INFO - Completed page 50, successfully processed 20/20 books
+2025-09-24 00:54:41,445 - INFO - Scraping page 51: http://books.toscrape.com/catalogue/page-51.html
+2025-09-24 00:54:41,701 - INFO - Reached end of pages - Page http://books.toscrape.com/catalogue/page-51.html not found (404)
+2025-09-24 00:54:41,701 - INFO - No more pages available. Stopped at page 51
+2025-09-24 00:54:41,702 - INFO - Saving 1000 books to CSV file: C:\Users\User\Documents\GitHub\Coursework\question2_social_media_analysis\data\scraped_books.csv
+2025-09-24 00:54:41,705 - INFO - Successfully saved 1000 books to C:\Users\User\Documents\GitHub\Coursework\question2_social_media_analysis\data\scraped_books.csv
+2025-09-24 00:54:41,706 - INFO - Scraping complete! Total books processed: 1000 from 50 pages
+2025-09-24 00:54:41,723 - INFO - Successfully scraped 1000 books
+2025-09-24 00:54:41,724 - INFO - Data saved to: C:\Users\User\Documents\GitHub\Coursework\question2_social_media_analysis\data\scraped_books.csv
+
+2025-09-24 00:54:41,724 - INFO - 
+============================================================
+2025-09-24 00:54:41,725 - INFO - STEP 2: RUNNING DATA CLEANER
+2025-09-24 00:54:41,725 - INFO - ============================================================
+
+2025-09-24 00:54:41,762 - INFO - Cleaning completed. Final dataset: 999 rows
+2025-09-24 00:54:41,762 - INFO - Processing statistics: {'initial_rows': 1000, 'currency_conversion': {'converted_prices': 1000, 'assumed_usd': 0, 'rates_used': {'£': 1.27, '€': 1.1, '$': 1.0}}, 'duplicates_removed': 1, 'missing_handled': 0, 'final_rows': 999}
+
+2025-09-24 00:54:41,762 - INFO - 
+============================================================
+2025-09-24 00:54:41,763 - INFO - STEP 3: RUNNING STATISTICAL ANALYSIS
+2025-09-24 00:54:41,763 - INFO - ============================================================
+
+2025-09-24 00:54:41,810 - INFO - Analysis completed and saved to:
+2025-09-24 00:54:41,810 - INFO -   - JSON: C:\Users\User\Documents\GitHub\Coursework\question2_social_media_analysis\data\comprehensive_analysis_report_20250924_004730.json
+2025-09-24 00:54:41,810 - INFO -   - Markdown: C:\Users\User\Documents\GitHub\Coursework\question2_social_media_analysis\data\comprehensive_analysis_report_20250924_004730.md
+
+2025-09-24 00:54:41,810 - INFO - 
+============================================================
+2025-09-24 00:54:41,811 - INFO - STEP 4: GENERATING VISUALIZATIONS
+2025-09-24 00:54:41,811 - INFO - ============================================================
+
+2025-09-24 00:54:41,815 - INFO - Generating price distribution plots...
+2025-09-24 00:54:42,350 - INFO - Generating rating analysis plots...
+2025-09-24 00:54:42,769 - INFO - Generating category analysis plots...
+2025-09-24 00:54:43,174 - INFO - Generating correlation analysis...
+2025-09-24 00:54:43,424 - INFO - Generating comprehensive dashboard...
+2025-09-24 00:54:43,607 - INFO - All visualizations saved to: C:\Users\User\Documents\GitHub\Coursework\question2_social_media_analysis\visualizations\output_visualizations
+
+2025-09-24 00:54:43,608 - INFO - ********************************************************************************
+2025-09-24 00:54:43,608 - INFO - PIPELINE COMPLETED SUCCESSFULLY!
+2025-09-24 00:54:43,608 - INFO - Duration: 432.69 seconds
+2025-09-24 00:54:43,609 - INFO - Steps completed: scraping, cleaning, analysis, visualization
+2025-09-24 00:54:43,609 - INFO - ********************************************************************************
