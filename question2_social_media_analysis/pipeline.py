@@ -15,6 +15,7 @@ import os
 import sys
 import time
 import logging
+import shutil
 from pathlib import Path
 from datetime import datetime
 from typing import Dict, Any, Optional
@@ -79,6 +80,13 @@ class AnalysisPipeline:
             ]
         )
         self.logger = logging.getLogger(__name__)
+    
+            self.data_dir.mkdir()
+        # Clear output visualizations folder
+        if self.visualization_dir.exists():
+            shutil.rmtree(self.visualization_dir)
+            self.visualization_dir.mkdir(parents=True)
+            self.logger.info(f"Cleared visualizations folder: {self.visualization_dir}")
     
     def run_scraper(self, num_pages: int = 1) -> bool:
         """
@@ -284,6 +292,10 @@ class AnalysisPipeline:
             Dictionary with pipeline results and statistics
         """
         self.pipeline_stats['start_time'] = datetime.now()
+        
+        # Clear existing data and visualizations
+        self.logger.info("Clearing existing data and visualizations...")
+        self._clear_data_folders()
         
         self.logger.info("*" * 80)
         self.logger.info("STARTING SOCIAL MEDIA ANALYSIS PIPELINE")
