@@ -31,19 +31,22 @@ class BookScraper:
     BASE_URL = "http://books.toscrape.com/catalogue/page-{}.html"
     DETAIL_BASE_URL = "http://books.toscrape.com/catalogue/"
     
-    def __init__(self, output_file: str = 'question2_social_media_analysis/data/scraped_books.csv'):
+    def __init__(self, output_file: str = 'data/scraped_books.csv', max_pages: int = 1):
         """
         Initialize the BookScraper.
         
         Args:
             output_file: Path to the output CSV file
+            max_pages: Maximum number of pages to scrape (0 = all pages)
         """
         self.output_file = output_file
+        self.max_pages = max_pages
         self.session = requests.Session()
         self._setup_logging()
         self._setup_session()
         self.logger.info("BookScraper initialized successfully")
         self.logger.info(f"Output file set to: {self.output_file}")
+        self.logger.info(f"Max pages to scrape: {self.max_pages if self.max_pages > 0 else 'unlimited'}")
     
     def _setup_logging(self) -> None:
         """Set up logging configuration for the scraper."""
@@ -129,26 +132,24 @@ class BookScraper:
             self.logger.warning("Failed to extract book title, using default")
             return "Unknown Title"
     
-    def _extract_price(self, book_element) -> float:
+    def _extract_price(self, book_element) -> str:
         """
-        Extract and clean book price from book element.
+        Extract book price from book element, preserving currency symbol.
         
         Args:
             book_element: BeautifulSoup element containing book data
             
         Returns:
-            Price as float, 0.0 if extraction fails
+            Price as string with currency symbol, '0.0' if extraction fails
         """
         try:
-            price_str = book_element.find('p', class_='price_color').text
-            # Remove all non-numeric characters except decimal point
-            price_numeric = re.sub(r'[^\d.]', '', price_str)
-            price = float(price_numeric)
-            self.logger.debug(f"Extracted price: £{price}")
-            return price
-        except (ValueError, AttributeError) as e:
+            price_str = book_element.find('p', class_='price_color').text.strip()
+            # Keep the currency symbol and numeric value
+            self.logger.debug(f"Extracted price: {price_str}")
+            return price_str
+        except (AttributeError) as e:
             self.logger.warning(f"Failed to extract price: {e}")
-            return 0.0
+            return '0.0'
     
     def _extract_rating(self, book_element) -> int:
         """
@@ -307,7 +308,7 @@ class BookScraper:
         self.logger.info("Starting book scraping process")
         all_books = []
         page_num = 1
-        limited_pages = 0  # Set to 0 to scrape all pages, or positive number to limit
+        limited_pages = self.max_pages  # Use the max_pages parameter
         books_processed = 0
 
         while limited_pages == 0 or page_num <= limited_pages:
