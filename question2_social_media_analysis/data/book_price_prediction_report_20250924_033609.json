@@ -1,0 +1,319 @@
+{
+  "metadata": {
+    "timestamp": "2025-09-24T03:36:09.473324",
+    "dataset_file": "C:\\Users\\User\\Documents\\GitHub\\Coursework\\question2_social_media_analysis\\data\\cleaned_books.csv",
+    "analysis_type": "Statistical Modeling and Prediction",
+    "total_books": 20,
+    "original_count": 20,
+    "columns": [
+      "title",
+      "price",
+      "rating",
+      "availability",
+      "category",
+      "title_hashtags",
+      "title_mentions",
+      "title_keywords"
+    ],
+    "price_range": [
+      17.77,
+      72.71
+    ],
+    "rating_range": [
+      1.0,
+      5.0
+    ],
+    "categories_count": 13,
+    "unique_categories": [
+      "poetry",
+      "historical fiction",
+      "fiction",
+      "mystery",
+      "history",
+      "young adult",
+      "business",
+      "default",
+      "sequential art",
+      "music",
+      "science fiction",
+      "politics",
+      "travel"
+    ]
+  },
+  "linear_regression": {
+    "model_equation": "price = -0.93 × rating + 50.98",
+    "slope": -0.9322,
+    "intercept": 50.9792,
+    "r_squared": 0.0058,
+    "dataset_size": 20,
+    "rating_range": [
+      1.0,
+      5.0
+    ],
+    "price_range": [
+      17.77,
+      72.71
+    ],
+    "predictions": [
+      48.182674543501605,
+      50.047013963480126,
+      50.047013963480126,
+      47.25050483351235,
+      46.31833512352309,
+      50.047013963480126,
+      47.25050483351235,
+      48.182674543501605,
+      47.25050483351235,
+      50.047013963480126,
+      49.114844253490865,
+      47.25050483351235,
+      46.31833512352309,
+      46.31833512352309,
+      46.31833512352309,
+      48.182674543501605,
+      50.047013963480126,
+      50.047013963480126,
+      49.114844253490865,
+      49.114844253490865
+    ],
+    "actual_prices": [
+      65.75,
+      68.25,
+      63.63,
+      60.73,
+      68.87,
+      28.77,
+      42.34,
+      22.77,
+      28.7,
+      66.23,
+      17.77,
+      26.24,
+      22.17,
+      66.41,
+      44.48,
+      72.71,
+      30.33,
+      47.74,
+      65.19,
+      57.37
+    ],
+    "ratings": [
+      3.0,
+      1.0,
+      1.0,
+      4.0,
+      5.0,
+      1.0,
+      4.0,
+      3.0,
+      4.0,
+      1.0,
+      2.0,
+      4.0,
+      5.0,
+      5.0,
+      5.0,
+      3.0,
+      1.0,
+      1.0,
+      2.0,
+      2.0
+    ],
+    "interpretation": "❌ Rating has virtually no predictive power for price",
+    "sample_predictions": {
+      "rating_1": 50.05,
+      "rating_2": 49.11,
+      "rating_3": 48.18,
+      "rating_4": 47.25,
+      "rating_5": 46.32
+    }
+  },
+  "category_pricing": {
+    "most_expensive": {
+      "history": {
+        "rank": 1,
+        "average_price": 68.87,
+        "median_price": 68.87,
+        "min_price": 68.87,
+        "max_price": 68.87,
+        "book_count": 1,
+        "std_dev": 0.0
+      },
+      "historical fiction": {
+        "rank": 2,
+        "average_price": 68.25,
+        "median_price": 68.25,
+        "min_price": 68.25,
+        "max_price": 68.25,
+        "book_count": 1,
+        "std_dev": 0.0
+      },
+      "sequential art": {
+        "rank": 3,
+        "average_price": 66.41,
+        "median_price": 66.41,
+        "min_price": 66.41,
+        "max_price": 66.41,
+        "book_count": 1,
+        "std_dev": 0.0
+      },
+      "politics": {
+        "rank": 4,
+        "average_price": 65.19,
+        "median_price": 65.19,
+        "min_price": 65.19,
+        "max_price": 65.19,
+        "book_count": 1,
+        "std_dev": 0.0
+      },
+      "fiction": {
+        "rank": 5,
+        "average_price": 63.63,
+        "median_price": 63.63,
+        "min_price": 63.63,
+        "max_price": 63.63,
+        "book_count": 1,
+        "std_dev": 0.0
+      }
+    },
+    "least_expensive": {
+      "default": {
+        "rank": 1,
+        "average_price": 23.08,
+        "median_price": 22.77,
+        "min_price": 17.77,
+        "max_price": 28.7,
+        "book_count": 3,
+        "std_dev": 5.47
+      },
+      "young adult": {
+        "rank": 2,
+        "average_price": 25.47,
+        "median_price": 25.47,
+        "min_price": 22.17,
+        "max_price": 28.77,
+        "book_count": 2,
+        "std_dev": 4.67
+      },
+      "business": {
+        "rank": 3,
+        "average_price": 42.34,
+        "median_price": 42.34,
+        "min_price": 42.34,
+        "max_price": 42.34,
+        "book_count": 1,
+        "std_dev": 0.0
+      },
+      "poetry": {
+        "rank": 4,
+        "average_price": 47.14,
+        "median_price": 48.04,
+        "min_price": 26.24,
+        "max_price": 66.23,
+        "book_count": 4,
+        "std_dev": 21.83
+      },
+      "science fiction": {
+        "rank": 5,
+        "average_price": 47.74,
+        "median_price": 47.74,
+        "min_price": 47.74,
+        "max_price": 47.74,
+        "book_count": 1,
+        "std_dev": 0.0
+      }
+    },
+    "overall_stats": {
+      "average_price": 48.3225,
+      "price_std_dev": 19.221954792700757,
+      "total_categories": 13,
+      "min_price": 17.77,
+      "max_price": 72.71,
+      "total_books": 20
+    }
+  },
+  "recommendation_system": {
+    "algorithm": "Category-based with price similarity scoring",
+    "similarity_formula": "1 / (1 + |price_difference|)",
+    "sample_recommendations": {
+      "a light in the attic": {
+        "category": "poetry",
+        "price": 65.75,
+        "rating": 3.0,
+        "recommendations": [
+          {
+            "title": "the black maria",
+            "price": 66.23,
+            "rating": 1.0,
+            "similarity_score": 0.6756756756756739
+          },
+          {
+            "title": "olio",
+            "price": 30.33,
+            "rating": 1.0,
+            "similarity_score": 0.02745744096650192
+          },
+          {
+            "title": "shakespeares sonnets",
+            "price": 26.24,
+            "rating": 4.0,
+            "similarity_score": 0.02468526289804986
+          }
+        ]
+      },
+      "tipping the velvet": {
+        "category": "historical fiction",
+        "price": 68.25,
+        "rating": 1.0,
+        "recommendations": "No books found in the same category"
+      },
+      "soumission": {
+        "category": "fiction",
+        "price": 63.63,
+        "rating": 1.0,
+        "recommendations": "No books found in the same category"
+      }
+    }
+  },
+  "stock_analysis": {
+    "correlation_coefficient": 0.4426773902377167,
+    "correlation_strength": "moderate",
+    "correlation_direction": "positive",
+    "stock_statistics": {
+      "average_availability": 19.35,
+      "min_availability": 19.0,
+      "max_availability": 22.0,
+      "std_dev_availability": 0.7262919523166975
+    },
+    "stock_level_analysis": {
+      "high_stock": {
+        "count": 20,
+        "average_price": 48.3225,
+        "books": [
+          "a light in the attic",
+          "tipping the velvet",
+          "soumission",
+          "sharp objects",
+          "sapiens a brief history of humankind",
+          "the requiem red",
+          "the dirty little secrets of getting your dream job",
+          "the coming woman a novel based on the life of the infamous feminist victoria woodhull",
+          "the boys in the boat nine americans and their epic quest for gold at the 1936 berlin olympics",
+          "the black maria",
+          "starving hearts triangular trade trilogy 1",
+          "shakespeares sonnets",
+          "set me free",
+          "scott pilgrims precious little life scott pilgrim 1",
+          "rip it up and start again",
+          "our band could be your life scenes from the american indie underground 19811991",
+          "olio",
+          "mesaerion the best science fiction stories 18001849",
+          "libertarianism for beginners",
+          "its only the himalayas"
+        ]
+      }
+    },
+    "business_interpretation": "📈 Higher priced books tend to have more stock. Suggests premium books may be stocked more heavily"
+  }
+}

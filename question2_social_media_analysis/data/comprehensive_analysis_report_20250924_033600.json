@@ -1,0 +1,286 @@
+{
+    "metadata": {
+        "report_generated_at": "2025-09-24T03:36:07.763676",
+        "source_file": "C:\\Users\\User\\Documents\\GitHub\\Coursework\\question2_social_media_analysis\\data\\cleaned_books.csv",
+        "total_records": 20
+    },
+    "descriptive_stats": {
+        "price": {
+            "mean": 48.32,
+            "median": 52.56,
+            "mode": 17.77,
+            "std_dev": 19.22,
+            "min": 17.77,
+            "max": 72.71
+        },
+        "rating": {
+            "mean": 2.85,
+            "median": 3.0,
+            "mode": 1,
+            "std_dev": 1.57,
+            "min": 1,
+            "max": 5
+        }
+    },
+    "price_distribution_by_category": {
+        "business": {
+            "count": 1,
+            "mean_price": 42.34,
+            "median_price": 42.34,
+            "std_dev": NaN,
+            "min_price": 42.34,
+            "max_price": 42.34,
+            "price_range": 0.0
+        },
+        "default": {
+            "count": 3,
+            "mean_price": 23.08,
+            "median_price": 22.77,
+            "std_dev": 5.47,
+            "min_price": 17.77,
+            "max_price": 28.7,
+            "price_range": 10.93
+        },
+        "fiction": {
+            "count": 1,
+            "mean_price": 63.63,
+            "median_price": 63.63,
+            "std_dev": NaN,
+            "min_price": 63.63,
+            "max_price": 63.63,
+            "price_range": 0.0
+        },
+        "historical fiction": {
+            "count": 1,
+            "mean_price": 68.25,
+            "median_price": 68.25,
+            "std_dev": NaN,
+            "min_price": 68.25,
+            "max_price": 68.25,
+            "price_range": 0.0
+        },
+        "history": {
+            "count": 1,
+            "mean_price": 68.87,
+            "median_price": 68.87,
+            "std_dev": NaN,
+            "min_price": 68.87,
+            "max_price": 68.87,
+            "price_range": 0.0
+        },
+        "music": {
+            "count": 2,
+            "mean_price": 58.6,
+            "median_price": 58.6,
+            "std_dev": 19.96,
+            "min_price": 44.48,
+            "max_price": 72.71,
+            "price_range": 28.23
+        },
+        "mystery": {
+            "count": 1,
+            "mean_price": 60.73,
+            "median_price": 60.73,
+            "std_dev": NaN,
+            "min_price": 60.73,
+            "max_price": 60.73,
+            "price_range": 0.0
+        },
+        "poetry": {
+            "count": 4,
+            "mean_price": 47.14,
+            "median_price": 48.04,
+            "std_dev": 21.83,
+            "min_price": 26.24,
+            "max_price": 66.23,
+            "price_range": 39.99
+        },
+        "politics": {
+            "count": 1,
+            "mean_price": 65.19,
+            "median_price": 65.19,
+            "std_dev": NaN,
+            "min_price": 65.19,
+            "max_price": 65.19,
+            "price_range": 0.0
+        },
+        "science fiction": {
+            "count": 1,
+            "mean_price": 47.74,
+            "median_price": 47.74,
+            "std_dev": NaN,
+            "min_price": 47.74,
+            "max_price": 47.74,
+            "price_range": 0.0
+        },
+        "sequential art": {
+            "count": 1,
+            "mean_price": 66.41,
+            "median_price": 66.41,
+            "std_dev": NaN,
+            "min_price": 66.41,
+            "max_price": 66.41,
+            "price_range": 0.0
+        },
+        "travel": {
+            "count": 1,
+            "mean_price": 57.37,
+            "median_price": 57.37,
+            "std_dev": NaN,
+            "min_price": 57.37,
+            "max_price": 57.37,
+            "price_range": 0.0
+        },
+        "young adult": {
+            "count": 2,
+            "mean_price": 25.47,
+            "median_price": 25.47,
+            "std_dev": 4.67,
+            "min_price": 22.17,
+            "max_price": 28.77,
+            "price_range": 6.6
+        }
+    },
+    "rating_patterns": {
+        "rating_distribution": {
+            "1": 6,
+            "2": 3,
+            "3": 3,
+            "4": 4,
+            "5": 4
+        },
+        "most_common_rating": 1,
+        "rating_variability": 1.57,
+        "rating_skewness": 0.09,
+        "rating_percentiles": {
+            "25th": 1.0,
+            "50th": 3.0,
+            "75th": 4.0,
+            "90th": 5.0
+        }
+    },
+    "correlation_analysis": {
+        "correlation_matrix": {
+            "price": {
+                "price": 1.0,
+                "rating": -0.076,
+                "availability": 0.443
+            },
+            "rating": {
+                "price": -0.076,
+                "rating": 1.0,
+                "availability": 0.002
+            },
+            "availability": {
+                "price": 0.443,
+                "rating": 0.002,
+                "availability": 1.0
+            }
+        },
+        "significant_correlations": {
+            "price_vs_rating": -0.076,
+            "price_vs_availability": 0.443,
+            "rating_vs_availability": 0.002
+        }
+    },
+    "category_popularity": {
+        "frequency_distribution": {
+            "poetry": 4,
+            "default": 3,
+            "young adult": 2,
+            "music": 2,
+            "historical fiction": 1,
+            "history": 1,
+            "mystery": 1,
+            "fiction": 1,
+            "business": 1,
+            "sequential art": 1,
+            "science fiction": 1,
+            "politics": 1,
+            "travel": 1
+        },
+        "percentage_distribution": {
+            "poetry": 20.0,
+            "default": 15.0,
+            "young adult": 10.0,
+            "music": 10.0,
+            "historical fiction": 5.0,
+            "history": 5.0,
+            "mystery": 5.0,
+            "fiction": 5.0,
+            "business": 5.0,
+            "sequential art": 5.0,
+            "science fiction": 5.0,
+            "politics": 5.0,
+            "travel": 5.0
+        },
+        "total_categories": 13,
+        "most_popular_category": "poetry",
+        "least_popular_category": "travel",
+        "category_concentration": {
+            "top_3_categories_percentage": 45.0,
+            "bottom_categories_count": 9
+        }
+    },
+    "comparative_analysis": {
+        "price_comparison": {
+            "fiction": {
+                "count": 3,
+                "mean": 59.87,
+                "std": 10.76
+            },
+            "non_fiction": {
+                "count": 17,
+                "mean": 46.28,
+                "std": 19.87
+            },
+            "difference": 13.59
+        },
+        "rating_comparison": {
+            "fiction": {
+                "count": 3,
+                "mean": 1.0,
+                "std": 0.0
+            },
+            "non_fiction": {
+                "count": 17,
+                "mean": 3.18,
+                "std": 1.47
+            },
+            "difference": -2.18
+        },
+        "price_range_comparison": {
+            "cheap_books": {
+                "count": 5,
+                "avg_rating": 3.6,
+                "price_threshold": 28.75
+            },
+            "expensive_books": {
+                "count": 5,
+                "avg_rating": 3.0,
+                "price_threshold": 65.87
+            }
+        }
+    },
+    "outlier_analysis": {
+        "price": {
+            "count": 0,
+            "percentage": 0.0,
+            "values": []
+        },
+        "rating": {
+            "count": 0,
+            "percentage": 0.0,
+            "values": []
+        }
+    },
+    "hypothesis_testing": {
+        "fiction_vs_nonfiction_price": {
+            "t_statistic": 1.728,
+            "p_value": 0.146,
+            "is_significant_at_0.05": false,
+            "fiction_mean_price": 59.87,
+            "non_fiction_mean_price": 46.28
+        }
+    }
+}
