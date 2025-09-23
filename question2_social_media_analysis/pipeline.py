@@ -28,12 +28,21 @@ sys.path.append(str(current_dir / 'data_collection'))
 sys.path.append(str(current_dir / 'data_processing'))
 sys.path.append(str(current_dir / 'analysis'))
 sys.path.append(str(current_dir / 'visualizations'))
+sys.path.append(str(current_dir / 'Predictive Analysis'))
 
 # Import pipeline components
 from scraper import BookScraper
 from cleaner import DataCleaner
 from analyzer import BookDataAnalyzer
 from visualizer import BookDataVisualizer
+
+# Import predictive analysis module
+try:
+    sys.path.append(str(current_dir / 'Predictive Analysis'))
+    from final_predictor import BookPricePredictionSystem
+except ImportError as e:
+    print(f"Warning: Could not import predictive analysis module: {e}")
+    print("Predictive analysis step will be skipped if this import fails.")
 
 
 class AnalysisPipeline:
@@ -317,6 +326,60 @@ class AnalysisPipeline:
             self.pipeline_stats['errors'].append(error_msg)
             return False
     
+    def run_predictive_analysis(self) -> bool:
+        """
+        Step 5: Run predictive analysis and modeling.
+        
+        Returns:
+            True if successful, False otherwise
+        """
+        try:
+            self.logger.info("\n" + "=" * 60)
+            self.logger.info("STEP 5: RUNNING PREDICTIVE ANALYSIS")
+            self.logger.info("=" * 60 + "\n")
+            
+            # Check if cleaned data exists
+            if not self.cleaned_file.exists():
+                raise FileNotFoundError(f"Cleaned data file not found: {self.cleaned_file}")
+            
+            # Initialize the prediction system
+            prediction_system = BookPricePredictionSystem(
+                file_path=str(self.cleaned_file),
+                output_dir=str(self.data_dir)
+            )
+            
+            # Load data
+            self.logger.info("Loading and preparing data...")
+            if not prediction_system.load_data():
+                raise ValueError("Failed to load data for predictive analysis")
+            
+            # Run all analyses
+            self.logger.info("Running comprehensive statistical analysis...")
+            report_data = prediction_system.run_all_analyses()
+            
+            # Generate reports
+            self.logger.info("Generating prediction reports...")
+            report_files = prediction_system.generate_reports(report_data)
+            
+            self.logger.info("Predictive analysis completed successfully!")
+            self.logger.info(f"Reports saved:")
+            for report_type, path in report_files.items():
+                self.logger.info(f"  - {report_type}: {path}")
+            
+            self.pipeline_stats['steps_completed'].append('predictive_analysis')
+            return True
+            
+        except ImportError:
+            error_msg = "Predictive analysis module not available - skipping step"
+            self.logger.warning(error_msg + "\n")
+            return True  # Don't fail the pipeline, just skip this step
+            
+        except Exception as e:
+            error_msg = f"Error in predictive analysis step: {str(e)}"
+            self.logger.error(error_msg + "\n")
+            self.pipeline_stats['errors'].append(error_msg)
+            return False
+    
     def run_full_pipeline(self, num_pages: int = 1, skip_scraping: bool = False) -> Dict[str, Any]:
         """
         Run the complete analysis pipeline.
@@ -364,6 +427,10 @@ class AnalysisPipeline:
         if success and not self.run_visualizer():
             success = False
         
+        # Step 5: Predictive Analysis
+        if success and not self.run_predictive_analysis():
+            success = False
+        
         # Finalize pipeline
         self.pipeline_stats['end_time'] = datetime.now()
         self.pipeline_stats['duration'] = (
@@ -395,7 +462,8 @@ class AnalysisPipeline:
                 'cleaned_data': str(self.cleaned_file),
                 'analysis_report_json': str(self.analysis_report),
                 'analysis_report_md': str(self.analysis_report.with_suffix('.md')),
-                'visualizations': str(self.visualization_dir)
+                'visualizations': str(self.visualization_dir),
+                'prediction_reports': str(self.data_dir) + '/book_price_prediction_report_*.{json,md,csv}'
             }
         }
 
@@ -407,7 +475,7 @@ def main():
     parser = argparse.ArgumentParser(description='Social Media Analysis Pipeline')
     parser.add_argument('--pages', type=int, default=1, help='Number of pages to scrape (default: 5)')
     parser.add_argument('--skip-scraping', action='store_true', help='Skip scraping and use existing data')
-    parser.add_argument('--step', choices=['scraper', 'cleaner', 'analyzer', 'visualizer'], 
+    parser.add_argument('--step', choices=['scraper', 'cleaner', 'analyzer', 'visualizer', 'predictor'], 
                        help='Run only a specific step')
     
     args = parser.parse_args()
@@ -425,6 +493,8 @@ def main():
             result = pipeline.run_analyzer()
         elif args.step == 'visualizer':
             result = pipeline.run_visualizer()
+        elif args.step == 'predictor':
+            result = pipeline.run_predictive_analysis()
         
         if result:
             print(f"Step '{args.step}' completed successfully!")

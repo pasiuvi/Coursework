@@ -236,31 +236,10 @@ class BookDataAnalyzer:
                 lower_bound = Q1 - 1.5 * IQR
                 upper_bound = Q3 + 1.5 * IQR
                 outliers = self.df[(self.df[col] < lower_bound) | (self.df[col] > upper_bound)]
-                
-                # Calculate actual data range
-                actual_min = self.df[col].min()
-                actual_max = self.df[col].max()
-                
                 report['outlier_analysis'][col] = {
                     'count': len(outliers),
                     'percentage': round((len(outliers) / len(self.df)) * 100, 2),
-                    'values': outliers[col].head(5).tolist() if len(outliers) > 0 else [],
-                    'iqr_details': {
-                        'Q1': round(Q1, 2),
-                        'Q3': round(Q3, 2),
-                        'IQR': round(IQR, 2),
-                        'lower_bound': round(lower_bound, 2),
-                        'upper_bound': round(upper_bound, 2),
-                        'actual_min': round(actual_min, 2),
-                        'actual_max': round(actual_max, 2),
-                        'data_range': round(actual_max - actual_min, 2),
-                        'bounds_range': round(upper_bound - lower_bound, 2)
-                    },
-                    'explanation': {
-                        'method': 'IQR (Interquartile Range) method with 1.5×IQR multiplier',
-                        'formula': 'Outliers: values < Q1 - 1.5×IQR or values > Q3 + 1.5×IQR',
-                        'analysis': self._analyze_outlier_results(len(outliers), actual_min, actual_max, lower_bound, upper_bound, col, len(self.df))
-                    }
+                    'values': outliers[col].head(5).tolist() # Show up to 5 sample outliers
                 }
 
         # 8. Hypothesis Testing (Fiction vs. Non-Fiction prices)
@@ -280,58 +259,6 @@ class BookDataAnalyzer:
 
         logger.info("Comprehensive report generated successfully.")
         return report
-
-    def _analyze_outlier_results(self, outlier_count: int, actual_min: float, actual_max: float, 
-                                lower_bound: float, upper_bound: float, column: str, total_records: int) -> str:
-        """
-        Provides a comprehensive analysis of outlier detection results.
-        
-        Args:
-            outlier_count: Number of outliers detected
-            actual_min: Minimum value in the data
-            actual_max: Maximum value in the data
-            lower_bound: IQR lower bound for outlier detection
-            upper_bound: IQR upper bound for outlier detection
-            column: Column name being analyzed
-            total_records: Total number of records in dataset
-            
-        Returns:
-            A detailed analysis string explaining the outlier results
-        """
-        outlier_percentage = (outlier_count / total_records) * 100
-        
-        if outlier_count == 0:
-            # No outliers detected
-            if column == 'rating':
-                return (f"No outliers detected. All {column} values ({actual_min}-{actual_max}) fall within "
-                       f"the IQR bounds ({lower_bound:.1f} to {upper_bound:.1f}). Ratings are naturally "
-                       f"constrained to 1-5 stars, making extreme outliers mathematically unlikely with the IQR method.")
-            elif column == 'price':
-                range_ratio = actual_max / actual_min if actual_min > 0 else float('inf')
-                return (f"No outliers detected. All {column} values (£{actual_min:.2f}-£{actual_max:.2f}) fall within "
-                       f"the IQR bounds (£{lower_bound:.2f} to £{upper_bound:.2f}). The {range_ratio:.1f}x price range "
-                       f"indicates a well-distributed dataset without extreme values.")
-            else:
-                return (f"No outliers detected. All {column} values ({actual_min:.2f}-{actual_max:.2f}) fall within "
-                       f"the IQR bounds ({lower_bound:.2f} to {upper_bound:.2f}), indicating a normally distributed dataset.")
-        
-        elif outlier_count > 0:
-            # Outliers detected
-            severity = "low" if outlier_percentage < 5 else "moderate" if outlier_percentage < 10 else "high"
-            
-            if column == 'rating':
-                return (f"{outlier_count} outliers detected ({outlier_percentage:.1f}% of data) - {severity} severity. "
-                       f"These represent {column} values outside the range ({lower_bound:.1f} to {upper_bound:.1f}). "
-                       f"For ratings, outliers may indicate data quality issues or unusual rating patterns.")
-            elif column == 'price':
-                lower_outliers = "below £{:.2f}".format(lower_bound) if lower_bound > 0 else "negative values (data errors)"
-                return (f"{outlier_count} outliers detected ({outlier_percentage:.1f}% of data) - {severity} severity. "
-                       f"These are {column} values {lower_outliers} or above £{upper_bound:.2f}. "
-                       f"Price outliers may indicate premium/luxury items, data entry errors, or unique market segments.")
-            else:
-                return (f"{outlier_count} outliers detected ({outlier_percentage:.1f}% of data) - {severity} severity. "
-                       f"These are {column} values outside ({lower_bound:.2f} to {upper_bound:.2f}). "
-                       f"Further investigation may be needed to understand these extreme values.")
 
     def save_report(self, report: Dict[str, Any], output_path: str, format: str = 'json') -> str:
         """
@@ -391,26 +318,7 @@ class BookDataAnalyzer:
         if outliers:
             lines.append("## 3. Outlier Analysis (IQR Method)\n")
             for col, data in outliers.items():
-                lines.append(f"### {col.title()} Outlier Analysis\n")
                 lines.append(f"- **{col.title()} Outliers**: {data.get('count')} ({data.get('percentage')}%)")
-                
-                # Add detailed IQR information
-                iqr_details = data.get('iqr_details', {})
-                if iqr_details:
-                    lines.append(f"- **Q1 (25th percentile)**: {iqr_details.get('Q1')}")
-                    lines.append(f"- **Q3 (75th percentile)**: {iqr_details.get('Q3')}")
-                    lines.append(f"- **IQR**: {iqr_details.get('IQR')}")
-                    lines.append(f"- **Lower Bound**: {iqr_details.get('lower_bound')}")
-                    lines.append(f"- **Upper Bound**: {iqr_details.get('upper_bound')}")
-                    lines.append(f"- **Actual Data Range**: {iqr_details.get('actual_min')} to {iqr_details.get('actual_max')}")
-                
-                # Add explanation
-                explanation = data.get('explanation', {})
-                if explanation:
-                    lines.append(f"\n**Analysis:**")
-                    lines.append(f"{explanation.get('analysis', 'No analysis available.')}")
-                
-                lines.append("")
             lines.append("")
 
         # Category Analysis
