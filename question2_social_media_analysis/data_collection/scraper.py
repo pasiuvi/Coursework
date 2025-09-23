@@ -235,19 +235,27 @@ class BookScraper:
     
     def _extract_availability(self, book_soup: BeautifulSoup) -> int:
         """
-        Extract availability status from book detail page.
+        Extract availability count from book detail page.
         
         Args:
             book_soup: BeautifulSoup object of book detail page
             
         Returns:
-            1 if in stock, 0 if out of stock
+            Number of items available in stock, 0 if out of stock
         """
         try:
             availability_tag = book_soup.find('p', class_='instock availability')
-            if availability_tag and 'In stock' in availability_tag.text:
-                return 1
-        except AttributeError:
+            if availability_tag:
+                availability_text = availability_tag.text.strip()
+                # Extract number from text like "In stock (22 available)"
+                import re
+                match = re.search(r'\((\d+) available\)', availability_text)
+                if match:
+                    return int(match.group(1))
+                elif 'In stock' in availability_text:
+                    # If no specific count is found but it's in stock, return 1
+                    return 1
+        except (AttributeError, ValueError):
             pass
         return 0
     

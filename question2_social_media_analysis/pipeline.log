@@ -1,0 +1,272 @@
+2025-09-24 03:18:00,248 - INFO - Clearing existing data and visualizations...
+2025-09-24 03:18:00,250 - INFO - Cleared data folder: C:\Users\omuser255\Downloads\Coursework-main\Coursework-main\question2_social_media_analysis\data
+2025-09-24 03:18:00,252 - INFO - Cleared visualizations folder: C:\Users\omuser255\Downloads\Coursework-main\Coursework-main\question2_social_media_analysis\visualizations\output_visualizations
+2025-09-24 03:18:00,253 - INFO - ********************************************************************************
+2025-09-24 03:18:00,254 - INFO - STARTING SOCIAL MEDIA ANALYSIS PIPELINE
+2025-09-24 03:18:00,255 - INFO - ********************************************************************************
+2025-09-24 03:18:00,256 - INFO - 
+============================================================
+2025-09-24 03:18:00,256 - INFO - STEP 1: RUNNING WEB SCRAPER
+2025-09-24 03:18:00,257 - INFO - ============================================================
+
+2025-09-24 03:18:00,258 - INFO - HTTP session configured with user agent
+2025-09-24 03:18:00,259 - INFO - BookScraper initialized successfully
+2025-09-24 03:18:00,259 - INFO - Output file set to: C:\Users\omuser255\Downloads\Coursework-main\Coursework-main\question2_social_media_analysis\data\scraped_books.csv
+2025-09-24 03:18:00,260 - INFO - Max pages to scrape: 1
+2025-09-24 03:18:00,260 - INFO - Starting book scraping process
+2025-09-24 03:18:00,260 - INFO - Scraping page 1: http://books.toscrape.com/catalogue/page-1.html
+2025-09-24 03:18:01,637 - INFO - Found 20 books on page 1
+2025-09-24 03:18:01,959 - INFO - Successfully extracted: 'A Light in the Attic'
+2025-09-24 03:18:02,261 - INFO - Successfully extracted: 'Tipping the Velvet'
+2025-09-24 03:18:02,569 - INFO - Successfully extracted: 'Soumission'
+2025-09-24 03:18:02,873 - INFO - Successfully extracted: 'Sharp Objects'
+2025-09-24 03:18:03,189 - INFO - Successfully extracted: 'Sapiens: A Brief History of Humankind'
+2025-09-24 03:18:03,481 - INFO - Successfully extracted: 'The Requiem Red'
+2025-09-24 03:18:03,778 - INFO - Successfully extracted: 'The Dirty Little Secrets of Getting Your Dream Job'
+2025-09-24 03:18:04,096 - INFO - Successfully extracted: 'The Coming Woman: A Novel Based on the Life of the Infamous Feminist, Victoria Woodhull'
+2025-09-24 03:18:04,390 - INFO - Successfully extracted: 'The Boys in the Boat: Nine Americans and Their Epic Quest for Gold at the 1936 Berlin Olympics'
+2025-09-24 03:18:04,697 - INFO - Successfully extracted: 'The Black Maria'
+2025-09-24 03:18:04,998 - INFO - Successfully extracted: 'Starving Hearts (Triangular Trade Trilogy, #1)'
+2025-09-24 03:18:05,314 - INFO - Successfully extracted: 'Shakespeare's Sonnets'
+2025-09-24 03:18:05,616 - INFO - Successfully extracted: 'Set Me Free'
+2025-09-24 03:18:05,922 - INFO - Successfully extracted: 'Scott Pilgrim's Precious Little Life (Scott Pilgrim #1)'
+2025-09-24 03:18:06,226 - INFO - Successfully extracted: 'Rip it Up and Start Again'
+2025-09-24 03:18:06,516 - INFO - Successfully extracted: 'Our Band Could Be Your Life: Scenes from the American Indie Underground, 1981-1991'
+2025-09-24 03:18:06,798 - INFO - Successfully extracted: 'Olio'
+2025-09-24 03:18:07,083 - INFO - Successfully extracted: 'Mesaerion: The Best Science Fiction Stories 1800-1849'
+2025-09-24 03:18:07,372 - INFO - Successfully extracted: 'Libertarianism for Beginners'
+2025-09-24 03:18:07,660 - INFO - Successfully extracted: 'It's Only the Himalayas'
+2025-09-24 03:18:07,662 - INFO - Completed page 1, successfully processed 20/20 books
+2025-09-24 03:18:07,665 - INFO - Saving 20 books to CSV file: C:\Users\omuser255\Downloads\Coursework-main\Coursework-main\question2_social_media_analysis\data\scraped_books.csv
+2025-09-24 03:18:07,676 - INFO - Successfully saved 20 books to C:\Users\omuser255\Downloads\Coursework-main\Coursework-main\question2_social_media_analysis\data\scraped_books.csv
+2025-09-24 03:18:07,679 - INFO - Scraping complete! Total books processed: 20 from 1 pages
+2025-09-24 03:18:07,706 - INFO - Successfully scraped 20 books
+2025-09-24 03:18:07,708 - INFO - Data saved to: C:\Users\omuser255\Downloads\Coursework-main\Coursework-main\question2_social_media_analysis\data\scraped_books.csv
+
+2025-09-24 03:18:07,709 - INFO - 
+============================================================
+2025-09-24 03:18:07,711 - INFO - STEP 2: RUNNING DATA CLEANER
+2025-09-24 03:18:07,712 - INFO - ============================================================
+
+2025-09-24 03:18:07,801 - INFO - Cleaning completed. Final dataset: 20 rows
+2025-09-24 03:18:07,801 - INFO - Processing statistics: {'initial_rows': 20, 'currency_conversion': {'converted_prices': 20, 'assumed_usd': 0, 'rates_used': {'£': 1.27, '€': 1.1, '$': 1.0}}, 'duplicates_removed': 0, 'missing_handled': 0, 'final_rows': 20}
+
+2025-09-24 03:18:07,803 - INFO - 
+============================================================
+2025-09-24 03:18:07,803 - INFO - STEP 3: RUNNING STATISTICAL ANALYSIS
+2025-09-24 03:18:07,804 - INFO - ============================================================
+
+2025-09-24 03:18:07,915 - INFO - Analysis completed and saved to:
+2025-09-24 03:18:07,917 - INFO -   - JSON: C:\Users\omuser255\Downloads\Coursework-main\Coursework-main\question2_social_media_analysis\data\comprehensive_analysis_report_20250924_031800.json
+2025-09-24 03:18:07,917 - INFO -   - Markdown: C:\Users\omuser255\Downloads\Coursework-main\Coursework-main\question2_social_media_analysis\data\comprehensive_analysis_report_20250924_031800.md
+
+2025-09-24 03:18:07,918 - INFO - 
+============================================================
+2025-09-24 03:18:07,920 - INFO - STEP 4: GENERATING VISUALIZATIONS
+2025-09-24 03:18:07,926 - INFO - ============================================================
+
+2025-09-24 03:18:07,933 - INFO - Generating price distribution plots...
+2025-09-24 03:18:09,185 - INFO - Generating rating analysis plots...
+2025-09-24 03:18:10,165 - INFO - Generating category analysis plots...
+2025-09-24 03:18:11,155 - INFO - Generating correlation analysis...
+2025-09-24 03:18:11,819 - INFO - Generating comprehensive dashboard...
+2025-09-24 03:18:12,677 - INFO - All visualizations saved to: C:\Users\omuser255\Downloads\Coursework-main\Coursework-main\question2_social_media_analysis\visualizations\output_visualizations
+
+2025-09-24 03:18:12,679 - INFO - 
+============================================================
+2025-09-24 03:18:12,681 - INFO - STEP 5: RUNNING PREDICTIVE ANALYSIS
+2025-09-24 03:18:12,683 - INFO - ============================================================
+
+2025-09-24 03:18:12,686 - ERROR - Error in predictive analysis step: name 'load_and_clean_data' is not defined
+
+2025-09-24 03:18:12,688 - INFO - ********************************************************************************
+2025-09-24 03:18:12,690 - ERROR - PIPELINE COMPLETED WITH ERRORS!
+2025-09-24 03:18:12,692 - INFO - Duration: 12.44 seconds
+2025-09-24 03:18:12,694 - INFO - Steps completed: scraping, cleaning, analysis, visualization
+2025-09-24 03:18:12,699 - ERROR - Errors encountered: 1
+2025-09-24 03:18:12,724 - ERROR -   - Error in predictive analysis step: name 'load_and_clean_data' is not defined
+2025-09-24 03:18:12,726 - INFO - ********************************************************************************
+2025-09-24 03:20:25,727 - INFO - Clearing existing data and visualizations...
+2025-09-24 03:20:25,733 - INFO - Cleared data folder: C:\Users\omuser255\Downloads\Coursework-main\Coursework-main\question2_social_media_analysis\data
+2025-09-24 03:20:25,739 - INFO - Cleared visualizations folder: C:\Users\omuser255\Downloads\Coursework-main\Coursework-main\question2_social_media_analysis\visualizations\output_visualizations
+2025-09-24 03:20:25,740 - INFO - ********************************************************************************
+2025-09-24 03:20:25,741 - INFO - STARTING SOCIAL MEDIA ANALYSIS PIPELINE
+2025-09-24 03:20:25,741 - INFO - ********************************************************************************
+2025-09-24 03:20:25,743 - INFO - 
+============================================================
+2025-09-24 03:20:25,744 - INFO - STEP 1: RUNNING WEB SCRAPER
+2025-09-24 03:20:25,744 - INFO - ============================================================
+
+2025-09-24 03:20:25,745 - INFO - HTTP session configured with user agent
+2025-09-24 03:20:25,746 - INFO - BookScraper initialized successfully
+2025-09-24 03:20:25,747 - INFO - Output file set to: C:\Users\omuser255\Downloads\Coursework-main\Coursework-main\question2_social_media_analysis\data\scraped_books.csv
+2025-09-24 03:20:25,748 - INFO - Max pages to scrape: 1
+2025-09-24 03:20:25,748 - INFO - Starting book scraping process
+2025-09-24 03:20:25,749 - INFO - Scraping page 1: http://books.toscrape.com/catalogue/page-1.html
+2025-09-24 03:20:26,957 - INFO - Found 20 books on page 1
+2025-09-24 03:20:27,305 - INFO - Successfully extracted: 'A Light in the Attic'
+2025-09-24 03:20:27,643 - INFO - Successfully extracted: 'Tipping the Velvet'
+2025-09-24 03:20:28,225 - INFO - Successfully extracted: 'Soumission'
+2025-09-24 03:20:29,441 - INFO - Successfully extracted: 'Sharp Objects'
+2025-09-24 03:20:30,315 - INFO - Successfully extracted: 'Sapiens: A Brief History of Humankind'
+2025-09-24 03:20:30,591 - INFO - Successfully extracted: 'The Requiem Red'
+2025-09-24 03:20:30,891 - INFO - Successfully extracted: 'The Dirty Little Secrets of Getting Your Dream Job'
+2025-09-24 03:20:31,702 - INFO - Successfully extracted: 'The Coming Woman: A Novel Based on the Life of the Infamous Feminist, Victoria Woodhull'
+2025-09-24 03:20:32,316 - INFO - Successfully extracted: 'The Boys in the Boat: Nine Americans and Their Epic Quest for Gold at the 1936 Berlin Olympics'
+2025-09-24 03:20:32,905 - INFO - Successfully extracted: 'The Black Maria'
+2025-09-24 03:20:33,202 - INFO - Successfully extracted: 'Starving Hearts (Triangular Trade Trilogy, #1)'
+2025-09-24 03:20:33,522 - INFO - Successfully extracted: 'Shakespeare's Sonnets'
+2025-09-24 03:20:33,828 - INFO - Successfully extracted: 'Set Me Free'
+2025-09-24 03:20:34,137 - INFO - Successfully extracted: 'Scott Pilgrim's Precious Little Life (Scott Pilgrim #1)'
+2025-09-24 03:20:34,431 - INFO - Successfully extracted: 'Rip it Up and Start Again'
+2025-09-24 03:20:34,744 - INFO - Successfully extracted: 'Our Band Could Be Your Life: Scenes from the American Indie Underground, 1981-1991'
+2025-09-24 03:20:35,064 - INFO - Successfully extracted: 'Olio'
+2025-09-24 03:20:35,419 - INFO - Successfully extracted: 'Mesaerion: The Best Science Fiction Stories 1800-1849'
+2025-09-24 03:20:35,714 - INFO - Successfully extracted: 'Libertarianism for Beginners'
+2025-09-24 03:20:36,006 - INFO - Successfully extracted: 'It's Only the Himalayas'
+2025-09-24 03:20:36,008 - INFO - Completed page 1, successfully processed 20/20 books
+2025-09-24 03:20:36,009 - INFO - Saving 20 books to CSV file: C:\Users\omuser255\Downloads\Coursework-main\Coursework-main\question2_social_media_analysis\data\scraped_books.csv
+2025-09-24 03:20:36,020 - INFO - Successfully saved 20 books to C:\Users\omuser255\Downloads\Coursework-main\Coursework-main\question2_social_media_analysis\data\scraped_books.csv
+2025-09-24 03:20:36,021 - INFO - Scraping complete! Total books processed: 20 from 1 pages
+2025-09-24 03:20:36,026 - INFO - Successfully scraped 20 books
+2025-09-24 03:20:36,027 - INFO - Data saved to: C:\Users\omuser255\Downloads\Coursework-main\Coursework-main\question2_social_media_analysis\data\scraped_books.csv
+
+2025-09-24 03:20:36,028 - INFO - 
+============================================================
+2025-09-24 03:20:36,029 - INFO - STEP 2: RUNNING DATA CLEANER
+2025-09-24 03:20:36,029 - INFO - ============================================================
+
+2025-09-24 03:20:36,109 - INFO - Cleaning completed. Final dataset: 20 rows
+2025-09-24 03:20:36,111 - INFO - Processing statistics: {'initial_rows': 20, 'currency_conversion': {'converted_prices': 20, 'assumed_usd': 0, 'rates_used': {'£': 1.27, '€': 1.1, '$': 1.0}}, 'duplicates_removed': 0, 'missing_handled': 0, 'final_rows': 20}
+
+2025-09-24 03:20:36,111 - INFO - 
+============================================================
+2025-09-24 03:20:36,112 - INFO - STEP 3: RUNNING STATISTICAL ANALYSIS
+2025-09-24 03:20:36,113 - INFO - ============================================================
+
+2025-09-24 03:20:36,211 - INFO - Analysis completed and saved to:
+2025-09-24 03:20:36,212 - INFO -   - JSON: C:\Users\omuser255\Downloads\Coursework-main\Coursework-main\question2_social_media_analysis\data\comprehensive_analysis_report_20250924_032025.json
+2025-09-24 03:20:36,213 - INFO -   - Markdown: C:\Users\omuser255\Downloads\Coursework-main\Coursework-main\question2_social_media_analysis\data\comprehensive_analysis_report_20250924_032025.md
+
+2025-09-24 03:20:36,214 - INFO - 
+============================================================
+2025-09-24 03:20:36,214 - INFO - STEP 4: GENERATING VISUALIZATIONS
+2025-09-24 03:20:36,215 - INFO - ============================================================
+
+2025-09-24 03:20:36,226 - INFO - Generating price distribution plots...
+2025-09-24 03:20:37,357 - INFO - Generating rating analysis plots...
+2025-09-24 03:20:38,232 - INFO - Generating category analysis plots...
+2025-09-24 03:20:39,307 - INFO - Generating correlation analysis...
+2025-09-24 03:20:39,880 - INFO - Generating comprehensive dashboard...
+2025-09-24 03:20:40,534 - INFO - All visualizations saved to: C:\Users\omuser255\Downloads\Coursework-main\Coursework-main\question2_social_media_analysis\visualizations\output_visualizations
+
+2025-09-24 03:20:40,536 - INFO - 
+============================================================
+2025-09-24 03:20:40,536 - INFO - STEP 5: RUNNING PREDICTIVE ANALYSIS
+2025-09-24 03:20:40,537 - INFO - ============================================================
+
+2025-09-24 03:20:40,538 - INFO - Loading and preparing data...
+2025-09-24 03:20:40,548 - INFO - Running comprehensive statistical analysis...
+2025-09-24 03:20:40,637 - INFO - Generating prediction reports...
+2025-09-24 03:20:40,694 - INFO - Predictive analysis completed successfully!
+2025-09-24 03:20:40,695 - INFO - Reports saved:
+2025-09-24 03:20:40,706 - INFO -   - json_report: C:\Users\omuser255\Downloads\Coursework-main\Coursework-main\question2_social_media_analysis\data\book_price_prediction_report_20250924_032040.json
+2025-09-24 03:20:40,707 - INFO -   - markdown_report: C:\Users\omuser255\Downloads\Coursework-main\Coursework-main\question2_social_media_analysis\data\book_price_prediction_report_20250924_032040.md
+2025-09-24 03:20:40,707 - INFO -   - predictions_csv: C:\Users\omuser255\Downloads\Coursework-main\Coursework-main\question2_social_media_analysis\data\book_price_predictions_20250924_032040.csv
+2025-09-24 03:20:40,708 - INFO - ********************************************************************************
+2025-09-24 03:20:40,709 - INFO - PIPELINE COMPLETED SUCCESSFULLY!
+2025-09-24 03:20:40,709 - INFO - Duration: 14.98 seconds
+2025-09-24 03:20:40,710 - INFO - Steps completed: scraping, cleaning, analysis, visualization, predictive_analysis
+2025-09-24 03:20:40,711 - INFO - ********************************************************************************
+2025-09-24 03:21:05,751 - INFO - Clearing existing data and visualizations...
+2025-09-24 03:21:05,753 - INFO - Cleared data folder: C:\Users\omuser255\Downloads\Coursework-main\Coursework-main\question2_social_media_analysis\data
+2025-09-24 03:21:05,758 - INFO - Cleared visualizations folder: C:\Users\omuser255\Downloads\Coursework-main\Coursework-main\question2_social_media_analysis\visualizations\output_visualizations
+2025-09-24 03:21:05,759 - INFO - ********************************************************************************
+2025-09-24 03:21:05,759 - INFO - STARTING SOCIAL MEDIA ANALYSIS PIPELINE
+2025-09-24 03:21:05,760 - INFO - ********************************************************************************
+2025-09-24 03:21:05,760 - INFO - 
+============================================================
+2025-09-24 03:21:05,761 - INFO - STEP 1: RUNNING WEB SCRAPER
+2025-09-24 03:21:05,761 - INFO - ============================================================
+
+2025-09-24 03:21:05,763 - INFO - HTTP session configured with user agent
+2025-09-24 03:21:05,764 - INFO - BookScraper initialized successfully
+2025-09-24 03:21:05,765 - INFO - Output file set to: C:\Users\omuser255\Downloads\Coursework-main\Coursework-main\question2_social_media_analysis\data\scraped_books.csv
+2025-09-24 03:21:05,765 - INFO - Max pages to scrape: 1
+2025-09-24 03:21:05,766 - INFO - Starting book scraping process
+2025-09-24 03:21:05,767 - INFO - Scraping page 1: http://books.toscrape.com/catalogue/page-1.html
+2025-09-24 03:21:10,336 - INFO - Found 20 books on page 1
+2025-09-24 03:21:12,103 - INFO - Successfully extracted: 'A Light in the Attic'
+2025-09-24 03:21:14,892 - INFO - Successfully extracted: 'Tipping the Velvet'
+2025-09-24 03:21:16,031 - INFO - Successfully extracted: 'Soumission'
+2025-09-24 03:21:18,946 - INFO - Successfully extracted: 'Sharp Objects'
+2025-09-24 03:21:27,727 - INFO - Successfully extracted: 'Sapiens: A Brief History of Humankind'
+2025-09-24 03:21:29,495 - INFO - Successfully extracted: 'The Requiem Red'
+2025-09-24 03:21:32,725 - INFO - Successfully extracted: 'The Dirty Little Secrets of Getting Your Dream Job'
+2025-09-24 03:21:35,433 - INFO - Successfully extracted: 'The Coming Woman: A Novel Based on the Life of the Infamous Feminist, Victoria Woodhull'
+2025-09-24 03:21:37,844 - INFO - Successfully extracted: 'The Boys in the Boat: Nine Americans and Their Epic Quest for Gold at the 1936 Berlin Olympics'
+2025-09-24 03:21:42,301 - INFO - Successfully extracted: 'The Black Maria'
+2025-09-24 03:21:44,932 - INFO - Successfully extracted: 'Starving Hearts (Triangular Trade Trilogy, #1)'
+2025-09-24 03:21:47,859 - INFO - Successfully extracted: 'Shakespeare's Sonnets'
+2025-09-24 03:21:51,241 - INFO - Successfully extracted: 'Set Me Free'
+2025-09-24 03:21:52,357 - INFO - Successfully extracted: 'Scott Pilgrim's Precious Little Life (Scott Pilgrim #1)'
+2025-09-24 03:21:53,193 - INFO - Successfully extracted: 'Rip it Up and Start Again'
+2025-09-24 03:21:54,107 - INFO - Successfully extracted: 'Our Band Could Be Your Life: Scenes from the American Indie Underground, 1981-1991'
+2025-09-24 03:21:54,988 - INFO - Successfully extracted: 'Olio'
+2025-09-24 03:22:00,206 - INFO - Successfully extracted: 'Mesaerion: The Best Science Fiction Stories 1800-1849'
+2025-09-24 03:22:05,079 - INFO - Successfully extracted: 'Libertarianism for Beginners'
+2025-09-24 03:22:17,694 - INFO - Successfully extracted: 'It's Only the Himalayas'
+2025-09-24 03:22:17,696 - INFO - Completed page 1, successfully processed 20/20 books
+2025-09-24 03:22:17,697 - INFO - Saving 20 books to CSV file: C:\Users\omuser255\Downloads\Coursework-main\Coursework-main\question2_social_media_analysis\data\scraped_books.csv
+2025-09-24 03:22:17,707 - INFO - Successfully saved 20 books to C:\Users\omuser255\Downloads\Coursework-main\Coursework-main\question2_social_media_analysis\data\scraped_books.csv
+2025-09-24 03:22:17,708 - INFO - Scraping complete! Total books processed: 20 from 1 pages
+2025-09-24 03:22:17,714 - INFO - Successfully scraped 20 books
+2025-09-24 03:22:17,715 - INFO - Data saved to: C:\Users\omuser255\Downloads\Coursework-main\Coursework-main\question2_social_media_analysis\data\scraped_books.csv
+
+2025-09-24 03:22:17,716 - INFO - 
+============================================================
+2025-09-24 03:22:17,716 - INFO - STEP 2: RUNNING DATA CLEANER
+2025-09-24 03:22:17,717 - INFO - ============================================================
+
+2025-09-24 03:22:17,813 - INFO - Cleaning completed. Final dataset: 20 rows
+2025-09-24 03:22:17,814 - INFO - Processing statistics: {'initial_rows': 20, 'currency_conversion': {'converted_prices': 20, 'assumed_usd': 0, 'rates_used': {'£': 1.27, '€': 1.1, '$': 1.0}}, 'duplicates_removed': 0, 'missing_handled': 0, 'final_rows': 20}
+
+2025-09-24 03:22:17,816 - INFO - 
+============================================================
+2025-09-24 03:22:17,816 - INFO - STEP 3: RUNNING STATISTICAL ANALYSIS
+2025-09-24 03:22:17,817 - INFO - ============================================================
+
+2025-09-24 03:22:17,908 - INFO - Analysis completed and saved to:
+2025-09-24 03:22:17,909 - INFO -   - JSON: C:\Users\omuser255\Downloads\Coursework-main\Coursework-main\question2_social_media_analysis\data\comprehensive_analysis_report_20250924_032105.json
+2025-09-24 03:22:17,918 - INFO -   - Markdown: C:\Users\omuser255\Downloads\Coursework-main\Coursework-main\question2_social_media_analysis\data\comprehensive_analysis_report_20250924_032105.md
+
+2025-09-24 03:22:17,926 - INFO - 
+============================================================
+2025-09-24 03:22:17,931 - INFO - STEP 4: GENERATING VISUALIZATIONS
+2025-09-24 03:22:17,933 - INFO - ============================================================
+
+2025-09-24 03:22:17,956 - INFO - Generating price distribution plots...
+2025-09-24 03:22:19,305 - INFO - Generating rating analysis plots...
+2025-09-24 03:22:20,369 - INFO - Generating category analysis plots...
+2025-09-24 03:22:21,568 - INFO - Generating correlation analysis...
+2025-09-24 03:22:22,342 - INFO - Generating comprehensive dashboard...
+2025-09-24 03:22:23,129 - INFO - All visualizations saved to: C:\Users\omuser255\Downloads\Coursework-main\Coursework-main\question2_social_media_analysis\visualizations\output_visualizations
+
+2025-09-24 03:22:23,130 - INFO - 
+============================================================
+2025-09-24 03:22:23,131 - INFO - STEP 5: RUNNING PREDICTIVE ANALYSIS
+2025-09-24 03:22:23,131 - INFO - ============================================================
+
+2025-09-24 03:22:23,132 - INFO - Loading and preparing data...
+2025-09-24 03:22:23,145 - INFO - Running comprehensive statistical analysis...
+2025-09-24 03:22:23,245 - INFO - Generating prediction reports...
+2025-09-24 03:22:23,330 - INFO - Predictive analysis completed successfully!
+2025-09-24 03:22:23,331 - INFO - Reports saved:
+2025-09-24 03:22:23,332 - INFO -   - json_report: C:\Users\omuser255\Downloads\Coursework-main\Coursework-main\question2_social_media_analysis\data\book_price_prediction_report_20250924_032223.json
+2025-09-24 03:22:23,332 - INFO -   - markdown_report: C:\Users\omuser255\Downloads\Coursework-main\Coursework-main\question2_social_media_analysis\data\book_price_prediction_report_20250924_032223.md
+2025-09-24 03:22:23,333 - INFO -   - predictions_csv: C:\Users\omuser255\Downloads\Coursework-main\Coursework-main\question2_social_media_analysis\data\book_price_predictions_20250924_032223.csv
+2025-09-24 03:22:23,333 - INFO - ********************************************************************************
+2025-09-24 03:22:23,334 - INFO - PIPELINE COMPLETED SUCCESSFULLY!
+2025-09-24 03:22:23,335 - INFO - Duration: 77.58 seconds
+2025-09-24 03:22:23,335 - INFO - Steps completed: scraping, cleaning, analysis, visualization, predictive_analysis
+2025-09-24 03:22:23,336 - INFO - ********************************************************************************
