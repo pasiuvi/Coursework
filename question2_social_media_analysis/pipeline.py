@@ -20,6 +20,8 @@ from pathlib import Path
 from datetime import datetime
 from typing import Dict, Any, Optional
 
+from colorama import init, Fore, Back, Style
+
 # Add subdirectories to path for imports
 current_dir = Path(__file__).parent
 sys.path.append(str(current_dir / 'data_collection'))
@@ -28,10 +30,10 @@ sys.path.append(str(current_dir / 'analysis'))
 sys.path.append(str(current_dir / 'visualizations'))
 
 # Import pipeline components
-from data_collection.scraper import BookScraper
-from data_processing.cleaner import DataCleaner
-from analysis.analyzer import BookDataAnalyzer
-from visualizations.visualizer import BookDataVisualizer
+from scraper import BookScraper
+from cleaner import DataCleaner
+from analyzer import BookDataAnalyzer
+from visualizer import BookDataVisualizer
 
 
 class AnalysisPipeline:
@@ -70,16 +72,44 @@ class AnalysisPipeline:
     
     def _setup_logging(self) -> None:
         """Set up logging for the pipeline."""
+        # Initialize colorama
+        init(autoreset=True)
+        
         log_file = self.base_dir / 'pipeline.log'
-        logging.basicConfig(
-            level=logging.INFO,
-            format='%(asctime)s -  %(message)s',
-            handlers=[
-                logging.FileHandler(log_file),
-                logging.StreamHandler(sys.stdout)
-            ]
-        )
-        self.logger = logging.getLogger(__name__)
+        
+        # Custom formatter with colors
+        class ColoredFormatter(logging.Formatter):
+            def format(self, record):
+                if record.levelno == logging.INFO:
+                    record.msg = Fore.GREEN + record.msg + Style.RESET_ALL
+                elif record.levelno == logging.WARNING:
+                    record.msg = Fore.YELLOW + record.msg + Style.RESET_ALL
+                elif record.levelno == logging.ERROR:
+                    record.msg = Fore.RED + record.msg + Style.RESET_ALL
+                elif record.levelno == logging.DEBUG:
+                    record.msg = Fore.BLUE + record.msg + Style.RESET_ALL
+                return super().format(record)
+        
+        # Create logger
+        self.logger = logging.getLogger('AnalysisPipeline')
+        self.logger.setLevel(logging.INFO)
+        
+        # Remove any existing handlers
+        for handler in self.logger.handlers[:]:
+            self.logger.removeHandler(handler)
+        
+        # File handler (no colors)
+        file_handler = logging.FileHandler(log_file)
+        file_formatter = logging.Formatter('%(asctime)s - %(levelname)s - %(message)s')
+        file_handler.setFormatter(file_formatter)
+        
+        # Console handler (with colors)
+        console_handler = logging.StreamHandler(sys.stdout)
+        console_formatter = ColoredFormatter('%(asctime)s - %(levelname)s - %(message)s')
+        console_handler.setFormatter(console_formatter)
+        
+        self.logger.addHandler(file_handler)
+        self.logger.addHandler(console_handler)
     
     def _clear_data_folders(self) -> None:
         """Clear all data in data folder and output_visualizations folder."""
@@ -106,12 +136,12 @@ class AnalysisPipeline:
             True if successful, False otherwise
         """
         try:
-            self.logger.info("=" * 60)
+            self.logger.info("\n" + "=" * 60)
             self.logger.info("STEP 1: RUNNING WEB SCRAPER")
-            self.logger.info("=" * 60)
+            self.logger.info("=" * 60 + "\n")
             
             # Initialize scraper with relative path from scraper's perspective
-            scraper = BookScraper(output_file=str(self.scraped_file), max_pages=num_pages)
+            scraper = BookScraper(output_file=str(self.scraped_file), max_pages=num_pages, logger=self.logger)
             
             # Run scraping
             scraper.scrape_books()
@@ -124,22 +154,22 @@ class AnalysisPipeline:
                     books_count = len(df)
                     if books_count > 0:
                         self.logger.info(f"Successfully scraped {books_count} books")
-                        self.logger.info(f"Data saved to: {self.scraped_file}")
+                        self.logger.info(f"Data saved to: {self.scraped_file}\n")
                         self.pipeline_stats['steps_completed'].append('scraping')
                         return True
                     else:
-                        self.logger.error("Scraped file is empty")
+                        self.logger.error("Scraped file is empty\n")
                         return False
                 except Exception as e:
-                    self.logger.error(f"Error reading scraped file: {e}")
+                    self.logger.error(f"Error reading scraped file: {e}\n")
                     return False
             else:
-                self.logger.error("Scraped file was not created")
+                self.logger.error("Scraped file was not created\n")
                 return False
                 
         except Exception as e:
             error_msg = f"Error in scraping step: {str(e)}"
-            self.logger.error(error_msg)
+            self.logger.error(error_msg + "\n")
             self.pipeline_stats['errors'].append(error_msg)
             return False
     
@@ -151,9 +181,9 @@ class AnalysisPipeline:
             True if successful, False otherwise
         """
         try:
-            self.logger.info("=" * 60)
+            self.logger.info("\n" + "=" * 60)
             self.logger.info("STEP 2: RUNNING DATA CLEANER")
-            self.logger.info("=" * 60)
+            self.logger.info("=" * 60 + "\n")
             
             # Check if scraped data exists
             if not self.scraped_file.exists():
@@ -177,14 +207,14 @@ class AnalysisPipeline:
             # Log statistics
             stats = cleaner.processing_stats
             self.logger.info(f"Cleaning completed. Final dataset: {len(cleaned_df)} rows")
-            self.logger.info(f"Processing statistics: {stats}")
+            self.logger.info(f"Processing statistics: {stats}\n")
             
             self.pipeline_stats['steps_completed'].append('cleaning')
             return True
             
         except Exception as e:
             error_msg = f"Error in cleaning step: {str(e)}"
-            self.logger.error(error_msg)
+            self.logger.error(error_msg + "\n")
             self.pipeline_stats['errors'].append(error_msg)
             return False
     
@@ -196,9 +226,9 @@ class AnalysisPipeline:
             True if successful, False otherwise
         """
         try:
-            self.logger.info("=" * 60)
+            self.logger.info("\n" + "=" * 60)
             self.logger.info("STEP 3: RUNNING STATISTICAL ANALYSIS")
-            self.logger.info("=" * 60)
+            self.logger.info("=" * 60 + "\n")
             
             # Check if cleaned data exists
             if not self.cleaned_file.exists():
@@ -219,7 +249,7 @@ class AnalysisPipeline:
             
             # Also save as markdown
             md_report = self.analysis_report.with_suffix('.md')
-            md_path = analyzer.save_report(
+            analyzer.save_report(
                 analysis_results, 
                 str(md_report),
                 format='markdown'
@@ -227,14 +257,14 @@ class AnalysisPipeline:
             
             self.logger.info(f"Analysis completed and saved to:")
             self.logger.info(f"  - JSON: {json_path}")
-            self.logger.info(f"  - Markdown: {md_path}")
+            self.logger.info(f"  - Markdown: {md_report}\n")
             
             self.pipeline_stats['steps_completed'].append('analysis')
             return True
             
         except Exception as e:
             error_msg = f"Error in analysis step: {str(e)}"
-            self.logger.error(error_msg)
+            self.logger.error(error_msg + "\n")
             self.pipeline_stats['errors'].append(error_msg)
             return False
     
@@ -246,9 +276,9 @@ class AnalysisPipeline:
             True if successful, False otherwise
         """
         try:
-            self.logger.info("=" * 60)
+            self.logger.info("\n" + "=" * 60)
             self.logger.info("STEP 4: GENERATING VISUALIZATIONS")
-            self.logger.info("=" * 60)
+            self.logger.info("=" * 60 + "\n")
             
             # Check if cleaned data exists
             if not self.cleaned_file.exists():
@@ -276,14 +306,14 @@ class AnalysisPipeline:
             self.logger.info("Generating comprehensive dashboard...")
             visualizer.create_interactive_plotly_dashboard()
             
-            self.logger.info(f"All visualizations saved to: {self.visualization_dir}")
+            self.logger.info(f"All visualizations saved to: {self.visualization_dir}\n")
             
             self.pipeline_stats['steps_completed'].append('visualization')
             return True
             
         except Exception as e:
             error_msg = f"Error in visualization step: {str(e)}"
-            self.logger.error(error_msg)
+            self.logger.error(error_msg + "\n")
             self.pipeline_stats['errors'].append(error_msg)
             return False
     

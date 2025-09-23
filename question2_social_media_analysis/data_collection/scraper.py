@@ -17,6 +17,7 @@ from urllib.parse import urljoin
 
 import requests
 from bs4 import BeautifulSoup
+from tqdm import tqdm
 
 
 class BookScraper:
@@ -31,18 +32,22 @@ class BookScraper:
     BASE_URL = "http://books.toscrape.com/catalogue/page-{}.html"
     DETAIL_BASE_URL = "http://books.toscrape.com/catalogue/"
     
-    def __init__(self, output_file: str = 'data/scraped_books.csv', max_pages: int = 1):
+    def __init__(self, output_file: str = 'data/scraped_books.csv', max_pages: int = 1, logger=None):
         """
         Initialize the BookScraper.
         
         Args:
             output_file: Path to the output CSV file
             max_pages: Maximum number of pages to scrape (0 = all pages)
+            logger: Optional logger to use instead of creating one
         """
         self.output_file = output_file
         self.max_pages = max_pages
         self.session = requests.Session()
-        self._setup_logging()
+        if logger:
+            self.logger = logger
+        else:
+            self._setup_logging()
         self._setup_session()
         self.logger.info("BookScraper initialized successfully")
         self.logger.info(f"Output file set to: {self.output_file}")
@@ -329,13 +334,13 @@ class BookScraper:
                 self.logger.info(f"Found {len(books)} books on page {page_num}")
                 
                 page_books_processed = 0
-                for book in books:
+                for book in tqdm(books, desc=f"Processing books on page {page_num}", unit="book"):
                     try:
                         book_data = self._extract_book_data(book)
                         all_books.append(book_data)
                         books_processed += 1
                         page_books_processed += 1
-                        self.logger.debug(f"Processed book {books_processed}: {book_data['title']}")
+                        # Removed debug log to avoid cluttering with tqdm
                     except Exception as e:
                         self.logger.error(f"Failed to process book {books_processed + 1} on page {page_num}: {e}")
                         continue
