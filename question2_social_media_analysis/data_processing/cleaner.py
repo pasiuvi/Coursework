@@ -252,6 +252,75 @@ class DataCleaner:
         
         return validation_results
     
+    def convert_prices_to_usd(self, df: pd.DataFrame) -> pd.DataFrame:
+        """
+        Convert prices from various currencies to USD.
+        Detects currency symbols (£, €, $) and converts accordingly.
+        If no currency symbol, assumes USD.
+        
+        Args:
+            df: Input DataFrame
+            
+        Returns:
+            DataFrame with prices converted to USD
+        """
+        if 'price' not in df.columns:
+            print("Warning: No 'price' column found for currency conversion")
+            return df
+        
+        df = df.copy()
+        
+        # Define conversion rates (as of September 2025)
+        rates = {
+            '£': 1.27,  # GBP to USD
+            '€': 1.10,  # EUR to USD
+            '$': 1.0    # USD to USD (no conversion needed)
+        }
+        
+        converted_count = 0
+        
+        def convert_price(price):
+            nonlocal converted_count
+            if pd.isna(price):
+                return price
+            
+            # Convert to string to check for currency symbols
+            price_str = str(price).strip()
+            
+            for symbol, rate in rates.items():
+                if price_str.startswith(symbol):
+                    # Remove symbol and convert
+                    numeric_part = price_str[len(symbol):].strip()
+                    try:
+                        numeric_value = float(numeric_part)
+                        converted_value = numeric_value * rate
+                        converted_count += 1
+                        return round(converted_value, 2)
+                    except ValueError:
+                        print(f"Warning: Could not convert price '{price_str}'")
+                        return price
+            
+            # No currency symbol found, assume USD
+            try:
+                return float(price_str)
+            except ValueError:
+                print(f"Warning: Could not parse price '{price_str}'")
+                return price
+        
+        # Apply conversion
+        df['price'] = df['price'].apply(convert_price)
+        
+        print(f"Converted {converted_count} prices to USD")
+        print(f"Assumed {len(df) - converted_count} prices were already in USD")
+        
+        self.processing_stats['currency_conversion'] = {
+            'converted_prices': converted_count,
+            'assumed_usd': len(df) - converted_count,
+            'rates_used': rates
+        }
+        
+        return df
+    
     def preprocess_text_columns(self, df: pd.DataFrame, 
                                text_columns: List[str]) -> pd.DataFrame:
         """
@@ -352,6 +421,7 @@ class DataCleaner:
         
         # Execute pipeline steps
         df = self.load_data(input_path)
+        df = self.convert_prices_to_usd(df)
         df = self.remove_duplicates(df)
         df = self.handle_missing_values(df)
         df = self.preprocess_text_columns(df, text_columns)
@@ -390,6 +460,12 @@ class DataCleaner:
         print(f"Final rows: {final}")
         print(f"Total rows processed: {initial - final}")
         print(f"Data retention rate: {(final/initial)*100:.2f}%" if initial > 0 else "N/A")
+        
+        # Print currency conversion info if available
+        currency_info = self.processing_stats.get('currency_conversion')
+        if currency_info:
+            print(f"Currency conversion: {currency_info['converted_prices']} prices converted, {currency_info['assumed_usd']} assumed USD")
+            print(f"Exchange rates used: {currency_info['rates_used']}")
 
 
 def main():
