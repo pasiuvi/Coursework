@@ -81,7 +81,14 @@ class AnalysisPipeline:
         )
         self.logger = logging.getLogger(__name__)
     
+    def _clear_data_folders(self) -> None:
+        """Clear all data in data folder and output_visualizations folder."""
+        # Clear data folder
+        if self.data_dir.exists():
+            shutil.rmtree(self.data_dir)
             self.data_dir.mkdir()
+            self.logger.info(f"Cleared data folder: {self.data_dir}")
+        
         # Clear output visualizations folder
         if self.visualization_dir.exists():
             shutil.rmtree(self.visualization_dir)
