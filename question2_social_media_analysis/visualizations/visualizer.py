@@ -261,8 +261,8 @@ class BookDataVisualizer:
                     color=valid_data['price'],
                     colorscale='Viridis',
                     size=8,
-                    showscale=True,
-                    colorbar=dict(title="Price ($)", x=0.45, y=0.5, len=0.4)
+                    showscale=False,
+                    # colorbar=dict(title="Price ($)", x=0.45, y=0.5, len=0.4)
                 ),
                 hovertemplate='<b>%{text}</b><br>Rating: %{x}<br>Price: $%{y:.2f}<extra></extra>',
                 showlegend=False
@@ -300,7 +300,7 @@ class BookDataVisualizer:
         )
 
         # 5. Price by Category Box Plot
-        top_categories = self.data['category'].value_counts().head(5).index
+        top_categories = self.data['category'].value_counts().head(10).index
         box_data = self.data[self.data['category'].isin(top_categories)]
         for cat in top_categories:
             cat_data = box_data[box_data['category'] == cat]['price'].dropna()
@@ -343,7 +343,8 @@ class BookDataVisualizer:
                 texttemplate='%{text:.3f}',
                 textfont={"size": 10},
                 hoverongaps=False,
-                showlegend=False
+                showlegend=False,
+                showscale=False
             ),
             row=4, col=1
         )
