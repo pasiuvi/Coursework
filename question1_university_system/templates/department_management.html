@@ -25,6 +25,25 @@
         <input type="submit" value="Assign to Department">
     </form>
 
+    <h2>Assign Courses to Departments</h2>
+    <form method="POST" action="/assign_course_to_department">
+        <label>Department:
+            <select name="department" required>
+                {% for dept in departments %}
+                <option value="{{ dept.name }}">{{ dept.name }}</option>
+                {% endfor %}
+            </select>
+        </label><br><br>
+        <label>Course:
+            <select name="course_code" required>
+                {% for course in courses %}
+                <option value="{{ course.code }}">{{ course.name }} ({{ course.code }})</option>
+                {% endfor %}
+            </select>
+        </label><br><br>
+        <input type="submit" value="Assign Course to Department">
+    </form>
+
     <h2>Department Overview</h2>
     {% for dept in departments %}
         <div style="border: 1px solid #ccc; margin: 10px; padding: 10px;">

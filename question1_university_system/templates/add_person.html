@@ -18,20 +18,45 @@
         <div id="student_fields" style="display:none;">
             <label>Major: <input type="text" name="major"></label><br>
             <label>Subtype:
-                <select name="subtype">
+                <select name="student_subtype">
                     <option value="undergrad">Undergraduate</option>
                     <option value="grad">Graduate</option>
                 </select>
             </label><br>
         </div>
         <div id="faculty_fields" style="display:none;">
-            <label>Department: <input type="text" name="department"></label><br>
+            <label>Department: 
+                {% if departments %}
+                <select name="department" id="faculty_department">
+                    <option value="">Select a department</option>
+                    {% for department in departments %}
+                    <option value="{{ department.name }}">{{ department.name }}</option>
+                    {% endfor %}
+                </select>
+                {% else %}
+                <input type="text" name="department" id="faculty_department" placeholder="No departments available - please add departments first">
+                {% endif %}
+            </label><br>
             <label>Subtype:
-                <select name="subtype">
+                <select name="faculty_subtype">
                     <option value="professor">Professor</option>
                     <option value="lecturer">Lecturer</option>
                     <option value="ta">TA</option>
                 </select>
+            </label><br>
+        </div>
+        <div id="staff_fields" style="display:none;">
+            <label>Department: 
+                {% if departments %}
+                <select name="staff_department">
+                    <option value="Administration">Administration (Default)</option>
+                    {% for department in departments %}
+                    <option value="{{ department.name }}">{{ department.name }}</option>
+                    {% endfor %}
+                </select>
+                {% else %}
+                <input type="text" name="staff_department" value="Administration" placeholder="Administration">
+                {% endif %}
             </label><br>
         </div>
         <input type="submit" value="Add">
@@ -39,8 +64,21 @@
     <script>
         document.getElementById('type').addEventListener('change', function() {
             var type = this.value;
+            var facultyDept = document.getElementById('faculty_department');
+            
+            // Show/hide appropriate fields
             document.getElementById('student_fields').style.display = type === 'student' ? 'block' : 'none';
             document.getElementById('faculty_fields').style.display = type === 'faculty' ? 'block' : 'none';
+            document.getElementById('staff_fields').style.display = type === 'staff' ? 'block' : 'none';
+            
+            // Set required attribute only for faculty department when faculty is selected
+            if (facultyDept) {
+                if (type === 'faculty') {
+                    facultyDept.required = true;
+                } else {
+                    facultyDept.required = false;
+                }
+            }
         });
     </script>
     <a href="/">Back</a>

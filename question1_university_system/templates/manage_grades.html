@@ -9,7 +9,7 @@
         <label>Student:
             <select name="student_id" required>
                 {% for student in students %}
-                <option value="{{ student.id }}">{{ student.name }} ({{ student.id }})</option>
+                <option value="{{ student.person_id }}">{{ student.name }} ({{ student.person_id }})</option>
                 {% endfor %}
             </select>
         </label><br><br>
@@ -26,7 +26,7 @@
 
     <h2>Current Grades</h2>
     {% for student in students %}
-        <h3>{{ student.name }} ({{ student.id }})</h3>
+        <h3>{{ student.name }} ({{ student.person_id }})</h3>
         <ul>
             {% for course_code, grade in student.grades.items() %}
                 <li>{{ course_code }}: {{ grade }}</li>

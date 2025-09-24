@@ -9,7 +9,7 @@
         <label>Faculty Member:
             <select name="faculty_id" required>
                 {% for faculty in faculty_members %}
-                <option value="{{ faculty.id }}">{{ faculty.name }} ({{ faculty.__class__.__name__ }}) - {{ faculty.id }}</option>
+                <option value="{{ faculty.person_id }}">{{ faculty.name }} ({{ faculty.__class__.__name__ }}) - {{ faculty.person_id }}</option>
                 {% endfor %}
             </select>
         </label><br><br>

@@ -1,144 +1,102 @@
 {
   "departments": [
     {
-      "name": "Computer Science",
-      "faculty_ids": [
-        "F001",
-        "F003",
-        "F004"
-      ],
-      "student_ids": [
-        "S001",
-        "S002"
-      ]
-    },
-    {
-      "name": "Mathematics",
-      "faculty_ids": [
-        "F002"
-      ],
-      "student_ids": [
-        "S003"
-      ]
-    },
-    {
       "name": "Engineering",
-      "faculty_ids": [],
-      "student_ids": []
+      "faculty_ids": [
+        "008"
+      ],
+      "student_ids": [
+        "ss10",
+        "22",
+        "0013"
+      ],
+      "course_codes": [
+        "AES10"
+      ]
     }
   ],
   "courses": [
     {
-      "name": "Introduction to Computer Science",
-      "code": "CS101",
-      "max_enrollment": 50,
-      "prerequisites": [],
-      "enrolled_student_ids": [
-        "S001",
-        "S002"
-      ],
-      "faculty_id": "F001"
-    },
-    {
-      "name": "Data Structures",
-      "code": "CS201",
-      "max_enrollment": 30,
-      "prerequisites": [
-        "CS101"
-      ],
-      "enrolled_student_ids": [],
-      "faculty_id": "F002"
-    },
-    {
-      "name": "Calculus I",
-      "code": "MATH101",
-      "max_enrollment": 40,
-      "prerequisites": [],
-      "enrolled_student_ids": [
-        "S003"
-      ],
-      "faculty_id": "F002"
-    },
-    {
       "name": "Software Engineering",
-      "code": "se",
+      "code": "AES10",
       "max_enrollment": 10,
-      "prerequisites": [
-        "degree"
+      "prerequisites": [],
+      "enrolled_student_ids": [
+        "22",
+        "0013",
+        "ss10"
       ],
-      "enrolled_student_ids": [],
-      "faculty_id": null
+      "faculty_id": "008"
     }
   ],
   "people": [
     {
-      "type": "Professor",
-      "name": "Dr. Smith",
-      "id": "F001",
-      "department": "Computer Science"
-    },
-    {
-      "type": "Professor",
-      "name": "Dr. Johnson",
-      "id": "F002",
-      "department": "Mathematics"
-    },
-    {
-      "type": "Lecturer",
-      "name": "Ms. Brown",
-      "id": "F003",
-      "department": "Computer Science"
+      "type": "UndergraduateStudent",
+      "name": "Nishan Nilupul",
+      "person_id": "ss10",
+      "major": "",
+      "courses": [
+        "AES10"
+      ],
+      "grades": {}
     },
     {
       "type": "TA",
-      "name": "Alex Wilson",
-      "id": "F004",
-      "department": "Computer Science"
+      "name": "Ashaan",
+      "person_id": "0003",
+      "department": "Engineering"
+    },
+    {
+      "type": "TA",
+      "name": "deshan",
+      "person_id": "006",
+      "department": "Engineering"
+    },
+    {
+      "type": "Professor",
+      "name": "deshan",
+      "person_id": "008",
+      "department": "Engineering"
+    },
+    {
+      "type": "Professor",
+      "name": "malshan",
+      "person_id": "008",
+      "department": "Engineering"
+    },
+    {
+      "type": "Professor",
+      "name": "sss",
+      "person_id": "1111",
+      "department": "Engineering"
+    },
+    {
+      "type": "Professor",
+      "name": "ssd",
+      "person_id": "111",
+      "department": "Engineering"
     },
     {
       "type": "UndergraduateStudent",
-      "name": "John Doe",
-      "id": "S001",
-      "major": "Computer Science",
-      "courses": [
-        "CS101"
-      ],
-      "grades": {
-        "CS101": 1.2,
-        "CS201": 3.8
-      }
-    },
-    {
-      "type": "UndergraduateStudent",
-      "name": "Jane Smith",
-      "id": "S002",
-      "major": "Computer Science",
-      "courses": [
-        "CS101"
-      ],
-      "grades": {
-        "CS101": 3.2
-      }
-    },
-    {
-      "type": "GraduateStudent",
-      "name": "Robert Brown",
-      "id": "S003",
-      "major": "Mathematics",
-      "courses": [
-        "MATH101"
-      ],
-      "grades": {
-        "MATH101": 3.9
-      }
-    },
-    {
-      "type": "UndergraduateStudent",
-      "name": "Saman",
-      "id": "002",
+      "name": "wee",
+      "person_id": "22",
       "major": "",
-      "courses": [],
+      "courses": [
+        "AES10"
+      ],
       "grades": {}
+    },
+    {
+      "type": "UndergraduateStudent",
+      "name": "Pasindu Ashan",
+      "person_id": "0013",
+      "major": "",
+      "courses": [
+        "AES10"
+      ],
+      "grades": {
+        "AES10": 2.5
+      }
     }
   ]
 }
