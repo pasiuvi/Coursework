@@ -1,0 +1,144 @@
+{
+  "departments": [
+    {
+      "name": "Computer Science",
+      "faculty_ids": [
+        "F001",
+        "F003",
+        "F004"
+      ],
+      "student_ids": [
+        "S001",
+        "S002"
+      ]
+    },
+    {
+      "name": "Mathematics",
+      "faculty_ids": [
+        "F002"
+      ],
+      "student_ids": [
+        "S003"
+      ]
+    },
+    {
+      "name": "Engineering",
+      "faculty_ids": [],
+      "student_ids": []
+    }
+  ],
+  "courses": [
+    {
+      "name": "Introduction to Computer Science",
+      "code": "CS101",
+      "max_enrollment": 50,
+      "prerequisites": [],
+      "enrolled_student_ids": [
+        "S001",
+        "S002"
+      ],
+      "faculty_id": "F001"
+    },
+    {
+      "name": "Data Structures",
+      "code": "CS201",
+      "max_enrollment": 30,
+      "prerequisites": [
+        "CS101"
+      ],
+      "enrolled_student_ids": [],
+      "faculty_id": "F002"
+    },
+    {
+      "name": "Calculus I",
+      "code": "MATH101",
+      "max_enrollment": 40,
+      "prerequisites": [],
+      "enrolled_student_ids": [
+        "S003"
+      ],
+      "faculty_id": "F002"
+    },
+    {
+      "name": "Software Engineering",
+      "code": "se",
+      "max_enrollment": 10,
+      "prerequisites": [
+        "degree"
+      ],
+      "enrolled_student_ids": [],
+      "faculty_id": null
+    }
+  ],
+  "people": [
+    {
+      "type": "Professor",
+      "name": "Dr. Smith",
+      "id": "F001",
+      "department": "Computer Science"
+    },
+    {
+      "type": "Professor",
+      "name": "Dr. Johnson",
+      "id": "F002",
+      "department": "Mathematics"
+    },
+    {
+      "type": "Lecturer",
+      "name": "Ms. Brown",
+      "id": "F003",
+      "department": "Computer Science"
+    },
+    {
+      "type": "TA",
+      "name": "Alex Wilson",
+      "id": "F004",
+      "department": "Computer Science"
+    },
+    {
+      "type": "UndergraduateStudent",
+      "name": "John Doe",
+      "id": "S001",
+      "major": "Computer Science",
+      "courses": [
+        "CS101"
+      ],
+      "grades": {
+        "CS101": 1.2,
+        "CS201": 3.8
+      }
+    },
+    {
+      "type": "UndergraduateStudent",
+      "name": "Jane Smith",
+      "id": "S002",
+      "major": "Computer Science",
+      "courses": [
+        "CS101"
+      ],
+      "grades": {
+        "CS101": 3.2
+      }
+    },
+    {
+      "type": "GraduateStudent",
+      "name": "Robert Brown",
+      "id": "S003",
+      "major": "Mathematics",
+      "courses": [
+        "MATH101"
+      ],
+      "grades": {
+        "MATH101": 3.9
+      }
+    },
+    {
+      "type": "UndergraduateStudent",
+      "name": "Saman",
+      "id": "002",
+      "major": "",
+      "courses": [],
+      "grades": {}
+    }
+  ]
+}
