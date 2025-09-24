@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>University System</title>
+     <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        label { display: block; margin-top: 10px; }
+        input[type="text"], input[type="number"] { width: 300px; padding: 5px; }
+        input[type="submit"] { margin-top: 15px; padding: 10px 20px; }
+    </style>
+</head>
+<body>
+    <h1>University Management System</h1>
+    <h2>Departments</h2>
+    <ul>
+        {% for dept in departments %}
+        <li>{{ dept.name }}</li>
+        {% endfor %}
+    </ul>
+    <a href="/add_department">Add Department</a>
+
+    <h2>Courses</h2>
+    <ul>
+        {% for course in courses %}
+        <li>{{ course.name }} ({{ course.code }}) - Enrolled: {{ course.enrolled_students|length }}/{{ course.max_enrollment }}</li>
+        {% endfor %}
+    </ul>
+    <a href="/add_course">Add Course</a>
+
+    <h2>People</h2>
+    <ul>
+        {% for person in people %}
+        <li>
+            {{ person.name }} ({{ person.__class__.__name__ }}) - ID: {{ person.id }}
+            {% if person.__class__.__name__ in ['UndergraduateStudent', 'GraduateStudent'] %}
+                - <a href="/student_details/{{ person.id }}">View Details</a>
+            {% endif %}
+        </li>
+        {% endfor %}
+    </ul>
+    <a href="/add_person">Add Person</a>
+
+    <h2>Actions</h2>
+    <ul>
+        <li><a href="/enroll">Enroll Student in Course</a></li>
+        <li><a href="/drop_course">Drop Student from Course</a></li>
+        <li><a href="/manage_grades">Manage Student Grades</a></li>
+        <li><a href="/assign_faculty">Assign Faculty to Course</a></li>
+        <li><a href="/faculty_workload">View Faculty Workload</a></li>
+        <li><a href="/department_management">Department Management</a></li>
+        <li><a href="/database_admin">Database Administration</a></li>
+    </ul>
+</body>
+</html>

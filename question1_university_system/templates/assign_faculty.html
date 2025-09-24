@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Assign Faculty to Course</title>
+</head>
+<body>
+    <h1>Assign Faculty to Course</h1>
+    <form method="POST">
+        <label>Faculty Member:
+            <select name="faculty_id" required>
+                {% for faculty in faculty_members %}
+                <option value="{{ faculty.id }}">{{ faculty.name }} ({{ faculty.__class__.__name__ }}) - {{ faculty.id }}</option>
+                {% endfor %}
+            </select>
+        </label><br><br>
+        <label>Course:
+            <select name="course_code" required>
+                {% for course in courses %}
+                <option value="{{ course.code }}">{{ course.name }} ({{ course.code }})</option>
+                {% endfor %}
+            </select>
+        </label><br><br>
+        <input type="submit" value="Assign Faculty">
+    </form>
+
+    <h2>Current Course Assignments</h2>
+    {% for course in courses %}
+        <p><strong>{{ course.name }} ({{ course.code }}):</strong> 
+        {% if course.faculty %}
+            {{ course.faculty.name }} ({{ course.faculty.__class__.__name__ }})
+        {% else %}
+            No faculty assigned
+        {% endif %}
+        </p>
+    {% endfor %}
+
+    <a href="/">Back</a>
+</body>
+</html>

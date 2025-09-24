@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Person</title>
+</head>
+<body>
+    <h1>Add Person</h1>
+    <form method="POST">
+        <label>Type:
+            <select name="type" id="type" required>
+                <option value="student">Student</option>
+                <option value="faculty">Faculty</option>
+                <option value="staff">Staff</option>
+            </select>
+        </label><br>
+        <label>Name: <input type="text" name="name" required></label><br>
+        <label>ID: <input type="text" name="id" required></label><br>
+        <div id="student_fields" style="display:none;">
+            <label>Major: <input type="text" name="major"></label><br>
+            <label>Subtype:
+                <select name="subtype">
+                    <option value="undergrad">Undergraduate</option>
+                    <option value="grad">Graduate</option>
+                </select>
+            </label><br>
+        </div>
+        <div id="faculty_fields" style="display:none;">
+            <label>Department: <input type="text" name="department"></label><br>
+            <label>Subtype:
+                <select name="subtype">
+                    <option value="professor">Professor</option>
+                    <option value="lecturer">Lecturer</option>
+                    <option value="ta">TA</option>
+                </select>
+            </label><br>
+        </div>
+        <input type="submit" value="Add">
+    </form>
+    <script>
+        document.getElementById('type').addEventListener('change', function() {
+            var type = this.value;
+            document.getElementById('student_fields').style.display = type === 'student' ? 'block' : 'none';
+            document.getElementById('faculty_fields').style.display = type === 'faculty' ? 'block' : 'none';
+        });
+    </script>
+    <a href="/">Back</a>
+</body>
+</html>

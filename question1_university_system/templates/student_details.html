@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Details</title>
+</head>
+<body>
+    <h1>Student Details: {{ student.name }}</h1>
+    
+    <h2>Basic Information</h2>
+    <p><strong>Name:</strong> {{ student.name }}</p>
+    <p><strong>ID:</strong> {{ student.id }}</p>
+    <p><strong>Major:</strong> {{ student.major }}</p>
+    <p><strong>Type:</strong> {{ student.__class__.__name__ }}</p>
+    
+    <h2>Academic Performance</h2>
+    <p><strong>GPA:</strong> {{ "%.2f"|format(student.calculate_gpa()) }}</p>
+    <p><strong>Academic Status:</strong> {{ student.get_academic_status() }}</p>
+    
+    <h2>Enrolled Courses</h2>
+    <ul>
+        {% for course in student.courses %}
+            <li>{{ course }}</li>
+        {% endfor %}
+    </ul>
+    
+    <h2>Grades</h2>
+    <ul>
+        {% for course_code, grade in student.grades.items() %}
+            <li>{{ course_code }}: {{ grade }}</li>
+        {% endfor %}
+    </ul>
+    
+    <h2>Responsibilities</h2>
+    <p>{{ student.get_responsibilities() }}</p>
+    
+    {% if secure_record %}
+    <h2>Secure Record Information</h2>
+    <p>{{ secure_record.get_student_info() }}</p>
+    {% endif %}
+    
+    <a href="/">Back to Home</a>
+</body>
+</html>

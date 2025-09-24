@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Department Management</title>
+</head>
+<body>
+    <h1>Department Management</h1>
+    
+    <h2>Assign People to Departments</h2>
+    <form method="POST" action="/assign_to_department">
+        <label>Department:
+            <select name="department" required>
+                {% for dept in departments %}
+                <option value="{{ dept.name }}">{{ dept.name }}</option>
+                {% endfor %}
+            </select>
+        </label><br><br>
+        <label>Person:
+            <select name="person_id" required>
+                {% for person in people %}
+                <option value="{{ person.id }}">{{ person.name }} ({{ person.__class__.__name__ }}) - {{ person.id }}</option>
+                {% endfor %}
+            </select>
+        </label><br><br>
+        <input type="submit" value="Assign to Department">
+    </form>
+
+    <h2>Department Overview</h2>
+    {% for dept in departments %}
+        <div style="border: 1px solid #ccc; margin: 10px; padding: 10px;">
+            <h3>{{ dept.name }} Department</h3>
+            
+            <h4>Faculty Members:</h4>
+            <ul>
+                {% for faculty in dept.faculty %}
+                    <li>{{ faculty.name }} ({{ faculty.__class__.__name__ }}) - {{ faculty.id }}</li>
+                {% else %}
+                    <li>No faculty assigned</li>
+                {% endfor %}
+            </ul>
+            
+            <h4>Students:</h4>
+            <ul>
+                {% for student in dept.students %}
+                    <li>{{ student.name }} ({{ student.__class__.__name__ }}) - {{ student.id }}</li>
+                {% else %}
+                    <li>No students assigned</li>
+                {% endfor %}
+            </ul>
+            
+            <h4>Courses:</h4>
+            <ul>
+                {% for course in dept.courses %}
+                    <li>{{ course.name }} ({{ course.code }}) - Enrolled: {{ course.enrolled_students|length }}/{{ course.max_enrollment }}</li>
+                {% else %}
+                    <li>No courses</li>
+                {% endfor %}
+            </ul>
+        </div>
+    {% endfor %}
+    
+    <a href="/">Back to Home</a>
+</body>
+</html>
