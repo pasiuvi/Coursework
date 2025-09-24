@@ -10,7 +10,7 @@
     {% for faculty in faculty_members %}
         <div style="border: 1px solid #ccc; margin: 10px; padding: 10px;">
             <h3>{{ faculty.name }} ({{ faculty.__class__.__name__ }})</h3>
-            <p><strong>ID:</strong> {{ faculty.id }}</p>
+            <p><strong>ID:</strong> {{ faculty.person_id }}</p>
             <p><strong>Department:</strong> {{ faculty.department }}</p>
             <p><strong>Responsibilities:</strong> {{ faculty.get_responsibilities() }}</p>
             <p><strong>Workload:</strong> {{ faculty.calculate_workload() }}</p>
@@ -19,7 +19,7 @@
             <ul>
                 {% set courses_found = [] %}
                 {% for course in courses %}
-                    {% if course.faculty and course.faculty.id == faculty.id %}
+                    {% if course.faculty and course.faculty.person_id == faculty.person_id %}
                         {% set _ = courses_found.append(course) %}
                         <li>{{ course.name }} ({{ course.code }}) - Enrolled: {{ course.enrolled_students|length }}/{{ course.max_enrollment }}</li>
                     {% endif %}

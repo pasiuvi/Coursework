@@ -31,9 +31,9 @@
     <ul>
         {% for person in people %}
         <li>
-            {{ person.name }} ({{ person.__class__.__name__ }}) - ID: {{ person.id }}
+            {{ person.name }} ({{ person.__class__.__name__ }}) - ID: {{ person.person_id }}
             {% if person.__class__.__name__ in ['UndergraduateStudent', 'GraduateStudent'] %}
-                - <a href="/student_details/{{ person.id }}">View Details</a>
+                - <a href="/student_details/{{ person.person_id }}">View Details</a>
             {% endif %}
         </li>
         {% endfor %}
