@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Drop Course</title>
+</head>
+<body>
+    <h1>Drop Student from Course</h1>
+    <form method="POST">
+        <label>Student:
+            <select name="student_id" required>
+                {% for student in students %}
+                <option value="{{ student.id }}">{{ student.name }} ({{ student.id }})</option>
+                {% endfor %}
+            </select>
+        </label><br><br>
+        <label>Course to Drop:
+            <input type="text" name="course_code" placeholder="Enter course code" required>
+        </label><br><br>
+        <input type="submit" value="Drop Course">
+    </form>
+
+    <h2>Current Enrollments</h2>
+    {% for student in students %}
+        <h3>{{ student.name }} ({{ student.id }})</h3>
+        <p><strong>Enrolled Courses:</strong></p>
+        <ul>
+            {% for course in student.courses %}
+                <li>{{ course }}</li>
+            {% endfor %}
+        </ul>
+    {% endfor %}
+
+    <a href="/">Back</a>
+</body>
+</html>

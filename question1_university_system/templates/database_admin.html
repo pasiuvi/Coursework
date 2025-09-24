@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Database Administration</title>
+    <style>
+        .admin-section { border: 1px solid #ccc; margin: 10px; padding: 10px; }
+        .warning { background-color: #ffeeee; color: #cc0000; padding: 10px; margin: 10px 0; }
+        .info { background-color: #eeeeff; color: #0000cc; padding: 10px; margin: 10px 0; }
+    </style>
+</head>
+<body>
+    <h1>Database Administration</h1>
+    
+    <div class="admin-section">
+        <h2>Database Status</h2>
+        <div class="info">
+            <p><strong>Departments:</strong> {{ departments|length }}</p>
+            <p><strong>Courses:</strong> {{ courses|length }}</p>
+            <p><strong>People:</strong> {{ people|length }}</p>
+            <p><strong>Students:</strong> {{ people|selectattr('__class__.__name__', 'in', ['UndergraduateStudent', 'GraduateStudent'])|list|length }}</p>
+            <p><strong>Faculty:</strong> {{ people|selectattr('__class__.__name__', 'in', ['Professor', 'Lecturer', 'TA'])|list|length }}</p>
+        </div>
+    </div>
+    
+    <div class="admin-section">
+        <h2>Database Actions</h2>
+        
+        <h3>Load Sample Data</h3>
+        <p>This will add sample departments, courses, faculty, and students to the database.</p>
+        <form method="POST" action="/load_sample_data" onsubmit="return confirm('Are you sure you want to load sample data?')">
+            <input type="submit" value="Load Sample Data" style="background-color: #4CAF50; color: white; padding: 10px;">
+        </form>
+        
+        <h3>Reset Database</h3>
+        <div class="warning">
+            <strong>Warning:</strong> This will permanently delete all data in the database!
+        </div>
+        <form method="POST" action="/reset_database" onsubmit="return confirm('Are you sure you want to reset the database? This cannot be undone!')">
+            <input type="submit" value="Reset Database" style="background-color: #f44336; color: white; padding: 10px;">
+        </form>
+    </div>
+    
+    <div class="admin-section">
+        <h2>Current Data Summary</h2>
+        
+        <h3>Departments</h3>
+        <ul>
+            {% for dept in departments %}
+                <li>{{ dept.name }} ({{ dept.faculty|length }} faculty, {{ dept.students|length }} students)</li>
+            {% else %}
+                <li>No departments</li>
+            {% endfor %}
+        </ul>
+        
+        <h3>Courses</h3>
+        <ul>
+            {% for course in courses %}
+                <li>{{ course.name }} ({{ course.code }}) - {{ course.enrolled_students|length }}/{{ course.max_enrollment }} enrolled</li>
+            {% else %}
+                <li>No courses</li>
+            {% endfor %}
+        </ul>
+        
+        <h3>Recent People</h3>
+        <ul>
+            {% for person in people[:10] %}
+                <li>{{ person.name }} ({{ person.__class__.__name__ }}) - {{ person.id }}</li>
+            {% else %}
+                <li>No people</li>
+            {% endfor %}
+            {% if people|length > 10 %}
+                <li>... and {{ people|length - 10 }} more</li>
+            {% endif %}
+        </ul>
+    </div>
+    
+    <a href="/">Back to Home</a>
+</body>
+</html>
