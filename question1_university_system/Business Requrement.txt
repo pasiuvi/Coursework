@@ -1,0 +1,39 @@
+Build upon the school management system by creating a more comprehensive university system 
+that handles multiple departments, course enrollments, and grading systems. 
+
+A. Inheritance with Multiple Classes (8 marks) 
+Create a base class Person and extend the inheritance hierarchy: 
+• Person → Student, Faculty, Staff 
+• Faculty → Professor, Lecturer, TA (Teaching Assistant) 
+• Student → UndergraduateStudent, GraduateStudent 
+Task: Implement the inheritance structure with proper __init__ methods and demonstrate method 
+inheritance. 
+
+B. Advanced Student Management (8 marks) 
+Enhance the Student class with: 
+• Course enrollment system (students can enroll in multiple courses) 
+• GPA calculation across multiple semesters 
+• Academic status tracking (Good Standing, Probation, Dean's List) 
+Task: Create methods enroll_course(), drop_course(), calculate_gpa(), and 
+get_academic_status(). 
+
+C. Encapsulation with Validation (8 marks) 
+Implement data validation and security: 
+• Private attributes with getter/setter methods 
+• Input validation (e.g., GPA must be between 0.0-4.0) 
+• Data integrity checks (e.g., enrollment limits) 
+Task: Create a SecureStudentRecord class with proper encapsulation and validation. 
+
+D. Polymorphism with Method Overriding (8 marks) 
+Create specialized behavior for different roles: 
+• Override get_responsibilities() method for each person type 
+• Override calculate_workload() method for different faculty types 
+• Demonstrate polymorphism by handling different person types in lists 
+Task: Show how the same method call behaves differently for different classes. 
+
+E. Department and Course Management (8 marks) 
+Create additional classes to manage university structure: 
+• Department class with faculty and course lists 
+• Course class with enrollment limits and prerequisites 
+• Methods to assign faculty to courses and students to departments 
+Task: Implement a complete course registration system with prerequisite checking.

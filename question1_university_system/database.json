@@ -1,0 +1,102 @@
+{
+  "departments": [
+    {
+      "name": "Engineering",
+      "faculty_ids": [
+        "008"
+      ],
+      "student_ids": [
+        "ss10",
+        "22",
+        "0013"
+      ],
+      "course_codes": [
+        "AES10"
+      ]
+    }
+  ],
+  "courses": [
+    {
+      "name": "Software Engineering",
+      "code": "AES10",
+      "max_enrollment": 10,
+      "prerequisites": [],
+      "enrolled_student_ids": [
+        "22",
+        "0013",
+        "ss10"
+      ],
+      "faculty_id": "008"
+    }
+  ],
+  "people": [
+    {
+      "type": "UndergraduateStudent",
+      "name": "Nishan Nilupul",
+      "person_id": "ss10",
+      "major": "",
+      "courses": [
+        "AES10"
+      ],
+      "grades": {}
+    },
+    {
+      "type": "TA",
+      "name": "Ashaan",
+      "person_id": "0003",
+      "department": "Engineering"
+    },
+    {
+      "type": "TA",
+      "name": "deshan",
+      "person_id": "006",
+      "department": "Engineering"
+    },
+    {
+      "type": "Professor",
+      "name": "deshan",
+      "person_id": "008",
+      "department": "Engineering"
+    },
+    {
+      "type": "Professor",
+      "name": "malshan",
+      "person_id": "008",
+      "department": "Engineering"
+    },
+    {
+      "type": "Professor",
+      "name": "sss",
+      "person_id": "1111",
+      "department": "Engineering"
+    },
+    {
+      "type": "Professor",
+      "name": "ssd",
+      "person_id": "111",
+      "department": "Engineering"
+    },
+    {
+      "type": "UndergraduateStudent",
+      "name": "wee",
+      "person_id": "22",
+      "major": "",
+      "courses": [
+        "AES10"
+      ],
+      "grades": {}
+    },
+    {
+      "type": "UndergraduateStudent",
+      "name": "Pasindu Ashan",
+      "person_id": "0013",
+      "major": "",
+      "courses": [
+        "AES10"
+      ],
+      "grades": {
+        "AES10": 2.5
+      }
+    }
+  ]
+}

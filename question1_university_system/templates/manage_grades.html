@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Manage Grades</title>
+</head>
+<body>
+    <h1>Manage Student Grades</h1>
+    <form method="POST">
+        <label>Student:
+            <select name="student_id" required>
+                {% for student in students %}
+                <option value="{{ student.person_id }}">{{ student.name }} ({{ student.person_id }})</option>
+                {% endfor %}
+            </select>
+        </label><br><br>
+        <label>Course Code:
+            <select name="course_code" required>
+                {% for course in courses %}
+                <option value="{{ course.code }}">{{ course.name }} ({{ course.code }})</option>
+                {% endfor %}
+            </select>
+        </label><br><br>
+        <label>Grade (0.0-4.0): <input type="number" name="grade" min="0" max="4" step="0.1" required></label><br><br>
+        <input type="submit" value="Assign Grade">
+    </form>
+
+    <h2>Current Grades</h2>
+    {% for student in students %}
+        <h3>{{ student.name }} ({{ student.person_id }})</h3>
+        <ul>
+            {% for course_code, grade in student.grades.items() %}
+                <li>{{ course_code }}: {{ grade }}</li>
+            {% endfor %}
+        </ul>
+        <p><strong>GPA: {{ "%.2f"|format(student.calculate_gpa()) }}</strong></p>
+        <p><strong>Academic Status: {{ student.get_academic_status() }}</strong></p>
+    {% endfor %}
+
+    <a href="/">Back</a>
+</body>
+</html>

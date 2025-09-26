@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Course</title>
+    <style>
+        body { 
+            font-family: Arial, sans-serif; 
+            margin: 20px; 
+            max-width: 600px;
+        }
+        label { 
+            display: block; 
+            margin-top: 15px; 
+            font-weight: bold;
+        }
+        input[type="text"], input[type="number"], select { 
+            width: 100%; 
+            padding: 8px; 
+            margin-top: 5px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        select[multiple] {
+            height: 120px;
+        }
+        input[type="submit"] { 
+            margin-top: 20px; 
+            padding: 12px 24px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+        .form-section {
+            margin-bottom: 20px;
+            padding: 15px;
+            border: 1px solid #e0e0e0;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+        .form-section h3 {
+            margin-top: 0;
+            color: #333;
+        }
+        .help-text {
+            font-size: 12px;
+            color: #666;
+            margin-top: 5px;
+        }
+        .back-link {
+            display: inline-block;
+            margin-top: 15px;
+            color: #007bff;
+            text-decoration: none;
+        }
+        .back-link:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <h1>Add New Course</h1>
+    <form method="POST">
+        <div class="form-section">
+            <h3>Basic Information</h3>
+            
+            <label>Course Name:
+                <input type="text" name="name" required placeholder="e.g., Advanced Software Engineering">
+            </label>
+            
+            <label>Course Code:
+                <input type="text" name="code" required placeholder="e.g., ASE101">
+            </label>
+            
+            <label>Maximum Enrollment:
+                <input type="number" name="max_enrollment" required min="1" placeholder="e.g., 30">
+            </label>
+        </div>
+
+        <div class="form-section">
+            <h3>Prerequisites</h3>
+            
+            {% if existing_courses %}
+            <label>Select Prerequisite Courses:
+                <select name="prerequisite_courses" multiple>
+                    {% for course in existing_courses %}
+                    <option value="{{ course.code }}">{{ course.name }} ({{ course.code }})</option>
+                    {% endfor %}
+                </select>
+                <div class="help-text">Hold Ctrl (Windows) or Cmd (Mac) to select multiple courses</div>
+            </label>
+            {% else %}
+            <p style="color: #666;">No existing courses available for prerequisites.</p>
+            {% endif %}
+        </div>
+
+        <input type="submit" value="Add Course">
+    </form>
+    
+    <a href="/" class="back-link">← Back to Home</a>
+</body>
+</html>
