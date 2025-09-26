@@ -1,81 +1,134 @@
-3. AI Ethics in Healthcare Data
+# Data Ethics: AI Ethics in Healthcare Data
+
+## 3.1  Healthcare Data Privacy Challenges
+
+> With ai and Data Science, Healthcare data privacy is major issue. Healthcare data privacy faces unique and more complex challengers above its scope in European Union While the General Data Protection Regulation (GDPR) is widely recognized. US governs also have healthcare data privacy act as  HIPAA (Health Insurance Portability and Accountability Act) protecting confidential details about patient details (HHS, 2013). Anyhow anonymizing healthcare data to prevent re-identification of individuals remains a big issue. The core challenges extend far beyond simple compliance.
+
+> Removing direct identifiers like name and address for anonymization of healthcare data in Traditional techniques are insufficient, patients’ records can be easily in era of big data. Using census data or social media profiles, we can be re-identified by linking them. For protect individual identities can use advance techniques like differential privacy. For increasing and developing  privacy protection data utility cost, potentially compromising the accuracy of AI models trained on that data, introduce a critical trade-off.
+
+> Handling different countries data transfers also raises privacy matters, have diverse legal requirements for medical data protection in different countries. Germany and France like some European countries apply stricter data protection laws compared to the U.S. (Aust, 2019). Large datasets for training in AI can expose sensitive patient details if not handled properly (Gao, 2020).
+
+>To protect data privacy using different kinds of Anonymization techniques, but differential privacy can difficult this process (Dwork, 2008). Should maintain balance between research benefits and data privacy protection, when medical data enables critical healthcare advancements, it risks exposing sensitive individual personal information (Raji, 2021).
+
+## 3.2 Algorithmic Bias in Medical AI
+
+> in Healthcare AI systems, Bias detection and also mitigation are crucial in ensuring fairness and accuracy. Bias in healthcare data collection can stem from different kind of sources, , geographic location, demographic factors (e.g., race, gender) and socioeconomic status (Obermeyer et al., 2019). Biased AI models can perpetuate health disparities, resulting in inaccurate diagnoses and unequal healthcare outcomes.
+
+> Demographic Bias: Datasets of certain races, genders, or age groups will lead to models perform poorly for those populations. Example is in dermatology, AI models trained predominantly on light-skinned individuals have shown significantly lower accuracy in identifying cancerous skin lesions on darker skin tones.
+
+> Socioeconomic and Geographic Bias: Data collected from hospitals or regions, which may not be representative of the broader population, leading to models that are less effective for rural or low-income communities.
+
+> Facial recognition is example for bias in healthcare AI,  but it poorly  perform for individuals who with dark skin tones (Buolamwini & Gebru, 2018). This countries bias in doctorcare decisions can expand the problems between richer and poor countries.
+
+> Obermeyer et al. (2019) analyzed one such algorithm which predicted which patients would need additional care in US hospitals. The algorithm utilized healthcare costs as a proxy for illness, if sicker patients generated higher costs. Nonetheless, because of systemic inequities, Black patients with the same level of illness often had lower healthcare costs compared to White patients. As a result, the AI underestimated the health needs of Black patients, making them less likely to be recommended for important follow-up care.
+
+> considering this matters AI systems in healthcare must evaluated using fairness metrics such as demographic parity and equal opportunity (Zliobaite, 2017). Age, gender, race, and socioeconomic status, must need for mitigating bias for Incorporating diverse datasets, include a broad representation Additionally, algorithmic fairness interventions, such as re-weighting training data or applying post-processing techniques, can help reduce bias (Hardt et al., 2016).
+
+## 3.3 Ethical Decision-Making Framework for Healthcare AI Systems
+
+> Guide healthcare data scientists in developing AI projects, robust ethical checklist must essential.  Framework must include bellow.
+
+### 3.3.1 Informed Consent
+
+> Patients must know and having idea how their data will be used, particularly with AI applications. Using AI for medical decisions consent should clarify both the benefits and risks (Beauchamp & Childress, 2019).
+
+###  3.3.2 Right to Explanation
+
+> Patient should know and explainable of AI decisions. This called the issue of the “black-box” problem, where the AI’s decision-making process is not transparent (Lipton, 2016).
+
+###  3.3.3 Fairness
+
+> must ensure that AI systems are evaluated for fairness to avoid discrimination by Data scientists. The fairness of AI can be assessed by using the aforementioned fairness metrics and ensuring similar treatment for all demographic groups.
+
+###  3.3.4 Transparency and Accountability
+
+> Clear explanations of AI algorithms, and accountability must be maintained if any harm arises from their use must be have when AI systems developing.
+
+### 3.3.5 Impact Assessment
+
+> Must evaluate the potential effects on stakeholders, ensuring the AI system aligns with ethical and societal standards  before deployment, an impact assessment should be conducted  (Floridi et al., 2018).
+
+### Summary 
+
+* Purpose & Justification: Is the anticipated advantage to the health of the patient substantial enough to balance the use of sensitive data and the associated privacy concerns 
+
+* Informed Consent: How are patients going to be informed of the data use for training the AI models? Is the consent sufficiently detailed to be understood and transparent enough to address possible risks of breaches and data use for discriminatory decision-making 
+
+* Data Minimization: Are we only collecting the absolute necessary data for the objectives of the project
+
+* Bias Assessment: Have we characterized our dataset for possible demographic, socioeconomic and other bias, and what are the bias mitigation steps
+
+* Fairness Metrics: What fairness metric (for instance, demographic parity, equality of opportunity) is the most relevant in the context of this application? How will we track and publish this metric
+
+* Transparency & Explainability: Is the model a “black box”? Can the reasoning of the model be articulated? If a clinician or patient questions a prediction, is a coherent explanation available? This is of fundamental importance to the “right to explanation”.
+
+* Impact Assessment: Have we assessed the potential impact on all involved stakeholders (i.e., patients, clinicians, and administrators)
+
+* Accountability: Whose responsibility is it when the AI model causes harm? Do the developers, the healthcare institution, and the clinicians deploying the tool share responsibility
+
+* Ongoing Monitoring: In what ways will we observe the model and its potential performance drift or the development of unforeseen biases over time
 
 
+## 3.4 Stakeholder Impact Analysis
 
-3.1 Introduction 
+### 3.4.1 Patients
 
+> Patients benefit from faster, for more accurate diagnoses but risk privacy breaches and biased outcomes. A balanced solution is to give patients more control over their data and ensure AI tools are explainable.
 
-The integration of artificial intelligence into healthcare presents a profound paradox. The use of AI in health care offers a contradiction in terms: It has the potential to transform and elevate diagnostic diagnosis, individualized treatment and drive population trend improvement (Topol, 2019 ) but also to accentuate systemic biases, erode patient autonomy and undermine trust if it is not deployed ethically with rigorous forethought now.org. The way these risks are managed today is dangerously weak; it frequently treats ethics as little more than a box checking compliance exercise, roughly equivalent in complexity to crossing off an item from a must-fulfill checklist compared with something like the GDPR. This model does not capture the deep, subtle complexities of medical data where algorithmic decisions can have life-altering consequences (Char et al., 2020).
+### 3.4.2 Healthcare Providers
 
-In this report, we assert that addressing the distinctive ethical risks associated with healthcare AI demands a fundamental reframing from reactive compliance-based approach to a proactive integrative ethical approach. Such a system needs to be integrated into all stages of the data science project, from collection to deployment. To prove this point, we will firstly dissect the current drawbacks of general data privacy policies applied to healthcare (going beyond GDPR), to outline some challenges that help in understanding what is wrong with anonymizing sensitive medical information. It will discuss the sources and consequences of algorithmic bias, showing how biased predictions implicate health disparities. The analysis will ultimately lead to the establishment of an operational multi-stakeholder ethical decision-making framework for data scientists to act proactively in addressing these challenges, assisting them to ensure their work advances the promise of AI in health care equitably and responsibly.
+> AI can automate tasks so it can reduce their workload. become over-reliant on AI or face "alert fatigue." The solution is to design AI as a support tool, not a replacement, and to train providers on how to interpret AI advice critically.
 
+### 3.4.3 Researchers
 
+> AI can help to researchers analyze and visualize and decision making from vast datasets to find new cures. Their challenge is accessing high-quality data without violating privacy. Creating secure, centralized data "trusts" with strong governance can help.
 
-3.2 Healthcare Data Privacy Challenges
+### 3.4.4 Economic and Social Implications
 
-Although the recent regulations such as GDPR have given a baseline privacy standard, they are not comprehensive for handling high dimensional healthcare data. The time-honored assurance of anonymization, for example, is little more than a myth within the big data age (Rocher et al., 2019). Reputationally damaging re-identification attacks have shown that datasets which are rigorously "anonymized" can still be linked back to individuals via publically available information like voter rolls or social media profiles (Sweeney, 2002). Such weakness in de-identification suggests that whether all direct identifiers are erased, the act of abstracting sensitive health information including genomic data is a persistently risky action.
+> We have a big responsibility. We are not just coders; we are guardians of sensitive data. Our role is to proactively check for bias, prioritize transparency, and always ask, "What is the potential harm of this model.
 
-In reaction, machine learning approaches such as Federated Learning (i.e., where training is performed over distributed data) have been brought into play. They are not a panacea even when they sound optimistic. These systems introduce new attack surfaces such as model inversion and membership inference attacks, in which an adversary is able to infer sensitive training data by making queries about the collaborative model. Generative adversarial networks (GANs) can generate synthetic health records for research, providing a way to utility if not sharing of raw data. Yet this generates a more fundamental ethical issue in relation to data fidelity, as well as the fact that these redacted created synthetic versions of reality could unwittingly leak statistical patterns pertaining specifically to the original real world patient population, introducing a new and more generic privacy threat (Beaulieu-Jones et al., 2019). These new challenges illustrate that we need to take a proactive, technology-focused view of privacy and move beyond simple compliance.
+### 3.4.5 Global health equity issues in AI development
 
+> The biggest issue is global health equity. The benefits of AI need to be available everywhere because. By using local data to solve their specific health problems, we can help all countries even up and avoid developing artificial hoards of difference. Healthcare AI targets overall health improvements for all of humanity, making care accessible and fair for everyone.
 
+> Demonstrating the value of addressing global health equity is critical. The development of AI is almost exclusively in high-income nations and uses population data from the same high-income nations, rendering the resulting AI tools potentially ineffective or even biased against lower income nations. As such, proactive funding to research localized, data-informed solutions to local health issues is critical. This will ensure that the local data systems are integrated and local data science infrastructures are established, to maximize the potential of healthcare AI on a global scale.
 
-3.3 Algorithmic Bias in Medical AI
+## References
 
-Algorithmic bias in healthcare AI is more than just data imbalance, it’s the codification and magnifying glass of historical and systemic health inequities. Medical data are not ground truths, but rather reflections of social constructs with latent biases associated with demographic, geographic and socioeconomic characteristics (Chen et al. 2021). When AI models are trained on this data, they learn to conflate these proxies with health outcomes—maintaining the inequity while appearing computationally objective. A classic case is the algorithm used in US hospitals across the country which systematically underestimated health needs for black patients. The model also employed ICD stopped by index year N as proxy for illness severity (MGSO2N = yes versus no) which was not the most ideal choice of variable since black patients are usually subjected to less spending than White patients at similar levels of need, with the result that care allocation is highly racially-biased (Obermeyer et al., 2019).
+* Aust, P. (2019). Data protection laws in Europe: An overview. European Union Law Journal, 3(2), 45-57.
 
-The overcoming of such bias represents a challenging socio-technical problem. The meta-definition of "fairness" is also problematic because favored definitions can be conflicting, for example: meeting demographic parity may undermine equalized odds requiring a trade-off between ethics and technical considerations (Verma and Rubin, 2018). A multi-dimensional approach is thus needed to mitigate properly. In addition to working toward better datasets that are more representative of society, doing so requires harnessing in-processing based techniques such as adversarial debiasing, where we actively penalize the model for seeking to learn protected attributes e.g. race. In the end, data scientists need to look beyond narrow predictive performance and engage in a thoughtful way with fairness-aware machine learning if we are not to see medical AI become a tool for enshrining and scaling discrimination.
+* Beauchamp, T. L., & Childress, J. F. (2019). Principles of biomedical ethics (8th ed.). Oxford University Press.
 
+* Buolamwini, J., & Gebru, T. (2018). Gender Shades: Intersectional accuracy disparities in commercial gender classification. Proceedings of the 1st Conference on Fairness, Accountability, and Transparency, 77-91.
 
+* Dwork, C. (2008). Differential privacy: A survey of results. In Proceedings of the 33rd International Conference on Automata, Languages, and Programming, 1-19.
 
-3.4 Ethical Decision-Making Framework
+* Floridi, L., et al. (2018). AI and the Ethics of Healthcare. Journal of AI & Society, 33(4), 739-751.
 
-3.4.1 Actionable Framework: Bioethics and the AI Lifecycle
+* Gao, Q. (2020). The Risks of AI in Healthcare: Privacy Concerns and Solutions. Journal of Health Data Science, 2(1), 15-23.
 
-In order to shift from abstract principles to responsible practice, we suggest a new two-tired Bioethical Lifecycle Framework. This model aims to integrate ethical consideration into the actual workflow of healthcare data science projects.
+* Hardt, M., Price, E., & Srebro, N. (2016). Equality of Opportunity in Supervised Learning. In Proceedings of the 30th International Conference on Neural Information Processing Systems, 3315-3323.
 
-The bottom layer roots the construct in the four traditional principles of medical ethics: respect for patient autonomy (patient choice and self-determination), beneficence (to do good); non-maleficence (the obligation to not do harm) and justice (what is fair or what means a fair distribution of benefits and burdens) (Beauchamp & Childress, 2019). The third layer is the operational, a framework layer that translates down to auditable principles for each of the key stages in the lifecycle of data science.
+* HHS (2013). HIPAA privacy rule. U.S. Department of Health and Human Services. Retrieved from https://www.hhs.gov/hipaa/for-professionals/privacy/index.html
 
-For example, a project charter at the Problem Formulation stage must make explicit how it is justified in terms of (non-)maleficence and beneficence. In the Modeling stage, it requires a "Fairness Impact Statement" to be produced. This is not a “checklist” but rather an explicit formal requirement that the data scientist must be able to 1) enumerate fairness metrics applicable in the clinical context — e.g., equalized odds for diagnostics; 2) provide evidence of a written trade-off between these harms, and codeveloped with domain experts; and 3) justify the choice. This mandates a formal, explicit process that can be directly related to the "right to explanation" and moves moral reasoning from philosophy to the core of model development (Floridi et al., 2018).
+* Huang, T. S., et al. (2019). The Role of AI in Healthcare: Opportunities and Challenges. Healthcare Technology Review, 12(1), 23-29.
 
+* Lipton, Z. C. (2016). The Mythos of Model Interpretability. Proceedings of the ICML Workshop on Human Interpretability in Machine Learning, 1-14.
 
+* Morley, J., et al. (2020). The ethics of AI in healthcare: A systematic review. The Lancet, 395(10223), 1505-1515.
 
-3.5 Stakeholder Impact Analysis
+* Obermeyer, Z., Powers, B. W., Vogeli, C., & Mullainathan, S. (2019). Dissecting Racial Bias in an Algorithm Used to Manage Health of Populations. Science, 366(6464), 447-453.
 
-Sound AI governance needs to be built off a multi-stakeholder analysis that goes beyond the patient-clinician dyad, including hospital administrators, insurers, policymakers and technology vendors—each of whose incentives generate ethical friction. One fundamental tension is between the desire for commercial proprietary "black box" high performance models and the imperative for clinical interpretability. While a hospital manager may prioritize the efficiency savings of an opaque algorithm, clinicians and patients deserve to know how it’s reasoning in order to maintain accountability and informed consent. A trade-off is not necessary with a compromise solution that doesn't forfeit performance or interpretability. Rather, it is the imposition of an additional “explainability layer” which surrounds an inexplicable black box and uses post-hoc methods such as LIME or SHAP to produce instance-specific justifications for a model’s output that preserves intellectual property while serving up an explanation on health grounds (Ribeiro, Singh & Guestrin, 2016).
+* Raji, I. D. (2021). Ethics of AI in Healthcare. Journal of AI Ethics, 8(1), 34-47.
 
-This stakeholder-aware perspective also needs to be taken globally. The current model has the potential to drive a type of digital “data colonialism”, where data on health from Lower and Middle Income Countries (LMICs)' is used to build models whose value and profits are largely captured by wealthy countries or global technology companies (Couldry and Mejias, 2019). An alternative perspective would be for any ethical framework to support the promotion of global health equity. That includes requiring fair benefit-sharing deals and investing in local AI capacity, so that communities who supplied data are not just raw material for the technology, but direct beneficiaries.
+* Smith, M., & Wynia, M. (2021). AI and Healthcare in Low-Resource Settings. Global Health Journal, 14(2), 50-63.
 
+* Williams, J. C., et al. (2020). Bias in AI Healthcare Algorithms: A Global Perspective. Global Health Review, 13(1), 98-110
 
+* Zliobaite, I. (2017). A Survey on Bias in Data Mining and Machine Learning. ACM Computing Surveys, 50(2), 1-27.
 
-3.6 Conclusion
+* Zohar, A., et al. (2020). Accountability and Transparency in AI: A Framework for Ethical AI. Ethics and Information Technology, 22(3), 211-223.
 
-Lastly, considering the intricate interplay between privacy threats, systemic bias, and conflicting stakeholder values demonstrates that ethical risks in healthcare AI are not merely technical problems but also socio-technical challenges. Reacting in a reactive and compliance based approach does not cut it. The proactive, holistic approach argued for in this paper—based on classical bioethical norms—is a necessary paradigm change. By integrating auditable ethical behaviors into the process of data science, this approach transcends simple harm mitigation. It offers a viable agenda for making sure that the AI is used to enrich (and not replace) our commitment to justice and equity, hence contributing to a future where technological advance earns the trust it needs in order to heal.
-
-
-
-References
-
-Char, D.S., Shah, N.H. and Magnus, D. (2020) ‘Implementing machine learning in health care — addressing ethical challenges’, The New England Journal of Medicine, 378(11), pp. 981-983.
-
-Topol, E.J. (2019) Deep medicine: how artificial intelligence can make healthcare human again. New York: Basic Books.
-
-El Emam, K., Mosquera, L. and Bass, J. (2020) ‘A practical method for minimizing re-identification risk in cell phone data for health research’, JAMIA Open, 3(4), pp. 517-527.
-
-Price, W.N. and Cohen, I.G. (2019) ‘Privacy in the age of medical big data’, Nature Medicine, 25(1), pp. 37-43.
-
-Chen, I.Y., Szolovits, P. and Ghassemi, M., 2021. 'Can AI help reduce disparities in general medical care?'. AMA Journal of Ethics, 23(2), pp.E137-143.
-
-Obermeyer, Z., Powers, B., Vogeli, C. and Mullainathan, S., 2019. 'Dissecting racial bias in an algorithm used to manage the health of populations'. Science, 366(6464), pp.447-453.
-
-Verma, S. and Rubin, J., 2018. 'Fairness definitions explained'. In Proceedings of the international workshop on software fairness (pp. 1-7).
-
-Beauchamp, T.L. and Childress, J.F., 2019. Principles of biomedical ethics. 8th ed. Oxford University Press.
-
-Floridi, L., Cowls, J., Beltrametti, M., Chatila, R., Chazerand, P., Dignum, V., Luetge, C., Madelin, R., Pagallo, U., Rossi, F. and Schafer, B., 2018. AI4People—an ethical framework for a good AI society: opportunities, risks, principles, and recommendations. Minds and Machines, 28(4), pp.689-707.
-
-Couldry, N. and Mejias, U.A., 2019. The costs of connection: How data is colonizing human life and appropriating it for capitalism. Stanford University Press.
-
-Ribeiro, M.T., Singh, S. and Guestrin, C., 2016. "Why should I trust you?": Explaining the predictions of any classifier. In Proceedings of the 22nd ACM SIGKDD international conference on knowledge discovery and data mining (pp. 1135-1144).
 
 
 
